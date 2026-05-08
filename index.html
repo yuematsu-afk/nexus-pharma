@@ -115,7 +115,34 @@
     border-radius: var(--radius); transition: all .2s;
   }
   .nav-cta:hover { background: var(--accent); color: #fff !important; }
-  @media (max-width: 900px) { .nav a:not(.nav-cta) { display: none; } }
+  .nav-toggle { display: none; width: 40px; height: 40px; align-items: center; justify-content: center; flex-direction: column; gap: 5px; padding: 0; }
+  .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--primary); transition: transform .25s, opacity .2s; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  @media (max-width: 900px) {
+    .site-head .wrap { height: 64px; }
+    .brand-mark { font-size: 18px; }
+    .brand-sub { display: none; }
+    .nav-toggle { display: flex; }
+    .nav {
+      position: fixed; top: 64px; left: 0; right: 0;
+      background: var(--bg); border-bottom: 1px solid var(--line-soft);
+      flex-direction: column; align-items: stretch; gap: 0;
+      padding: 8px 0 24px;
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease, padding .3s ease;
+    }
+    .nav.open { max-height: calc(100vh - 64px); padding: 8px 0 24px; overflow-y: auto; }
+    .nav:not(.open) { padding-top: 0; padding-bottom: 0; }
+    .nav a { padding: 16px var(--gutter); font-size: 15px; border-bottom: 1px solid var(--line-soft); }
+    .nav a:last-child { border-bottom: none; }
+    .nav-cta {
+      margin: 16px var(--gutter) 0;
+      padding: 16px 22px; text-align: center;
+      justify-content: center; display: block;
+    }
+  }
 
   /* ============= HERO ============= */
   .hero {
@@ -598,6 +625,117 @@
 
   /* tweaks panel (custom location) */
   #tweaks-mount { position: fixed; bottom: 16px; right: 16px; z-index: 100; }
+
+  /* ============= MOBILE REFINEMENTS ============= */
+  @media (max-width: 768px) {
+    body { font-size: 14.5px; line-height: 1.85; }
+    .sec-title { font-size: clamp(24px, 6.5vw, 32px); line-height: 1.5; }
+    .sec-lead { font-size: 14.5px; line-height: 1.95; }
+    .sec-head { margin-bottom: 40px; }
+    section { padding: 64px 0; }
+
+    /* Hero */
+    .hero { padding-top: 110px; padding-bottom: 56px; }
+    .hero h1 { font-size: clamp(26px, 7.4vw, 36px); line-height: 1.5; margin-bottom: 24px; }
+    .hero h1 .small { font-size: 0.6em; margin-top: 12px; line-height: 1.7; }
+    .hero p.lead { font-size: 14.5px; line-height: 1.95; margin-bottom: 28px; }
+    .hero p.lead br { display: none; }
+    .hero-eyebrow { margin-bottom: 22px; }
+    .hero-eyebrow span { font-size: 10px; letter-spacing: 0.15em; }
+    .hero-cta { gap: 12px; }
+    .hero-cta .btn-primary { width: 100%; justify-content: center; padding: 18px 24px; }
+    .hero-cta .btn-ghost { width: 100%; justify-content: center; }
+    .hero-visual { aspect-ratio: 5/4; }
+    .hero-stats { margin-top: 48px; padding-top: 28px; gap: 18px 16px; }
+    .hero-stat .num { font-size: 34px; }
+
+    /* Pain */
+    .pain-card { padding: 32px 24px; }
+    .pain-card h3 { font-size: 19px; }
+    .pain-card h3 br { display: none; }
+    .pain-message { padding: 24px 22px; font-size: 16px; line-height: 1.85; }
+    .pain-message br { display: none; }
+
+    /* Options */
+    .opt-card { padding: 32px 24px; margin-left: 0; }
+    .opt-card.featured { transform: none; }
+    .opt-card h3 { font-size: 20px; }
+    .ma-benefits { margin-top: 56px; gap: 16px; }
+    .ma-benefit { padding: 22px 18px; }
+
+    /* Strengths */
+    .strength-row { padding: 32px 0; gap: 16px; }
+    .strength-row .num { font-size: 48px; }
+    .strength-row h3 { font-size: 22px; }
+    .strength-row h3 br { display: none; }
+
+    /* Profile */
+    .profile-grid { margin-top: 36px; }
+    .profile h3.profile-jp { font-size: 28px; }
+    .profile-quote { font-size: 17px; line-height: 1.85; padding-left: 20px; margin-bottom: 28px; }
+    .profile-bio { font-size: 14px; line-height: 1.95; margin-bottom: 28px; }
+
+    /* Flow */
+    .flow-row { padding: 28px 0; }
+    .flow-step { display: flex; align-items: baseline; gap: 12px; padding-top: 0; }
+    .flow-step .big { display: inline; font-size: 28px; margin-top: 0; }
+    .flow-content h3 { font-size: 19px; }
+
+    /* Pricing */
+    .pricing-banner { padding: 28px 24px; gap: 20px; text-align: left; }
+    .pricing-banner h3 { font-size: 22px; line-height: 1.55; }
+    .pricing-banner h3 br { display: none; }
+    .pricing-banner .price-tag { font-size: 56px; }
+    .price-row { padding: 20px 4px 22px; }
+    .price-row .pname { font-size: 16px; }
+    .price-row .pval { font-size: 26px; }
+
+    /* Cases */
+    .cases-grid { margin-top: 40px; gap: 24px; }
+    .case-card { padding: 24px; }
+    .case-card h3 { font-size: 17px; }
+
+    /* FAQ */
+    .faq-list { margin-top: 32px; }
+    .faq-q { grid-template-columns: 36px 1fr 24px; gap: 14px; padding: 22px 0; font-size: 15.5px; line-height: 1.6; }
+    .faq-q .qmark { font-size: 18px; }
+    .faq-a-inner { padding: 0 0 24px 50px; font-size: 13.5px; line-height: 1.95; }
+
+    /* Columns */
+    .columns-grid { gap: 28px; margin-top: 32px; }
+
+    /* Contact */
+    .contact-grid { margin-top: 32px; }
+    .contact-side h3 { font-size: 21px; }
+    .form-card { padding: 28px 22px; }
+    .form-row { margin-bottom: 18px; }
+    .form-row input, .form-row textarea, .form-row select { padding: 13px 14px; font-size: 15px; }
+    .form-submit { padding: 18px; font-size: 13.5px; }
+    .contact-channels dd { font-size: 18px; }
+    .contact-channels dd small { display: block; margin-left: 0; margin-top: 4px; }
+
+    /* Footer */
+    footer.site-foot { padding: 56px 0 32px; }
+    .foot-bottom { flex-direction: column; align-items: flex-start; }
+    .foot-bottom .links { flex-wrap: wrap; gap: 16px; }
+    .foot-brand .brand-mark { font-size: 22px; }
+
+    /* Tweaks panel — keep out of CTA way */
+    #tweaks-mount { bottom: 12px; right: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    :root { --gutter: 18px; }
+    .hero h1 { font-size: 28px; }
+    .sec-title { font-size: 24px; }
+    .pricing-banner .price-tag { font-size: 44px; }
+    .strength-row .num { font-size: 40px; }
+    .profile h3.profile-jp { font-size: 24px; }
+    .profile-quote { font-size: 16px; }
+    .hero-stat .num { font-size: 28px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .ma-benefits { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body class="theme-classic" data-screen-label="01 Top">
@@ -609,7 +747,10 @@
       <span class="brand-mark">SASAERU<span class="pharm">.pharma</span></span>
       <span class="brand-sub">薬局M&A・事業承継</span>
     </a>
-    <nav class="nav">
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="siteNav">
       <a href="#strengths">選ばれる理由</a>
       <a href="#profile">代表紹介</a>
       <a href="#flow">流れ</a>
@@ -1357,6 +1498,24 @@
 
 <!-- ============= JS ============= -->
 <script>
+  // === Mobile nav toggle ===
+  const navToggle = document.getElementById('navToggle');
+  const siteNav = document.getElementById('siteNav');
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', () => {
+      const open = siteNav.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open);
+    });
+    siteNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        siteNav.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // === Scroll fade-in ===
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -1421,54 +1580,6 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script type="text/babel">
-
-// tweaks-panel.jsx
-// Reusable Tweaks shell + form-control helpers.
-//
-// Owns the host protocol (listens for __activate_edit_mode / __deactivate_edit_mode,
-// posts __edit_mode_available / __edit_mode_set_keys / __edit_mode_dismissed) so
-// individual prototypes don't re-roll it. Ships a consistent set of controls so you
-// don't hand-draw <input type="range">, segmented radios, steppers, etc.
-//
-// Usage (in an HTML file that loads React + Babel):
-//
-//   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-//     "primaryColor": "#D97757",
-//     "palette": ["#D97757", "#29261b", "#f6f4ef"],
-//     "fontSize": 16,
-//     "density": "regular",
-//     "dark": false
-//   }/*EDITMODE-END*/;
-//
-//   function App() {
-//     const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-//     return (
-//       <div style={{ fontSize: t.fontSize, color: t.primaryColor }}>
-//         Hello
-//         <TweaksPanel>
-//           <TweakSection label="Typography" />
-//           <TweakSlider label="Font size" value={t.fontSize} min={10} max={32} unit="px"
-//                        onChange={(v) => setTweak('fontSize', v)} />
-//           <TweakRadio  label="Density" value={t.density}
-//                        options={['compact', 'regular', 'comfy']}
-//                        onChange={(v) => setTweak('density', v)} />
-//           <TweakSection label="Theme" />
-//           <TweakColor  label="Primary" value={t.primaryColor}
-//                        options={['#D97757', '#2A6FDB', '#1F8A5B', '#7A5AE0']}
-//                        onChange={(v) => setTweak('primaryColor', v)} />
-//           <TweakColor  label="Palette" value={t.palette}
-//                        options={[['#D97757', '#29261b', '#f6f4ef'],
-//                                  ['#475569', '#0f172a', '#f1f5f9']]}
-//                        onChange={(v) => setTweak('palette', v)} />
-//           <TweakToggle label="Dark mode" value={t.dark}
-//                        onChange={(v) => setTweak('dark', v)} />
-//         </TweaksPanel>
-//       </div>
-//     );
-//   }
-//
-// ─────────────────────────────────────────────────────────────────────────────
-
 const __TWEAKS_STYLE = `
   .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
     max-height:calc(100vh - 32px);display:flex;flex-direction:column;
@@ -1499,11 +1610,9 @@ const __TWEAKS_STYLE = `
     color:rgba(41,38,27,.72)}
   .twk-lbl>span:first-child{font-weight:500}
   .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
-
   .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
     color:rgba(41,38,27,.45);padding:10px 0 0}
   .twk-sect:first-child{padding-top:0}
-
   .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
     border:.5px solid rgba(0,0,0,.1);border-radius:7px;
     background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
@@ -1511,7 +1620,6 @@ const __TWEAKS_STYLE = `
   select.twk-field{padding-right:22px;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
     background-repeat:no-repeat;background-position:right 8px center}
-
   .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;
     border-radius:999px;background:rgba(0,0,0,.12);outline:none}
   .twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
@@ -1519,7 +1627,6 @@ const __TWEAKS_STYLE = `
     border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
   .twk-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
     background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
-
   .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
     background:rgba(0,0,0,.06);user-select:none}
   .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
@@ -1528,49 +1635,39 @@ const __TWEAKS_STYLE = `
   .twk-seg.dragging .twk-seg-thumb{transition:none}
   .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
     background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
-    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;
-    overflow-wrap:anywhere}
-
+    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;overflow-wrap:anywhere}
   .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
     background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
   .twk-toggle[data-on="1"]{background:#34c759}
   .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
     background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
   .twk-toggle[data-on="1"] i{transform:translateX(14px)}
-
   .twk-num{display:flex;align-items:center;height:26px;padding:0 0 0 8px;
     border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6)}
-  .twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;
-    user-select:none;padding-right:8px}
+  .twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;user-select:none;padding-right:8px}
   .twk-num input{flex:1;min-width:0;height:100%;border:0;background:transparent;
     font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:0 8px 0 0;
     outline:none;color:inherit;-moz-appearance:textfield}
-  .twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{
-    -webkit-appearance:none;margin:0}
+  .twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
   .twk-num-unit{padding-right:8px;color:rgba(41,38,27,.45)}
-
   .twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;
     background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}
   .twk-btn:hover{background:rgba(0,0,0,.88)}
   .twk-btn.secondary{background:rgba(0,0,0,.06);color:inherit}
   .twk-btn.secondary:hover{background:rgba(0,0,0,.1)}
-
   .twk-swatch{appearance:none;-webkit-appearance:none;width:56px;height:22px;
     border:.5px solid rgba(0,0,0,.1);border-radius:6px;padding:0;cursor:default;
     background:transparent;flex-shrink:0}
   .twk-swatch::-webkit-color-swatch-wrapper{padding:0}
   .twk-swatch::-webkit-color-swatch{border:0;border-radius:5.5px}
   .twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
-
   .twk-chips{display:flex;gap:6px}
   .twk-chip{position:relative;appearance:none;flex:1;min-width:0;height:46px;
     padding:0;border:0;border-radius:6px;overflow:hidden;cursor:default;
     box-shadow:0 0 0 .5px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);
     transition:transform .12s cubic-bezier(.3,.7,.4,1),box-shadow .12s}
-  .twk-chip:hover{transform:translateY(-1px);
-    box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.12)}
-  .twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),
-    0 2px 6px rgba(0,0,0,.15)}
+  .twk-chip:hover{transform:translateY(-1px);box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.12)}
+  .twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),0 2px 6px rgba(0,0,0,.15)}
   .twk-chip>span{position:absolute;top:0;bottom:0;right:0;width:34%;
     display:flex;flex-direction:column;box-shadow:-1px 0 0 rgba(0,0,0,.1)}
   .twk-chip>span>i{flex:1;box-shadow:0 -1px 0 rgba(0,0,0,.1)}
@@ -1578,91 +1675,56 @@ const __TWEAKS_STYLE = `
   .twk-chip svg{position:absolute;top:6px;left:6px;width:13px;height:13px;
     filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
 `;
-
-// ── useTweaks ───────────────────────────────────────────────────────────────
 function useTweaks(defaults) {
   const [values, setValues] = React.useState(defaults);
   const setTweak = React.useCallback((keyOrEdits, val) => {
-    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
-      ? keyOrEdits : { [keyOrEdits]: val };
+    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null ? keyOrEdits : { [keyOrEdits]: val };
     setValues((prev) => ({ ...prev, ...edits }));
     window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
     window.dispatchEvent(new CustomEvent('tweakchange', { detail: edits }));
   }, []);
   return [values, setTweak];
 }
-
-// ── TweaksPanel ─────────────────────────────────────────────────────────────
 function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
   const [open, setOpen] = React.useState(false);
   const dragRef = React.useRef(null);
-  const hasDeckStage = React.useMemo(
-    () => typeof document !== 'undefined' && !!document.querySelector('deck-stage'),
-    [],
-  );
-  const [railEnabled, setRailEnabled] = React.useState(
-    () => hasDeckStage && !!document.querySelector('deck-stage')?._railEnabled,
-  );
+  const hasDeckStage = React.useMemo(() => typeof document !== 'undefined' && !!document.querySelector('deck-stage'), []);
+  const [railEnabled, setRailEnabled] = React.useState(() => hasDeckStage && !!document.querySelector('deck-stage')?._railEnabled);
   React.useEffect(() => {
     if (!hasDeckStage || railEnabled) return undefined;
-    const onMsg = (e) => {
-      if (e.data && e.data.type === '__omelette_rail_enabled') setRailEnabled(true);
-    };
+    const onMsg = (e) => { if (e.data && e.data.type === '__omelette_rail_enabled') setRailEnabled(true); };
     window.addEventListener('message', onMsg);
     return () => window.removeEventListener('message', onMsg);
   }, [hasDeckStage, railEnabled]);
-  const [railVisible, setRailVisible] = React.useState(() => {
-    try { return localStorage.getItem('deck-stage.railVisible') !== '0'; } catch (e) { return true; }
-  });
-  const toggleRail = (on) => {
-    setRailVisible(on);
-    window.postMessage({ type: '__deck_rail_visible', on }, '*');
-  };
+  const [railVisible, setRailVisible] = React.useState(() => { try { return localStorage.getItem('deck-stage.railVisible') !== '0'; } catch (e) { return true; } });
+  const toggleRail = (on) => { setRailVisible(on); window.postMessage({ type: '__deck_rail_visible', on }, '*'); };
   const offsetRef = React.useRef({ x: 16, y: 16 });
   const PAD = 16;
-
   const clampToViewport = React.useCallback(() => {
     const panel = dragRef.current;
     if (!panel) return;
     const w = panel.offsetWidth, h = panel.offsetHeight;
     const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
     const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
-    offsetRef.current = {
-      x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)),
-      y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)),
-    };
+    offsetRef.current = { x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)), y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)) };
     panel.style.right = offsetRef.current.x + 'px';
     panel.style.bottom = offsetRef.current.y + 'px';
   }, []);
-
   React.useEffect(() => {
     if (!open) return;
     clampToViewport();
-    if (typeof ResizeObserver === 'undefined') {
-      window.addEventListener('resize', clampToViewport);
-      return () => window.removeEventListener('resize', clampToViewport);
-    }
+    if (typeof ResizeObserver === 'undefined') { window.addEventListener('resize', clampToViewport); return () => window.removeEventListener('resize', clampToViewport); }
     const ro = new ResizeObserver(clampToViewport);
     ro.observe(document.documentElement);
     return () => ro.disconnect();
   }, [open, clampToViewport]);
-
   React.useEffect(() => {
-    const onMsg = (e) => {
-      const t = e?.data?.type;
-      if (t === '__activate_edit_mode') setOpen(true);
-      else if (t === '__deactivate_edit_mode') setOpen(false);
-    };
+    const onMsg = (e) => { const t = e?.data?.type; if (t === '__activate_edit_mode') setOpen(true); else if (t === '__deactivate_edit_mode') setOpen(false); };
     window.addEventListener('message', onMsg);
     window.parent.postMessage({ type: '__edit_mode_available' }, '*');
     return () => window.removeEventListener('message', onMsg);
   }, []);
-
-  const dismiss = () => {
-    setOpen(false);
-    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
-  };
-
+  const dismiss = () => { setOpen(false); window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); };
   const onDragStart = (e) => {
     const panel = dragRef.current;
     if (!panel) return;
@@ -1670,211 +1732,92 @@ function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
     const sx = e.clientX, sy = e.clientY;
     const startRight = window.innerWidth - r.right;
     const startBottom = window.innerHeight - r.bottom;
-    const move = (ev) => {
-      offsetRef.current = {
-        x: startRight - (ev.clientX - sx),
-        y: startBottom - (ev.clientY - sy),
-      };
-      clampToViewport();
-    };
-    const up = () => {
-      window.removeEventListener('mousemove', move);
-      window.removeEventListener('mouseup', up);
-    };
+    const move = (ev) => { offsetRef.current = { x: startRight - (ev.clientX - sx), y: startBottom - (ev.clientY - sy) }; clampToViewport(); };
+    const up = () => { window.removeEventListener('mousemove', move); window.removeEventListener('mouseup', up); };
     window.addEventListener('mousemove', move);
     window.addEventListener('mouseup', up);
   };
-
   if (!open) return null;
   return (
     <>
       <style>{__TWEAKS_STYLE}</style>
-      <div ref={dragRef} className="twk-panel" data-noncommentable=""
-           style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
+      <div ref={dragRef} className="twk-panel" data-noncommentable="" style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
         <div className="twk-hd" onMouseDown={onDragStart}>
           <b>{title}</b>
-          <button className="twk-x" aria-label="Close tweaks"
-                  onMouseDown={(e) => e.stopPropagation()}
-                  onClick={dismiss}>✕</button>
+          <button className="twk-x" aria-label="Close tweaks" onMouseDown={(e) => e.stopPropagation()} onClick={dismiss}>✕</button>
         </div>
         <div className="twk-body">
           {children}
-          {hasDeckStage && railEnabled && !noDeckControls && (
-            <TweakSection label="Deck">
-              <TweakToggle label="Thumbnail rail" value={railVisible} onChange={toggleRail} />
-            </TweakSection>
-          )}
+          {hasDeckStage && railEnabled && !noDeckControls && (<TweakSection label="Deck"><TweakToggle label="Thumbnail rail" value={railVisible} onChange={toggleRail} /></TweakSection>)}
         </div>
       </div>
     </>
   );
 }
-
-// ── Layout helpers ──────────────────────────────────────────────────────────
-
-function TweakSection({ label, children }) {
-  return (
-    <>
-      <div className="twk-sect">{label}</div>
-      {children}
-    </>
-  );
-}
-
+function TweakSection({ label, children }) { return (<><div className="twk-sect">{label}</div>{children}</>); }
 function TweakRow({ label, value, children, inline = false }) {
-  return (
-    <div className={inline ? 'twk-row twk-row-h' : 'twk-row'}>
-      <div className="twk-lbl">
-        <span>{label}</span>
-        {value != null && <span className="twk-val">{value}</span>}
-      </div>
-      {children}
-    </div>
-  );
+  return (<div className={inline ? 'twk-row twk-row-h' : 'twk-row'}><div className="twk-lbl"><span>{label}</span>{value != null && <span className="twk-val">{value}</span>}</div>{children}</div>);
 }
-
-// ── Controls ────────────────────────────────────────────────────────────────
-
 function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
-  return (
-    <TweakRow label={label} value={`${value}${unit}`}>
-      <input type="range" className="twk-slider" min={min} max={max} step={step}
-             value={value} onChange={(e) => onChange(Number(e.target.value))} />
-    </TweakRow>
-  );
+  return (<TweakRow label={label} value={`${value}${unit}`}><input type="range" className="twk-slider" min={min} max={max} step={step} value={value} onChange={(e) => onChange(Number(e.target.value))} /></TweakRow>);
 }
-
 function TweakToggle({ label, value, onChange }) {
-  return (
-    <div className="twk-row twk-row-h">
-      <div className="twk-lbl"><span>{label}</span></div>
-      <button type="button" className="twk-toggle" data-on={value ? '1' : '0'}
-              role="switch" aria-checked={!!value}
-              onClick={() => onChange(!value)}><i /></button>
-    </div>
-  );
+  return (<div className="twk-row twk-row-h"><div className="twk-lbl"><span>{label}</span></div><button type="button" className="twk-toggle" data-on={value ? '1' : '0'} role="switch" aria-checked={!!value} onClick={() => onChange(!value)}><i /></button></div>);
 }
-
 function TweakRadio({ label, value, options, onChange }) {
   const trackRef = React.useRef(null);
   const [dragging, setDragging] = React.useState(false);
   const valueRef = React.useRef(value);
   valueRef.current = value;
-
   const labelLen = (o) => String(typeof o === 'object' ? o.label : o).length;
   const maxLen = options.reduce((m, o) => Math.max(m, labelLen(o)), 0);
   const fitsAsSegments = maxLen <= ({ 2: 16, 3: 10 }[options.length] ?? 0);
   if (!fitsAsSegments) {
-    const resolve = (s) => {
-      const m = options.find((o) => String(typeof o === 'object' ? o.value : o) === s);
-      return m === undefined ? s : typeof m === 'object' ? m.value : m;
-    };
-    return <TweakSelect label={label} value={value} options={options}
-                        onChange={(s) => onChange(resolve(s))} />;
+    const resolve = (s) => { const m = options.find((o) => String(typeof o === 'object' ? o.value : o) === s); return m === undefined ? s : typeof m === 'object' ? m.value : m; };
+    return <TweakSelect label={label} value={value} options={options} onChange={(s) => onChange(resolve(s))} />;
   }
   const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
   const idx = Math.max(0, opts.findIndex((o) => o.value === value));
   const n = opts.length;
-
-  const segAt = (clientX) => {
-    const r = trackRef.current.getBoundingClientRect();
-    const inner = r.width - 4;
-    const i = Math.floor(((clientX - r.left - 2) / inner) * n);
-    return opts[Math.max(0, Math.min(n - 1, i))].value;
-  };
-
+  const segAt = (clientX) => { const r = trackRef.current.getBoundingClientRect(); const inner = r.width - 4; const i = Math.floor(((clientX - r.left - 2) / inner) * n); return opts[Math.max(0, Math.min(n - 1, i))].value; };
   const onPointerDown = (e) => {
     setDragging(true);
     const v0 = segAt(e.clientX);
     if (v0 !== valueRef.current) onChange(v0);
-    const move = (ev) => {
-      if (!trackRef.current) return;
-      const v = segAt(ev.clientX);
-      if (v !== valueRef.current) onChange(v);
-    };
-    const up = () => {
-      setDragging(false);
-      window.removeEventListener('pointermove', move);
-      window.removeEventListener('pointerup', up);
-    };
+    const move = (ev) => { if (!trackRef.current) return; const v = segAt(ev.clientX); if (v !== valueRef.current) onChange(v); };
+    const up = () => { setDragging(false); window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
     window.addEventListener('pointermove', move);
     window.addEventListener('pointerup', up);
   };
-
   return (
     <TweakRow label={label}>
-      <div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown}
-           className={dragging ? 'twk-seg dragging' : 'twk-seg'}>
-        <div className="twk-seg-thumb"
-             style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
-                      width: `calc((100% - 4px) / ${n})` }} />
-        {opts.map((o) => (
-          <button key={o.value} type="button" role="radio" aria-checked={o.value === value}>
-            {o.label}
-          </button>
-        ))}
+      <div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown} className={dragging ? 'twk-seg dragging' : 'twk-seg'}>
+        <div className="twk-seg-thumb" style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`, width: `calc((100% - 4px) / ${n})` }} />
+        {opts.map((o) => (<button key={o.value} type="button" role="radio" aria-checked={o.value === value}>{o.label}</button>))}
       </div>
     </TweakRow>
   );
 }
-
 function TweakSelect({ label, value, options, onChange }) {
-  return (
-    <TweakRow label={label}>
-      <select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>
-        {options.map((o) => {
-          const v = typeof o === 'object' ? o.value : o;
-          const l = typeof o === 'object' ? o.label : o;
-          return <option key={v} value={v}>{l}</option>;
-        })}
-      </select>
-    </TweakRow>
-  );
+  return (<TweakRow label={label}><select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>{options.map((o) => { const v = typeof o === 'object' ? o.value : o; const l = typeof o === 'object' ? o.label : o; return <option key={v} value={v}>{l}</option>; })}</select></TweakRow>);
 }
-
 function TweakText({ label, value, placeholder, onChange }) {
-  return (
-    <TweakRow label={label}>
-      <input className="twk-field" type="text" value={value} placeholder={placeholder}
-             onChange={(e) => onChange(e.target.value)} />
-    </TweakRow>
-  );
+  return (<TweakRow label={label}><input className="twk-field" type="text" value={value} placeholder={placeholder} onChange={(e) => onChange(e.target.value)} /></TweakRow>);
 }
-
 function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) {
-  const clamp = (n) => {
-    if (min != null && n < min) return min;
-    if (max != null && n > max) return max;
-    return n;
-  };
+  const clamp = (n) => { if (min != null && n < min) return min; if (max != null && n > max) return max; return n; };
   const startRef = React.useRef({ x: 0, val: 0 });
   const onScrubStart = (e) => {
     e.preventDefault();
     startRef.current = { x: e.clientX, val: value };
     const decimals = (String(step).split('.')[1] || '').length;
-    const move = (ev) => {
-      const dx = ev.clientX - startRef.current.x;
-      const raw = startRef.current.val + dx * step;
-      const snapped = Math.round(raw / step) * step;
-      onChange(clamp(Number(snapped.toFixed(decimals))));
-    };
-    const up = () => {
-      window.removeEventListener('pointermove', move);
-      window.removeEventListener('pointerup', up);
-    };
+    const move = (ev) => { const dx = ev.clientX - startRef.current.x; const raw = startRef.current.val + dx * step; const snapped = Math.round(raw / step) * step; onChange(clamp(Number(snapped.toFixed(decimals)))); };
+    const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
     window.addEventListener('pointermove', move);
     window.addEventListener('pointerup', up);
   };
-  return (
-    <div className="twk-num">
-      <span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span>
-      <input type="number" value={value} min={min} max={max} step={step}
-             onChange={(e) => onChange(clamp(Number(e.target.value)))} />
-      {unit && <span className="twk-num-unit">{unit}</span>}
-    </div>
-  );
+  return (<div className="twk-num"><span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span><input type="number" value={value} min={min} max={max} step={step} onChange={(e) => onChange(clamp(Number(e.target.value)))} />{unit && <span className="twk-num-unit">{unit}</span>}</div>);
 }
-
 function __twkIsLight(hex) {
   const h = String(hex).replace('#', '');
   const x = h.length === 3 ? h.replace(/./g, (c) => c + c) : h.padEnd(6, '0');
@@ -1883,24 +1826,10 @@ function __twkIsLight(hex) {
   const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
   return r * 299 + g * 587 + b * 114 > 148000;
 }
-
-const __TwkCheck = ({ light }) => (
-  <svg viewBox="0 0 14 14" aria-hidden="true">
-    <path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2"
-          strokeLinecap="round" strokeLinejoin="round"
-          stroke={light ? 'rgba(0,0,0,.78)' : '#fff'} />
-  </svg>
-);
-
+const __TwkCheck = ({ light }) => (<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" stroke={light ? 'rgba(0,0,0,.78)' : '#fff'} /></svg>);
 function TweakColor({ label, value, options, onChange }) {
   if (!options || !options.length) {
-    return (
-      <div className="twk-row twk-row-h">
-        <div className="twk-lbl"><span>{label}</span></div>
-        <input type="color" className="twk-swatch" value={value}
-               onChange={(e) => onChange(e.target.value)} />
-      </div>
-    );
+    return (<div className="twk-row twk-row-h"><div className="twk-lbl"><span>{label}</span></div><input type="color" className="twk-swatch" value={value} onChange={(e) => onChange(e.target.value)} /></div>);
   }
   const key = (o) => String(JSON.stringify(o)).toLowerCase();
   const cur = key(value);
@@ -1912,38 +1841,16 @@ function TweakColor({ label, value, options, onChange }) {
           const [hero, ...rest] = colors;
           const sup = rest.slice(0, 4);
           const on = key(o) === cur;
-          return (
-            <button key={i} type="button" className="twk-chip" role="radio"
-                    aria-checked={on} data-on={on ? '1' : '0'}
-                    aria-label={colors.join(', ')} title={colors.join(' · ')}
-                    style={{ background: hero }}
-                    onClick={() => onChange(o)}>
-              {sup.length > 0 && (
-                <span>
-                  {sup.map((c, j) => <i key={j} style={{ background: c }} />)}
-                </span>
-              )}
-              {on && <__TwkCheck light={__twkIsLight(hero)} />}
-            </button>
-          );
+          return (<button key={i} type="button" className="twk-chip" role="radio" aria-checked={on} data-on={on ? '1' : '0'} aria-label={colors.join(', ')} title={colors.join(' · ')} style={{ background: hero }} onClick={() => onChange(o)}>{sup.length > 0 && (<span>{sup.map((c, j) => <i key={j} style={{ background: c }} />)}</span>)}{on && <__TwkCheck light={__twkIsLight(hero)} />}</button>);
         })}
       </div>
     </TweakRow>
   );
 }
-
 function TweakButton({ label, onClick, secondary = false }) {
-  return (
-    <button type="button" className={secondary ? 'twk-btn secondary' : 'twk-btn'}
-            onClick={onClick}>{label}</button>
-  );
+  return (<button type="button" className={secondary ? 'twk-btn secondary' : 'twk-btn'} onClick={onClick}>{label}</button>);
 }
-
-Object.assign(window, {
-  useTweaks, TweaksPanel, TweakSection, TweakRow,
-  TweakSlider, TweakToggle, TweakRadio, TweakSelect,
-  TweakText, TweakNumber, TweakColor, TweakButton,
-});
+Object.assign(window, { useTweaks, TweaksPanel, TweakSection, TweakRow, TweakSlider, TweakToggle, TweakRadio, TweakSelect, TweakText, TweakNumber, TweakColor, TweakButton });
 </script>
 <script type="text/babel">
   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -1965,9 +1872,7 @@ Object.assign(window, {
     }, [t.accent]);
 
     React.useEffect(() => {
-      const onMsg = (e) => {
-        if (e?.data?.type === '__edit_mode_dismissed') setPanelOpen(false);
-      };
+      const onMsg = (e) => { if (e?.data?.type === '__edit_mode_dismissed') setPanelOpen(false); };
       window.addEventListener('message', onMsg);
       return () => window.removeEventListener('message', onMsg);
     }, []);
@@ -1980,19 +1885,14 @@ Object.assign(window, {
     return (
       <>
         {!panelOpen && (
-          <button
-            onClick={openPanel}
-            style={{
-              position: 'fixed', bottom: 16, right: 16, zIndex: 2147483645,
-              background: 'rgba(13,29,58,0.88)', color: '#f1ead8',
-              border: 'none', borderRadius: 8, padding: '8px 14px',
-              fontSize: 12, fontWeight: 600, letterSpacing: '0.05em',
-              cursor: 'pointer', backdropFilter: 'blur(8px)',
-              boxShadow: '0 2px 12px rgba(0,0,0,0.25)',
-            }}
-          >
-            ⚙ Tweaks
-          </button>
+          <button onClick={openPanel} style={{
+            position: 'fixed', bottom: 16, right: 16, zIndex: 2147483645,
+            background: 'rgba(13,29,58,0.88)', color: '#f1ead8',
+            border: 'none', borderRadius: 8, padding: '8px 14px',
+            fontSize: 12, fontWeight: 600, letterSpacing: '0.05em',
+            cursor: 'pointer', backdropFilter: 'blur(8px)',
+            boxShadow: '0 2px 12px rgba(0,0,0,0.25)',
+          }}>⚙ Tweaks</button>
         )}
         <TweaksPanel title="Tweaks">
           <TweakSection label="Design Variation">
