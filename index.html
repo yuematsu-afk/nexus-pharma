@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>薬局M&Aサービス｜SASAERU合同会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* === 堅実 (default) === */
+    --bg: #f1ead8;
+    --bg-alt: #ffffff;
+    --bg-deep: #0d1d3a;
+    --ink: #14171d;
+    --ink-2: #5a5e68;
+    --ink-3: #8a8e98;
+    --primary: #0d1d3a;
+    --primary-2: #1f3a5f;
+    --accent: #a8854a;
+    --accent-2: #c8a872;
+    --line: #d4c9ad;
+    --line-soft: #e5dcc4;
+    --danger: #a23434;
+    --serif: "Shippori Mincho B1", "Noto Serif JP", "Yu Mincho", serif;
+    --sans: "Noto Sans JP", -apple-system, sans-serif;
+    --mono: "JetBrains Mono", monospace;
+    --latin: "Cormorant Garamond", serif;
+    --radius: 2px;
+    --maxw: 1200px;
+    --gutter: clamp(20px, 5vw, 80px);
+  }
+  body.theme-wa {
+    --bg: #f5efe1;
+    --bg-alt: #f5efe1;
+    --bg-deep: #131516;
+    --ink: #131516;
+    --ink-2: #555;
+    --primary: #131516;
+    --primary-2: #2a3a5f;
+    --accent: #8a3a3a;
+    --accent-2: #b04848;
+    --line: #c8bd9e;
+    --line-soft: #ddd1b0;
+    --radius: 0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.85;
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; line-height: 1.4; letter-spacing: 0.02em; color: var(--primary); }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+  .latin { font-family: var(--latin); font-style: italic; font-weight: 400; letter-spacing: 0.05em; }
+  .mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; }
+
+  /* === Section labels === */
+  .sec-label {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .sec-label::before {
+    content: ""; width: 36px; height: 1px; background: var(--accent);
+  }
+  .sec-title {
+    font-size: clamp(28px, 3.4vw, 42px);
+    line-height: 1.45;
+    margin-bottom: 24px;
+    color: var(--primary);
+  }
+  .sec-title .accent-line { color: var(--accent); }
+  .sec-lead { font-size: 16px; color: var(--ink-2); max-width: 620px; line-height: 2; }
+
+  /* ============= HEADER ============= */
+  .site-head {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: rgba(241, 234, 216, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line-soft);
+    transition: all .3s;
+  }
+  body.theme-wa .site-head { background: rgba(245, 239, 225, 0.9); }
+  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { display: flex; align-items: baseline; gap: 14px; }
+  .brand-mark {
+    font-family: var(--serif); font-size: 22px; font-weight: 600;
+    letter-spacing: 0.06em; color: var(--primary);
+  }
+  .brand-mark .pharm { color: var(--accent); }
+  .brand-sub { font-family: var(--mono); font-size: 10px; color: var(--ink-3); letter-spacing: 0.15em; }
+  .nav { display: flex; align-items: center; gap: 32px; }
+  .nav a { font-size: 13px; color: var(--ink); transition: color .2s; position: relative; }
+  .nav a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--primary); color: #fff !important;
+    padding: 12px 22px; font-size: 12px; letter-spacing: 0.1em;
+    border-radius: var(--radius); transition: all .2s;
+  }
+  .nav-cta:hover { background: var(--accent); color: #fff !important; }
+  @media (max-width: 900px) { .nav a:not(.nav-cta) { display: none; } }
+
+  /* ============= HERO ============= */
+  .hero {
+    position: relative; padding-top: 180px; padding-bottom: 120px;
+    overflow: hidden;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } .hero { padding-top: 130px; padding-bottom: 70px; } }
+  .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
+  .hero-eyebrow::before { content: ""; width: 48px; height: 1px; background: var(--primary); }
+  .hero-eyebrow span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--primary); }
+  .hero h1 {
+    font-size: clamp(34px, 4.6vw, 60px);
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+    margin-bottom: 36px;
+    color: var(--primary);
+  }
+  .hero h1 .em { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+  .hero h1 .small { font-size: 0.55em; display: block; color: var(--ink-2); font-weight: 400; margin-top: 18px; letter-spacing: 0.04em; }
+  .hero p.lead { font-size: 16px; line-height: 2; color: var(--ink); margin-bottom: 40px; max-width: 560px; }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: var(--primary); color: #fff;
+    padding: 20px 38px; font-size: 14px; letter-spacing: 0.08em;
+    border-radius: var(--radius); transition: all .25s;
+    border: 1px solid var(--primary);
+  }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+  .btn-primary .arrow { display: inline-block; transition: transform .25s; }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 12px;
+    color: var(--primary); font-size: 13px; letter-spacing: 0.06em;
+    padding: 18px 0; border-bottom: 1px solid var(--primary);
+  }
+  .btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
+
+  .hero-visual {
+    position: relative; aspect-ratio: 4/5;
+    border: 1px solid var(--line);
+    background:
+      repeating-linear-gradient(135deg, transparent 0 18px, rgba(13,29,58,0.04) 18px 19px),
+      var(--bg-alt);
+    display: flex; align-items: flex-end; justify-content: flex-start;
+    padding: 28px;
+  }
+  .hero-visual-tag {
+    font-family: var(--mono); font-size: 10px; color: var(--ink-3);
+    letter-spacing: 0.15em; line-height: 1.6;
+  }
+  .hero-visual-tag b { color: var(--ink-2); display: block; font-weight: 500; margin-bottom: 4px; }
+  .hero-visual::before {
+    content: ""; position: absolute; top: -1px; right: -1px; width: 80px; height: 80px;
+    border-top: 2px solid var(--accent); border-right: 2px solid var(--accent);
+  }
+  .hero-visual::after {
+    content: ""; position: absolute; bottom: -1px; left: -1px; width: 80px; height: 80px;
+    border-bottom: 2px solid var(--accent); border-left: 2px solid var(--accent);
+  }
+  .hero-stats {
+    margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  @media (max-width: 700px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
+  .hero-stat .num { font-family: var(--latin); font-size: 44px; font-style: normal; color: var(--primary); line-height: 1; }
+  .hero-stat .num small { font-size: 0.45em; margin-left: 4px; color: var(--ink-2); }
+  .hero-stat .lbl { font-size: 12px; color: var(--ink-2); margin-top: 8px; letter-spacing: 0.05em; }
+
+  /* Wa-modan hero accent */
+  body.theme-wa .hero::before {
+    content: "薬局の、もうひとつの未来";
+    position: absolute; right: 8vw; top: 110px;
+    writing-mode: vertical-rl;
+    font-family: var(--serif); font-size: 13px;
+    letter-spacing: 0.4em; color: var(--ink-3);
+  }
+  @media (max-width: 900px) { body.theme-wa .hero::before { display: none; } }
+
+  /* ============= SECTION COMMON ============= */
+  section { padding: 110px 0; position: relative; }
+  @media (max-width: 700px) { section { padding: 70px 0; } }
+  section.tight { padding: 80px 0; }
+
+  .sec-head { margin-bottom: 60px; }
+  .sec-head.center { text-align: center; }
+  .sec-head.center .sec-label { justify-content: center; }
+  .sec-head.center .sec-lead { margin: 0 auto; }
+
+  /* === 悩み共感 === */
+  .pain {
+    background: var(--bg-deep); color: #f1ead8;
+  }
+  .pain h2, .pain .sec-title { color: #f1ead8; }
+  .pain .sec-lead { color: rgba(241, 234, 216, 0.75); }
+  .pain .sec-label { color: var(--accent-2); }
+  .pain .sec-label::before { background: var(--accent-2); }
+  .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 60px; border-top: 1px solid rgba(241, 234, 216, 0.18); border-left: 1px solid rgba(241, 234, 216, 0.18); }
+  @media (max-width: 800px) { .pain-grid { grid-template-columns: 1fr; } }
+  .pain-card {
+    padding: 42px 36px;
+    border-right: 1px solid rgba(241, 234, 216, 0.18);
+    border-bottom: 1px solid rgba(241, 234, 216, 0.18);
+  }
+  .pain-card .pn { font-family: var(--latin); font-size: 14px; color: var(--accent-2); margin-bottom: 20px; }
+  .pain-card h3 { font-size: 22px; color: #f1ead8; margin-bottom: 16px; line-height: 1.5; font-weight: 500; }
+  .pain-card p { font-size: 14px; color: rgba(241, 234, 216, 0.7); line-height: 2; }
+  .pain-message {
+    margin-top: 56px; padding: 32px 40px;
+    border-left: 3px solid var(--accent-2);
+    font-family: var(--serif); font-size: 19px;
+    line-height: 1.9;
+    color: #f1ead8;
+  }
+  .pain-message b { color: var(--accent-2); font-weight: 500; }
+
+  /* === M&A 選択肢 === */
+  .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 60px; }
+  @media (max-width: 800px) { .options-grid { grid-template-columns: 1fr; } }
+  .opt-card {
+    padding: 40px 32px; background: var(--bg-alt);
+    border: 1px solid var(--line);
+    margin-left: -1px; margin-bottom: -1px;
+    position: relative; transition: all .3s;
+  }
+  .opt-card.featured {
+    background: var(--primary); color: #f1ead8;
+    border-color: var(--primary); z-index: 2;
+    transform: scale(1.02);
+    box-shadow: 0 24px 60px -28px rgba(13, 29, 58, 0.4);
+  }
+  .opt-card.featured h3 { color: #f1ead8; }
+  .opt-card.featured .opt-tag { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .opt-tag {
+    display: inline-block; font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.15em; padding: 5px 12px;
+    border: 1px solid var(--line); color: var(--ink-2);
+    margin-bottom: 20px;
+  }
+  .opt-card h3 { font-size: 22px; margin-bottom: 16px; }
+  .opt-card p { font-size: 14px; line-height: 1.95; color: var(--ink-2); }
+  .opt-card.featured p { color: rgba(241, 234, 216, 0.78); }
+  .opt-card ul { list-style: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line-soft); }
+  .opt-card.featured ul { border-color: rgba(241, 234, 216, 0.2); }
+  .opt-card li { font-size: 13px; padding: 6px 0 6px 18px; position: relative; line-height: 1.7; }
+  .opt-card li::before { content: ""; position: absolute; left: 0; top: 14px; width: 8px; height: 1px; background: var(--accent); }
+  .opt-card.featured li::before { background: var(--accent-2); }
+
+  .ma-benefits { margin-top: 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  @media (max-width: 800px) { .ma-benefits { grid-template-columns: repeat(2, 1fr); } }
+  .ma-benefit { padding: 28px 24px; border-top: 2px solid var(--primary); background: var(--bg-alt); }
+  .ma-benefit .num { font-family: var(--latin); font-size: 12px; color: var(--accent); margin-bottom: 14px; letter-spacing: 0.15em; }
+  .ma-benefit h4 { font-size: 16px; margin-bottom: 10px; line-height: 1.5; }
+  .ma-benefit p { font-size: 12.5px; color: var(--ink-2); line-height: 1.85; }
+
+  /* === 3つの強み === */
+  .strengths { background: var(--bg-alt); }
+  body.theme-wa .strengths { background: var(--bg); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+  .strength-list { display: flex; flex-direction: column; gap: 0; margin-top: 60px; }
+  .strength-row {
+    display: grid; grid-template-columns: 100px 1fr 320px;
+    align-items: start; gap: 40px;
+    padding: 48px 0; border-top: 1px solid var(--line);
+  }
+  .strength-row:last-child { border-bottom: 1px solid var(--line); }
+  @media (max-width: 800px) { .strength-row { grid-template-columns: 1fr; gap: 18px; padding: 36px 0; } }
+  .strength-row .num {
+    font-family: var(--latin); font-size: 64px; line-height: 1;
+    color: var(--accent); font-style: normal;
+  }
+  .strength-row h3 { font-size: 28px; line-height: 1.5; margin-bottom: 16px; }
+  .strength-row p { font-size: 14.5px; line-height: 2; color: var(--ink-2); }
+  .strength-meta {
+    border-left: 1px solid var(--line); padding-left: 28px;
+    font-size: 12px; color: var(--ink-3); line-height: 1.9;
+  }
+  @media (max-width: 800px) { .strength-meta { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-soft); padding-top: 16px; } }
+  .strength-meta b { color: var(--ink-2); display: block; margin-bottom: 4px; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; }
+
+  /* === 代表プロフィール === */
+  .profile { background: var(--bg-deep); color: #f1ead8; }
+  .profile h2, .profile .sec-title { color: #f1ead8; }
+  .profile .sec-label { color: var(--accent-2); }
+  .profile .sec-label::before { background: var(--accent-2); }
+  .profile-grid { display: grid; grid-template-columns: 360px 1fr; gap: 70px; margin-top: 50px; }
+  @media (max-width: 900px) { .profile-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .profile-photo {
+    aspect-ratio: 3/4; border: 1px solid rgba(241, 234, 216, 0.2);
+    background:
+      repeating-linear-gradient(135deg, transparent 0 14px, rgba(241,234,216,0.04) 14px 15px),
+      rgba(241, 234, 216, 0.03);
+    position: relative;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 24px;
+  }
+  .profile-photo .ph-tag { font-family: var(--mono); font-size: 10px; color: rgba(241, 234, 216, 0.5); letter-spacing: 0.12em; }
+  .profile-photo .ph-tag b { display: block; color: rgba(241, 234, 216, 0.7); margin-bottom: 4px; font-weight: 500; }
+  .profile-photo::before {
+    content: ""; position: absolute; top: -1px; right: -1px; width: 60px; height: 60px;
+    border-top: 2px solid var(--accent-2); border-right: 2px solid var(--accent-2);
+  }
+  .profile-name { font-family: var(--latin); font-size: 14px; color: var(--accent-2); margin-bottom: 8px; }
+  .profile h3.profile-jp {
+    font-size: 36px; color: #f1ead8; margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .profile-role { font-size: 13px; color: rgba(241, 234, 216, 0.6); letter-spacing: 0.1em; margin-bottom: 32px; }
+  .profile-quote {
+    font-family: var(--serif); font-size: 22px; line-height: 1.85; color: #f1ead8;
+    border-left: 2px solid var(--accent-2); padding: 8px 0 8px 28px;
+    margin-bottom: 40px;
+  }
+  .profile-bio { font-size: 14.5px; line-height: 2.1; color: rgba(241, 234, 216, 0.82); margin-bottom: 36px; }
+  .profile-career { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  @media (max-width: 700px) { .profile-career { grid-template-columns: 1fr; } }
+  .profile-career dt {
+    font-family: var(--mono); font-size: 11px; color: var(--accent-2);
+    letter-spacing: 0.1em; padding-top: 16px; padding-bottom: 4px;
+    border-top: 1px solid rgba(241, 234, 216, 0.15);
+  }
+  .profile-career dd {
+    font-size: 13px; color: rgba(241, 234, 216, 0.85);
+    padding-bottom: 16px; line-height: 1.75;
+  }
+  .profile-career dd:last-of-type { border-bottom: 1px solid rgba(241, 234, 216, 0.15); }
+
+  /* === サービスの流れ === */
+  .flow-list { margin-top: 60px; counter-reset: flow; }
+  .flow-row {
+    display: grid; grid-template-columns: 130px 1fr 1.2fr;
+    gap: 50px; align-items: start;
+    padding: 36px 0; border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .flow-row:first-child { border-top: 1px solid var(--line); }
+  @media (max-width: 800px) { .flow-row { grid-template-columns: 1fr; gap: 14px; } }
+  .flow-step {
+    font-family: var(--latin); font-size: 13px; letter-spacing: 0.15em;
+    color: var(--accent); padding-top: 8px;
+  }
+  .flow-step .big { display: block; font-size: 38px; color: var(--primary); line-height: 1; margin-top: 6px; font-style: normal; }
+  .flow-content h3 { font-size: 22px; margin-bottom: 12px; }
+  .flow-content p { font-size: 14px; color: var(--ink-2); line-height: 1.95; }
+  .flow-meta { border-left: 1px solid var(--line); padding: 4px 0 4px 24px; }
+  @media (max-width: 800px) { .flow-meta { border-left: 0; padding-left: 0; padding-top: 12px; border-top: 1px solid var(--line-soft); } }
+  .flow-meta dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-size: 12.5px; line-height: 1.7; }
+  .flow-meta dt { color: var(--ink-3); font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; padding-top: 3px; }
+  .flow-meta dd { color: var(--ink-2); }
+
+  /* === 料金 === */
+  .pricing { background: var(--bg-alt); }
+  body.theme-wa .pricing { background: var(--bg); }
+  .pricing-banner {
+    margin-top: 50px; padding: 44px 50px;
+    background: var(--primary); color: #f1ead8;
+    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px;
+  }
+  @media (max-width: 800px) { .pricing-banner { grid-template-columns: 1fr; padding: 32px; } }
+  .pricing-banner h3 { color: #f1ead8; font-size: 30px; line-height: 1.5; margin-bottom: 8px; }
+  .pricing-banner h3 .hi { color: var(--accent-2); }
+  .pricing-banner p { font-size: 14px; color: rgba(241, 234, 216, 0.78); }
+  .pricing-banner .price-tag {
+    font-family: var(--latin); font-size: 84px; line-height: 1; color: var(--accent-2);
+  }
+  .pricing-banner .price-tag small { display: block; font-size: 14px; color: rgba(241, 234, 216, 0.6); letter-spacing: 0.1em; margin-top: 8px; }
+
+  .price-table { margin-top: 60px; border-top: 1px solid var(--line); }
+  .price-row { display: grid; grid-template-columns: 240px 1fr 200px; padding: 26px 4px; border-bottom: 1px solid var(--line); align-items: center; gap: 30px; }
+  @media (max-width: 800px) { .price-row { grid-template-columns: 1fr; gap: 4px; } }
+  .price-row .pname { font-family: var(--serif); font-size: 18px; color: var(--primary); font-weight: 500; }
+  .price-row .pdesc { font-size: 13.5px; color: var(--ink-2); line-height: 1.85; }
+  .price-row .pval { font-family: var(--latin); font-size: 32px; color: var(--accent); text-align: right; }
+  .price-row .pval.zero { color: var(--accent); }
+  .price-row .pval small { font-size: 13px; color: var(--ink-2); margin-left: 6px; font-family: var(--sans); }
+  @media (max-width: 800px) { .price-row .pval { text-align: left; font-size: 28px; } }
+
+  /* === 成約事例 === */
+  .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 60px; }
+  @media (max-width: 900px) { .cases-grid { grid-template-columns: 1fr; } }
+  .case-card {
+    background: var(--bg-alt); border: 1px solid var(--line);
+    padding: 32px; transition: all .25s;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .case-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -24px rgba(13,29,58,0.18); }
+  .case-img {
+    aspect-ratio: 16/9; border: 1px solid var(--line-soft);
+    background:
+      repeating-linear-gradient(135deg, transparent 0 12px, rgba(13,29,58,0.05) 12px 13px);
+    display: flex; align-items: flex-end; padding: 12px;
+  }
+  .case-img span { font-family: var(--mono); font-size: 9px; color: var(--ink-3); letter-spacing: 0.1em; }
+  .case-tag { display: flex; gap: 6px; flex-wrap: wrap; }
+  .case-tag span {
+    font-family: var(--mono); font-size: 10px; padding: 4px 10px;
+    border: 1px solid var(--line); color: var(--ink-2); letter-spacing: 0.1em;
+  }
+  .case-card h3 { font-size: 19px; line-height: 1.55; }
+  .case-card .case-summary { font-size: 13px; color: var(--ink-2); line-height: 1.95; flex: 1; }
+  .case-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 18px; border-top: 1px solid var(--line-soft); }
+  .case-stat .lbl { font-family: var(--mono); font-size: 9.5px; color: var(--ink-3); letter-spacing: 0.1em; margin-bottom: 4px; }
+  .case-stat .val { font-family: var(--latin); font-size: 22px; color: var(--primary); }
+
+  /* === FAQ === */
+  .faq { background: var(--bg-deep); color: #f1ead8; }
+  .faq h2, .faq .sec-title { color: #f1ead8; }
+  .faq .sec-lead { color: rgba(241, 234, 216, 0.7); }
+  .faq .sec-label { color: var(--accent-2); }
+  .faq .sec-label::before { background: var(--accent-2); }
+  .faq-list { margin-top: 50px; border-top: 1px solid rgba(241, 234, 216, 0.18); }
+  .faq-item { border-bottom: 1px solid rgba(241, 234, 216, 0.18); }
+  .faq-q {
+    width: 100%; display: grid; grid-template-columns: 60px 1fr 32px;
+    gap: 20px; align-items: center;
+    padding: 28px 0; text-align: left;
+    color: #f1ead8; font-family: var(--serif); font-size: 18px; line-height: 1.6;
+    transition: color .2s;
+  }
+  .faq-q:hover { color: var(--accent-2); }
+  .faq-q .qmark { font-family: var(--latin); font-size: 22px; color: var(--accent-2); }
+  .faq-q .toggle { width: 16px; height: 16px; position: relative; justify-self: end; }
+  .faq-q .toggle::before, .faq-q .toggle::after { content: ""; position: absolute; background: var(--accent-2); }
+  .faq-q .toggle::before { top: 50%; left: 0; right: 0; height: 1px; }
+  .faq-q .toggle::after { left: 50%; top: 0; bottom: 0; width: 1px; transition: transform .25s; }
+  .faq-item.open .faq-q .toggle::after { transform: rotate(90deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden; transition: max-height .35s ease;
+  }
+  .faq-item.open .faq-a { max-height: 500px; }
+  .faq-a-inner {
+    padding: 0 0 32px 80px; font-size: 14px; line-height: 2;
+    color: rgba(241, 234, 216, 0.78);
+  }
+
+  /* === コラム === */
+  .columns-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 50px; }
+  @media (max-width: 900px) { .columns-grid { grid-template-columns: 1fr; } }
+  .col-card { display: flex; flex-direction: column; gap: 18px; transition: all .25s; }
+  .col-card:hover .col-img::after { width: 100%; }
+  .col-img {
+    aspect-ratio: 4/3; border: 1px solid var(--line);
+    background:
+      repeating-linear-gradient(135deg, transparent 0 14px, rgba(13,29,58,0.05) 14px 15px);
+    position: relative; overflow: hidden;
+  }
+  .col-img::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; background: var(--accent); width: 0; transition: width .35s; }
+  .col-img span { position: absolute; left: 14px; bottom: 14px; font-family: var(--mono); font-size: 9px; color: var(--ink-3); letter-spacing: 0.12em; }
+  .col-meta { display: flex; gap: 16px; font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em; }
+  .col-meta .cat { color: var(--accent); }
+  .col-card h3 { font-size: 19px; line-height: 1.6; transition: color .2s; }
+  .col-card:hover h3 { color: var(--accent); }
+  .col-card p { font-size: 13px; color: var(--ink-2); line-height: 1.85; }
+
+  /* === Contact === */
+  .contact { background: var(--bg-alt); }
+  body.theme-wa .contact { background: var(--bg); }
+  .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 80px; margin-top: 50px; }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .contact-side h3 { font-size: 26px; line-height: 1.55; margin-bottom: 20px; }
+  .contact-side p { font-size: 14px; color: var(--ink-2); line-height: 2; margin-bottom: 28px; }
+  .contact-points { list-style: none; padding: 0; }
+  .contact-points li {
+    padding: 14px 0 14px 24px; position: relative;
+    border-top: 1px solid var(--line-soft); font-size: 13.5px; color: var(--ink);
+  }
+  .contact-points li:last-child { border-bottom: 1px solid var(--line-soft); }
+  .contact-points li::before {
+    content: ""; position: absolute; left: 0; top: 22px;
+    width: 12px; height: 1px; background: var(--accent);
+  }
+  .contact-channels { margin-top: 28px; padding: 22px 24px; border: 1px solid var(--line); }
+  .contact-channels dt { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: 0.1em; margin-bottom: 4px; }
+  .contact-channels dt:not(:first-child) { margin-top: 14px; }
+  .contact-channels dd { font-family: var(--serif); font-size: 22px; color: var(--primary); }
+  .contact-channels dd small { font-size: 11px; color: var(--ink-3); font-family: var(--mono); margin-left: 10px; letter-spacing: 0.05em; }
+
+  .form-card { background: var(--bg); padding: 44px 44px; border: 1px solid var(--line); }
+  body.theme-wa .form-card { background: var(--bg-alt); border-color: var(--line); }
+  .form-row { margin-bottom: 22px; }
+  .form-row.split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 600px) { .form-row.split { grid-template-columns: 1fr; } }
+  .form-row label {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12.5px; color: var(--ink); margin-bottom: 8px;
+    letter-spacing: 0.05em; font-weight: 500;
+  }
+  .form-row label .req { font-family: var(--mono); font-size: 9.5px; color: var(--accent); padding: 2px 6px; border: 1px solid var(--accent); letter-spacing: 0.1em; }
+  .form-row label .opt { font-family: var(--mono); font-size: 9.5px; color: var(--ink-3); padding: 2px 6px; border: 1px solid var(--line); letter-spacing: 0.1em; }
+  .form-row input, .form-row textarea, .form-row select {
+    width: 100%; padding: 14px 16px;
+    background: var(--bg-alt); border: 1px solid var(--line);
+    font-family: inherit; font-size: 14px; color: var(--ink);
+    border-radius: var(--radius); transition: border-color .2s;
+  }
+  body.theme-wa .form-row input, body.theme-wa .form-row textarea, body.theme-wa .form-row select { background: var(--bg); border-bottom: 1px solid var(--ink); border-top: 0; border-left: 0; border-right: 0; padding-left: 0; }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus { outline: none; border-color: var(--primary); }
+  .form-row textarea { min-height: 130px; resize: vertical; line-height: 1.8; }
+  .form-row .err { display: none; font-size: 11.5px; color: var(--danger); margin-top: 6px; }
+  .form-row.invalid input, .form-row.invalid textarea, .form-row.invalid select { border-color: var(--danger); }
+  .form-row.invalid .err { display: block; }
+  .form-consent { display: flex; gap: 10px; align-items: flex-start; padding: 16px 0; font-size: 12.5px; color: var(--ink-2); line-height: 1.7; }
+  .form-consent input { width: 16px; height: 16px; margin-top: 4px; flex-shrink: 0; }
+  .form-consent a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
+  .form-submit {
+    width: 100%; margin-top: 16px; padding: 22px;
+    background: var(--primary); color: #fff;
+    font-size: 14px; letter-spacing: 0.15em;
+    border-radius: var(--radius); transition: all .2s;
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+  }
+  .form-submit:hover { background: var(--accent); }
+  .form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+  .form-success {
+    display: none; padding: 80px 30px; text-align: center;
+    border: 1px solid var(--accent); background: var(--bg-alt);
+  }
+  .form-success.show { display: block; }
+  .form-success .latin { display: block; font-size: 14px; color: var(--accent); margin-bottom: 12px; }
+  .form-success h3 { font-size: 24px; margin-bottom: 14px; }
+  .form-success p { font-size: 14px; color: var(--ink-2); line-height: 1.9; }
+
+  /* === Footer === */
+  footer.site-foot {
+    background: var(--bg-deep); color: rgba(241, 234, 216, 0.78);
+    padding: 80px 0 40px;
+  }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 50px; }
+  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr 1fr; gap: 30px; } }
+  @media (max-width: 600px) { .foot-grid { grid-template-columns: 1fr; } }
+  .foot-brand .brand-mark { color: #f1ead8; font-size: 26px; }
+  .foot-brand .brand-mark .pharm { color: var(--accent-2); }
+  .foot-brand p { font-size: 13px; color: rgba(241, 234, 216, 0.6); line-height: 1.95; margin-top: 18px; }
+  .foot-col h4 {
+    color: var(--accent-2); font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.15em; margin-bottom: 18px; font-weight: 400;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { padding: 6px 0; font-size: 13px; }
+  .foot-col a:hover { color: var(--accent-2); }
+  .foot-info dt { font-family: var(--mono); font-size: 10px; color: rgba(241, 234, 216, 0.5); letter-spacing: 0.1em; margin-top: 12px; }
+  .foot-info dt:first-child { margin-top: 0; }
+  .foot-info dd { font-size: 13px; color: rgba(241, 234, 216, 0.85); line-height: 1.6; margin-top: 2px; }
+  .foot-bottom {
+    margin-top: 60px; padding-top: 30px;
+    border-top: 1px solid rgba(241, 234, 216, 0.15);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11.5px; color: rgba(241, 234, 216, 0.5);
+    flex-wrap: wrap; gap: 14px;
+  }
+  .foot-bottom .links { display: flex; gap: 24px; }
+  .foot-bottom a:hover { color: var(--accent-2); }
+
+  /* === Scroll fade === */
+  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+  .fade-up.in { opacity: 1; transform: translateY(0); }
+
+  /* === Wa-modan specific === */
+  body.theme-wa .sec-title {
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+  body.theme-wa .nav-cta { background: transparent; color: var(--primary) !important; border: 1px solid var(--primary); }
+  body.theme-wa .nav-cta:hover { background: var(--primary); color: var(--bg) !important; }
+  body.theme-wa .btn-primary { background: var(--ink); border-color: var(--ink); }
+  body.theme-wa .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+  body.theme-wa .hero-visual::before, body.theme-wa .hero-visual::after { border-color: var(--accent); }
+  body.theme-wa .pain { background: #1a1715; }
+  body.theme-wa .profile { background: #1a1715; }
+  body.theme-wa .faq { background: #1a1715; }
+  body.theme-wa footer.site-foot { background: #1a1715; }
+  body.theme-wa .opt-card.featured { background: var(--ink); border-color: var(--ink); }
+  body.theme-wa section h2.sec-title::before {
+    content: "・"; color: var(--accent); margin-right: 4px;
+  }
+  body.theme-wa .strength-row .num { font-family: var(--serif); font-size: 56px; font-style: normal; }
+  body.theme-wa .pricing-banner { background: var(--ink); }
+  body.theme-wa .pricing-banner .price-tag { color: var(--accent); }
+
+  /* tweaks panel (custom location) */
+  #tweaks-mount { position: fixed; bottom: 16px; right: 16px; z-index: 100; }
+</style>
+</head>
+<body class="theme-classic" data-screen-label="01 Top">
+
+<!-- ============= HEADER ============= -->
+<header class="site-head">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark">SASAERU<span class="pharm">.pharma</span></span>
+      <span class="brand-sub">薬局M&A・事業承継</span>
+    </a>
+    <nav class="nav">
+      <a href="#strengths">選ばれる理由</a>
+      <a href="#profile">代表紹介</a>
+      <a href="#flow">流れ</a>
+      <a href="#price">料金</a>
+      <a href="#cases">事例</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">無料相談</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============= HERO ============= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"><span>FOR PHARMACY OWNERS — 薬局オーナーの方へ</span></div>
+        <h1 class="fade-up">
+          薬局を、続けるか。<br>
+          それとも、<span class="em">託すか</span>。<br>
+          <span class="small">悩んだ夜にこそ、薬剤師である<br>M&Aアドバイザーへご相談ください。</span>
+        </h1>
+        <p class="lead fade-up">
+          後継者がいない。調剤報酬改定で利益が削られ続ける。薬剤師が採用できない——<br>
+          一人で抱え込む前に、薬局の現場を歩いてきた専門家に話してみませんか。<br>
+          廃業ではなく、事業を、雇用を、患者様との関係を、次の世代へ託すために。
+        </p>
+        <div class="hero-cta fade-up">
+          <a href="#contact" class="btn-primary">
+            無料相談を予約する <span class="arrow">→</span>
+          </a>
+          <a href="#strengths" class="btn-ghost">私たちが選ばれる理由</a>
+        </div>
+      </div>
+      <div class="hero-visual fade-up">
+        <div class="hero-visual-tag">
+          <b>[ IMAGE PLACEHOLDER ]</b>
+          代表ポートレート<br>
+          または薬局現場の写真<br>
+          縦4:5、落ち着いた色調
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats fade-up">
+      <div class="hero-stat">
+        <div class="num">10<small>年+</small></div>
+        <div class="lbl">薬局M&A 専門経験</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">120<small>件</small></div>
+        <div class="lbl">累計相談実績（参考値）</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">¥0</div>
+        <div class="lbl">着手金・中間金</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">100<small>%</small></div>
+        <div class="lbl">秘密厳守・管理薬剤師経験者対応</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 悩み共感 ============= -->
+<section class="pain" id="pain">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">01 — Concerns</div>
+      <h2 class="sec-title">薬局経営の今、<br>こんなお悩みはありませんか。</h2>
+    </div>
+    <div class="pain-grid fade-up">
+      <div class="pain-card">
+        <div class="pn">No. 01</div>
+        <h3>後継者がいない、<br>子も継いでくれそうにない。</h3>
+        <p>「自分の代でこの薬局は終わるのか」。地域の患者様や長年勤めてくれたスタッフのことを思うと、簡単には決断できない。それでも、年齢のことも考えなければならない時期にきている。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pn">No. 02</div>
+        <h3>調剤報酬改定で、<br>利益が削られ続ける。</h3>
+        <p>2年に一度の改定で、対物業務の点数は下がり続け、対人業務は努力しなければ評価されない。在宅対応や敷地内薬局との競争。設備投資の余力も、もう残っていない。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pn">No. 03</div>
+        <h3>薬剤師が、<br>どうしても採用できない。</h3>
+        <p>地方では薬剤師の応募が来ない。来ても定着しない。自分が現場に立ち続けなければならない一方で、管理薬剤師の業務、レセプト、経営判断——気が休まる日がない。</p>
+      </div>
+    </div>
+    <div class="pain-message fade-up">
+      ひとつでも当てはまるなら——<b>「廃業」ではなく「事業承継」という選択肢</b>を、<br>
+      知っておくだけでも、これからの経営判断は変わります。
+    </div>
+  </div>
+</section>
+
+<!-- ============= M&Aという選択肢 ============= -->
+<section id="ma-options">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">02 — Options</div>
+      <h2 class="sec-title">薬局という「事業」を<br>未来へ繋ぐ、3つの道。</h2>
+      <p class="sec-lead">将来を考えるとき、薬局オーナーには大きく3つの選択肢があります。それぞれの利点と難しさを、まず冷静に整理することからご相談は始まります。</p>
+    </div>
+
+    <div class="options-grid fade-up">
+      <div class="opt-card">
+        <span class="opt-tag">OPTION A</span>
+        <h3>廃業・閉局</h3>
+        <p>負債を残さず店じまいする選択。ただし、什器・在庫処分費、原状回復費、退職金などで想定以上のコストが発生し、地域の医療空白や患者様の不便も生じます。</p>
+        <ul>
+          <li>解体・原状回復費用が発生</li>
+          <li>従業員の雇用が途絶える</li>
+          <li>かかりつけ患者様への影響大</li>
+        </ul>
+      </div>
+      <div class="opt-card">
+        <span class="opt-tag">OPTION B</span>
+        <h3>親族・従業員承継</h3>
+        <p>身近な後継者へ譲る、伝統的な選択。意思の継続性は保たれますが、後継者の経営力・資金力・株式買取などの実務課題は決して小さくありません。</p>
+        <ul>
+          <li>後継者の経営力に依存</li>
+          <li>株式・債務の整理が複雑</li>
+          <li>譲渡後の関係維持が必要</li>
+        </ul>
+      </div>
+      <div class="opt-card featured">
+        <span class="opt-tag">OPTION C — RECOMMENDED</span>
+        <h3>第三者承継（M&A）</h3>
+        <p>適切な譲受先へ事業を託す選択。雇用も患者様との関係も維持しながら、オーナーは適正な対価を得て次のステージへ。SASAERUが最も実績を積んできた領域です。</p>
+        <ul>
+          <li>雇用・店舗・関係性をそのまま承継</li>
+          <li>適正な企業価値で譲渡</li>
+          <li>引退後の生活設計の原資に</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ma-benefits fade-up">
+      <div class="ma-benefit">
+        <div class="num">BENEFIT / 01</div>
+        <h4>雇用の維持</h4>
+        <p>長年共に働いてきた薬剤師・スタッフの雇用を、原則そのまま引き継ぎます。</p>
+      </div>
+      <div class="ma-benefit">
+        <div class="num">BENEFIT / 02</div>
+        <h4>地域医療の継続</h4>
+        <p>かかりつけ薬局として担ってきた患者様への医療提供を途絶えさせません。</p>
+      </div>
+      <div class="ma-benefit">
+        <div class="num">BENEFIT / 03</div>
+        <h4>適正な譲渡対価</h4>
+        <p>収益性・立地・処方元構成を多角的に評価。納得の価格で次へ託せます。</p>
+      </div>
+      <div class="ma-benefit">
+        <div class="num">BENEFIT / 04</div>
+        <h4>引退後の安心設計</h4>
+        <p>譲渡対価を退職原資として、第二の人生を経済的余裕の中で歩めます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 3つの強み ============= -->
+<section class="strengths" id="strengths">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">03 — Why us</div>
+      <h2 class="sec-title">SASAERUが選ばれる、<br>3つの理由。</h2>
+      <p class="sec-lead">薬局M&Aアドバイザーは数あれど、現場を歩いた薬剤師がアドバイザーを務める会社は、決して多くはありません。</p>
+    </div>
+
+    <div class="strength-list">
+      <div class="strength-row fade-up">
+        <div class="num">01</div>
+        <div>
+          <h3>薬剤師として<br>「現場の言葉」が通じます。</h3>
+          <p>代表・佐藤健は薬剤師。大手ドラッグストアから調剤薬局へ転職し、管理薬剤師として現場を回した経験があります。レセプト、在庫、処方元との関係、患者様対応——M&Aの説明書ではなく、先生方が日々向き合う現実の言葉でお話しできることが、私たちの最大の強みです。</p>
+        </div>
+        <div class="strength-meta">
+          <b>BACKGROUND</b>
+          薬剤師資格<br>
+          管理薬剤師経験 8年<br>
+          調剤・OTC両領域の実務経験
+        </div>
+      </div>
+      <div class="strength-row fade-up">
+        <div class="num">02</div>
+        <div>
+          <h3>薬局業界M&A、<br>10年以上の専門実績。</h3>
+          <p>中小企業から大企業まで、規模を問わず薬局M&Aの最前線を10年以上歩んできました。地域の1店舗薬局から、複数店舗グループの譲渡まで。譲受側のドラッグストア・調剤チェーン双方とのネットワークを活かし、先生にとって最良のマッチングを実現します。</p>
+        </div>
+        <div class="strength-meta">
+          <b>TRACK RECORD</b>
+          累計相談 120件<br>
+          成約率 業界平均比 1.4倍<br>
+          地方〜都心まで広域対応
+        </div>
+      </div>
+      <div class="strength-row fade-up">
+        <div class="num">03</div>
+        <div>
+          <h3>着手金・中間金 <span style="color: var(--accent);">0円</span>、<br>完全成功報酬制。</h3>
+          <p>「相談したい、でも費用が心配」——そんな先生のために、私たちは譲渡が完了するまで一切の費用をいただきません。情報収集だけでも、他社比較のための一意見でも、まずはお気軽にお声がけください。リスクゼロで未来の選択肢が手に入ります。</p>
+        </div>
+        <div class="strength-meta">
+          <b>FEE POLICY</b>
+          着手金 ¥0<br>
+          中間金 ¥0<br>
+          完全成功報酬制
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 代表プロフィール ============= -->
+<section class="profile" id="profile">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">04 — Founder</div>
+      <h2 class="sec-title">「経営にお疲れの先生方の、<br>最後の対話の相手でありたい。」</h2>
+    </div>
+
+    <div class="profile-grid">
+      <div class="profile-photo fade-up">
+        <div class="ph-tag">
+          <b>[ PHOTO ]</b>
+          代表ポートレート<br>
+          縦3:4、白衣 or スーツ
+        </div>
+        <div class="ph-tag" style="text-align: right;">
+          PORTRAIT<br>
+          SATO TAKERU
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <div class="profile-name latin">— Takeru Sato</div>
+        <h3 class="profile-jp">佐藤 健</h3>
+        <div class="profile-role">SASAERU合同会社 代表 ／ 薬剤師 ／ M&Aアドバイザー</div>
+
+        <div class="profile-quote">
+          薬剤師でも、経営者でも、<br>
+          一番怖いのは「相談する相手がいない」こと。<br>
+          私は、その最後の対話の相手でありたいのです。
+        </div>
+
+        <p class="profile-bio">
+          大学卒業後、大手ドラッグストアにて新規出店・管理薬剤師業務に従事。その後、街の調剤薬局に転職し、地域医療の最前線で管理薬剤師として現場を回しました。「薬剤師の経営は、薬剤師にしかわからない悩みがある」——その実感が、現在のM&Aアドバイザー業の原点です。中小企業から上場企業まで、規模を問わない薬局M&Aの実務に10年以上携わり、SASAERU合同会社を設立しました。
+        </p>
+
+        <dl class="profile-career">
+          <dt>2010</dt>
+          <dd>薬学部卒業／薬剤師免許取得</dd>
+          <dt>2010 — 2014</dt>
+          <dd>大手ドラッグストア勤務（新規出店・管理薬剤師）</dd>
+          <dt>2014 — 2018</dt>
+          <dd>調剤薬局 管理薬剤師（地域医療・在宅対応）</dd>
+          <dt>2015 —</dt>
+          <dd>薬局M&A業務に従事（中小〜上場企業）</dd>
+          <dt>RESOURCES</dt>
+          <dd>薬剤師／M&Aシニアエキスパート（一般社団認定）／日本薬剤師会会員</dd>
+          <dt>NETWORK</dt>
+          <dd>主要調剤チェーン／ドラッグストア／地域中堅薬局</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= サービスの流れ ============= -->
+<section id="flow">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">05 — Service flow</div>
+      <h2 class="sec-title">ご相談から譲渡完了まで、<br>6つのステップ。</h2>
+      <p class="sec-lead">秘密厳守は当然のこと、すべてのプロセスにおいて代表自身が直接担当します。譲渡完了後のアフターフォローも責任を持って対応いたします。</p>
+    </div>
+
+    <div class="flow-list">
+      <div class="flow-row fade-up">
+        <div class="flow-step">STEP <em class="big">01</em></div>
+        <div class="flow-content">
+          <h3>無料相談・ヒアリング</h3>
+          <p>まずはお話をお聞かせください。経営状況、ご家族のこと、引退後のご希望——M&Aを決める前段階のご相談で構いません。代表が直接お伺いするか、オンラインで対応します。</p>
+        </div>
+        <div class="flow-meta">
+          <dl>
+            <dt>所要</dt><dd>60分程度</dd>
+            <dt>費用</dt><dd>完全無料</dd>
+            <dt>形式</dt><dd>対面 / オンライン</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="flow-row fade-up">
+        <div class="flow-step">STEP <em class="big">02</em></div>
+        <div class="flow-content">
+          <h3>秘密保持契約（NDA）</h3>
+          <p>本格的な検討に入る段階で、秘密保持契約を締結します。従業員・取引先・処方元医療機関に知られることなく、安心して情報をご提供いただけます。</p>
+        </div>
+        <div class="flow-meta">
+          <dl>
+            <dt>所要</dt><dd>1〜2週間</dd>
+            <dt>費用</dt><dd>無料</dd>
+            <dt>書類</dt><dd>NDA・委任状</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="flow-row fade-up">
+        <div class="flow-step">STEP <em class="big">03</em></div>
+        <div class="flow-content">
+          <h3>企業価値算定・譲渡条件設計</h3>
+          <p>収益力・立地・処方元構成・人員体制などを多角的に評価し、相場と先生のご希望を踏まえた譲渡条件を設計します。資料は分かりやすい言葉でご説明します。</p>
+        </div>
+        <div class="flow-meta">
+          <dl>
+            <dt>所要</dt><dd>2〜4週間</dd>
+            <dt>費用</dt><dd>無料</dd>
+            <dt>提出物</dt><dd>決算書3期分など</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="flow-row fade-up">
+        <div class="flow-step">STEP <em class="big">04</em></div>
+        <div class="flow-content">
+          <h3>譲受先マッチング・打診</h3>
+          <p>当社ネットワークの調剤チェーン・ドラッグストア・地域中堅薬局から、先生のご希望条件（雇用維持・地域継続・価格水準など）に最も合う候補をお選びします。</p>
+        </div>
+        <div class="flow-meta">
+          <dl>
+            <dt>所要</dt><dd>1〜3ヶ月</dd>
+            <dt>候補数</dt><dd>3〜10社程度</dd>
+            <dt>主導権</dt><dd>常にオーナー様</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="flow-row fade-up">
+        <div class="flow-step">STEP <em class="big">05</em></div>
+        <div class="flow-content">
+          <h3>条件交渉・基本合意・最終契約</h3>
+          <p>譲渡額・雇用条件・引継ぎ期間などをすり合わせ、基本合意を経て最終契約へ。法務・税務面は提携の弁護士・税理士と連携し、抜け漏れなく支援します。</p>
+        </div>
+        <div class="flow-meta">
+          <dl>
+            <dt>所要</dt><dd>2〜3ヶ月</dd>
+            <dt>連携</dt><dd>提携弁護士・税理士</dd>
+            <dt>段階</dt><dd>LOI → DD → SPA</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="flow-row fade-up">
+        <div class="flow-step">STEP <em class="big">06</em></div>
+        <div class="flow-content">
+          <h3>譲渡完了・アフターフォロー</h3>
+          <p>譲渡完了後も、引継ぎ期間中の調整・スタッフへの周知・処方元医療機関への挨拶など、オーナー様の負担を最小化するべく伴走します。第二の人生のスタートまで責任を持って。</p>
+        </div>
+        <div class="flow-meta">
+          <dl>
+            <dt>引継期間</dt><dd>3〜12ヶ月</dd>
+            <dt>支援</dt><dd>無料・期間制限なし</dd>
+            <dt>担当</dt><dd>代表が直接対応</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 料金 ============= -->
+<section class="pricing" id="price">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">06 — Fee structure</div>
+      <h2 class="sec-title">完全成功報酬制。<br>譲渡が成立するまで、費用は一切いただきません。</h2>
+      <p class="sec-lead">「相談しただけで費用が発生するのでは」というご不安を取り除くため、SASAERUは着手金・中間金を完全に無料化しました。安心してご検討の机に着いてください。</p>
+    </div>
+
+    <div class="pricing-banner fade-up">
+      <div>
+        <h3>着手金 <span class="hi">¥0</span> ／ 中間金 <span class="hi">¥0</span></h3>
+        <p>譲渡成立まで、一切の前払い費用はいただきません。情報提供のみのご相談も歓迎します。</p>
+      </div>
+      <div class="price-tag">¥0<small>UPFRONT FEE</small></div>
+    </div>
+
+    <div class="price-table fade-up">
+      <div class="price-row">
+        <div class="pname">無料相談</div>
+        <div class="pdesc">代表との初回ヒアリング、概況把握、選択肢のご説明まで。</div>
+        <div class="pval zero">¥0</div>
+      </div>
+      <div class="price-row">
+        <div class="pname">着手金</div>
+        <div class="pdesc">業務委託契約締結時に通常発生する費用。SASAERUでは無料化しています。</div>
+        <div class="pval zero">¥0</div>
+      </div>
+      <div class="price-row">
+        <div class="pname">中間金</div>
+        <div class="pdesc">基本合意時に発生することが多い費用。SASAERUは成約まで一切請求しません。</div>
+        <div class="pval zero">¥0</div>
+      </div>
+      <div class="price-row">
+        <div class="pname">企業価値算定</div>
+        <div class="pdesc">財務・収益力・立地・処方元構成を踏まえた評価書の作成。</div>
+        <div class="pval zero">¥0</div>
+      </div>
+      <div class="price-row">
+        <div class="pname">成功報酬</div>
+        <div class="pdesc">譲渡完了時のみ、譲渡対価に応じたレーマン方式にて算出します。詳細は個別にご説明。</div>
+        <div class="pval">譲渡対価<small>連動</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 成約事例 ============= -->
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">07 — Case studies</div>
+      <h2 class="sec-title">成約事例（一部抜粋）</h2>
+      <p class="sec-lead">守秘義務の範囲内で、これまでお手伝いした事例をご紹介します。条件・地域・規模はダミーデータです。実例詳細は個別にご説明可能です。</p>
+    </div>
+
+    <div class="cases-grid fade-up">
+      <article class="case-card">
+        <div class="case-img"><span>[ CASE PHOTO — 都市型小規模薬局 ]</span></div>
+        <div class="case-tag"><span>関東</span><span>1店舗</span><span>後継者不在</span></div>
+        <h3>「閉局を決めた前夜、もう一度だけ」<br>都内・調剤薬局A様</h3>
+        <p class="case-summary">後継者不在で閉局を決意していたオーナー様に、ご家族の紹介で初回相談を実施。3ヶ月後、希望条件を満たす中堅チェーンへ譲渡。スタッフ全員の雇用維持を実現。</p>
+        <div class="case-stats">
+          <div class="case-stat"><div class="lbl">期間</div><div class="val">5ヶ月</div></div>
+          <div class="case-stat"><div class="lbl">雇用維持</div><div class="val">100%</div></div>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-img"><span>[ CASE PHOTO — 地方の門前薬局 ]</span></div>
+        <div class="case-tag"><span>東北</span><span>2店舗</span><span>体力的限界</span></div>
+        <h3>「地域に薬局を残せた」<br>地方・門前薬局B様</h3>
+        <p class="case-summary">75歳のオーナー様。長年の在宅対応で体力的に限界を感じご相談。地域医療を理解する地元中堅薬局へ譲渡し、患者様への薬歴・服薬指導も継続。</p>
+        <div class="case-stats">
+          <div class="case-stat"><div class="lbl">期間</div><div class="val">7ヶ月</div></div>
+          <div class="case-stat"><div class="lbl">継続率</div><div class="val">98%</div></div>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-img"><span>[ CASE PHOTO — 複数店舗グループ ]</span></div>
+        <div class="case-tag"><span>近畿</span><span>5店舗</span><span>事業集中化</span></div>
+        <h3>「次の事業に集中するために」<br>5店舗グループC様</h3>
+        <p class="case-summary">他事業との両立に悩んでいた経営者様。グループ全店舗を一括譲渡。譲渡対価を本業の医療系新規事業に投じ、譲受側との業務提携も継続。</p>
+        <div class="case-stats">
+          <div class="case-stat"><div class="lbl">期間</div><div class="val">9ヶ月</div></div>
+          <div class="case-stat"><div class="lbl">対価</div><div class="val">想定+18%</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FAQ ============= -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">08 — FAQ</div>
+      <h2 class="sec-title">よくあるご質問</h2>
+    </div>
+
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.01</span>
+          <span>まだM&Aを決めていない段階でも相談できますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          もちろん歓迎いたします。むしろ、決めていない段階でこそ多角的な視点をご提供できます。「他に選択肢がないか確認したい」「相場感だけ知っておきたい」といったご相談も多数いただいております。情報収集のみで終わるご相談も完全に無料です。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.02</span>
+          <span>従業員や取引先に知られず進められますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          秘密厳守は当然の前提です。秘密保持契約を譲受候補先と締結したうえで、最終段階に近づくまで店名・所在地が特定されない形で交渉を進めます。スタッフへの周知タイミングはオーナー様と慎重に協議します。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.03</span>
+          <span>赤字でも譲渡できますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          赤字でも譲渡は可能です。立地・処方元医療機関との関係・在庫・薬剤師確保という観点から、譲受側にとっては赤字薬局でも価値があるケースが多くあります。まずは現況を拝見させてください。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.04</span>
+          <span>譲渡額はどのように決まりますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          一般的には「営業権（年間利益×倍率）＋純資産」という枠組みで算出されます。倍率は立地・処方元構成・人員体制で大きく変動します。SASAERUでは複数候補との比較で、相場の上限に近い水準を引き出すことを目指します。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.05</span>
+          <span>従業員の雇用は守られますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          原則として、雇用条件を維持したまま引き継ぐことを最優先で交渉します。給与・役職・勤務地について、オーナー様のご意向を譲渡条件に盛り込みます。これは譲受側にとっても薬剤師確保の観点から望ましい条件であることが多いです。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.06</span>
+          <span>相談から譲渡完了までどのくらいかかりますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          標準的には6〜12ヶ月です。早ければ4ヶ月で完了するケースもあれば、条件にこだわって1年以上かけるケースもあります。「いつまでに引退したい」というご希望に逆算してスケジュールを設計します。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.07</span>
+          <span>遠方でも対応していただけますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          全国対応可能です。初回相談はオンライン、必要に応じて代表が直接お伺いします。地方ほど後継者不在の課題が深刻なため、私たちはむしろ積極的にお伺いしています。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.08</span>
+          <span>他社からの提案と比較したいのですが。</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          むしろ複数社のご意見を伺うことを推奨します。私たちは「薬剤師である代表が直接担当する」という独自性で評価いただいています。比較検討のうえでお選びいただければ幸いです。セカンドオピニオンのみのご相談も歓迎します。
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= コラム ============= -->
+<section id="columns">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">09 — Insights</div>
+      <h2 class="sec-title">薬局経営者のための、コラム。</h2>
+      <p class="sec-lead">M&Aや事業承継に関する基礎知識から、調剤報酬改定の経営インパクトまで。代表が現場感覚で執筆しています。</p>
+    </div>
+
+    <div class="columns-grid fade-up">
+      <a href="#" class="col-card">
+        <div class="col-img"><span>[ COLUMN COVER 01 ]</span></div>
+        <div class="col-meta"><span class="cat">M&A基礎</span><span>2026.04.18</span></div>
+        <h3>調剤報酬改定2026、地方薬局オーナーが今考えるべき3つのこと。</h3>
+        <p>対物業務の点数引下げ、敷地内薬局の動向、後発品調剤体制——複合的な逆風のなか、経営者が今から打てる手は何か。</p>
+      </a>
+      <a href="#" class="col-card">
+        <div class="col-img"><span>[ COLUMN COVER 02 ]</span></div>
+        <div class="col-meta"><span class="cat">事業承継</span><span>2026.03.22</span></div>
+        <h3>「子に継がせない」を選んだオーナーへ。家族と話す前に整理したい論点。</h3>
+        <p>親族承継を選ばないことは、決して「逃げ」ではありません。第三者承継を選ぶための、家族会議の組み立て方。</p>
+      </a>
+      <a href="#" class="col-card">
+        <div class="col-img"><span>[ COLUMN COVER 03 ]</span></div>
+        <div class="col-meta"><span class="cat">価値評価</span><span>2026.02.10</span></div>
+        <h3>あなたの薬局の「適正価格」を知るための4つの指標。</h3>
+        <p>譲渡額は決算書だけで決まりません。立地、処方元、人員、在庫——4つの観点で、ご自身でも概算が可能です。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= Contact ============= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">10 — Contact</div>
+      <h2 class="sec-title">まずは、無料相談から。</h2>
+      <p class="sec-lead">代表・佐藤健が直接お話を伺います。決断前のご相談、情報収集だけのお問い合わせも歓迎いたします。</p>
+    </div>
+
+    <div class="contact-grid">
+      <aside class="contact-side fade-up">
+        <h3>「相談する」とは、<br>「決める」ことではありません。</h3>
+        <p>30分でも、選択肢を整理する時間を持つことから始めましょう。秘密厳守は当然の前提として、お話を伺うこと自体を私の仕事と心得ております。</p>
+        <ul class="contact-points">
+          <li>初回相談・資料作成すべて無料</li>
+          <li>秘密厳守（NDA前のご相談も可）</li>
+          <li>代表（薬剤師・佐藤健）が直接対応</li>
+          <li>オンライン／全国出張対応</li>
+          <li>強引な営業・契約勧誘は一切いたしません</li>
+        </ul>
+        <dl class="contact-channels">
+          <dt>PHONE — 受付 平日10:00 - 18:00</dt>
+          <dd>03-0000-0000</dd>
+          <dt>MAIL — 24時間受付</dt>
+          <dd style="font-family: var(--latin); font-size: 18px;">contact@sasaeru-pharma.example</dd>
+        </dl>
+      </aside>
+
+      <form class="form-card fade-up" id="contactForm" name="contact" data-netlify="true" novalidate>
+        <input type="hidden" name="form-name" value="contact">
+        <div class="form-row split">
+          <div>
+            <label>お名前 <span class="req">必須</span></label>
+            <input type="text" name="name" placeholder="例）佐藤 健" data-required>
+            <div class="err">お名前をご記入ください</div>
+          </div>
+          <div>
+            <label>薬局名 <span class="req">必須</span></label>
+            <input type="text" name="pharmacy" placeholder="例）○○調剤薬局" data-required>
+            <div class="err">薬局名をご記入ください</div>
+          </div>
+        </div>
+
+        <div class="form-row split">
+          <div>
+            <label>メールアドレス <span class="req">必須</span></label>
+            <input type="email" name="email" placeholder="example@email.com" data-required data-email>
+            <div class="err">正しいメールアドレスをご記入ください</div>
+          </div>
+          <div>
+            <label>お電話番号 <span class="opt">任意</span></label>
+            <input type="tel" name="tel" placeholder="03-0000-0000">
+            <div class="err"></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>ご相談内容（カテゴリ） <span class="opt">任意</span></label>
+          <select name="category">
+            <option value="">選択してください</option>
+            <option>後継者不在についての相談</option>
+            <option>譲渡相場・企業価値の概算を知りたい</option>
+            <option>具体的に譲渡を検討している</option>
+            <option>セカンドオピニオン</option>
+            <option>その他</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>ご相談内容（自由記入） <span class="req">必須</span></label>
+          <textarea name="message" placeholder="ご状況、ご希望、ご質問など、思いつくままにお書きください。後ほど代表より直接ご連絡いたします。" data-required></textarea>
+          <div class="err">ご相談内容をご記入ください</div>
+        </div>
+
+        <label class="form-consent">
+          <input type="checkbox" name="consent" data-required>
+          <span><a href="#">プライバシーポリシー</a>に同意のうえ送信します。お預かりした情報は本相談対応のみに使用し、外部へ提供することはありません。</span>
+        </label>
+        <div class="form-row" style="margin-bottom: 0; margin-top: -14px;">
+          <div class="err" id="consentErr">同意のチェックをお願いします</div>
+        </div>
+
+        <button type="submit" class="form-submit">
+          無料相談を申し込む <span>→</span>
+        </button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="latin">— Thank you for reaching out</div>
+        <h3>お問い合わせを受け付けました。</h3>
+        <p>確認のメールを自動送信しております。<br>2営業日以内に、代表・佐藤より直接ご連絡いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand-mark">SASAERU<span class="pharm">.pharma</span></div>
+        <p>薬局オーナー様の「次の一歩」に寄り添う、薬剤師×M&AアドバイザーのSASAERU合同会社が運営する、薬局M&A・事業承継の専門サービスです。</p>
+      </div>
+      <div class="foot-col">
+        <h4>SERVICE</h4>
+        <ul>
+          <li><a href="#strengths">選ばれる理由</a></li>
+          <li><a href="#flow">サービスの流れ</a></li>
+          <li><a href="#price">料金体系</a></li>
+          <li><a href="#cases">成約事例</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>ABOUT</h4>
+        <ul>
+          <li><a href="#profile">代表紹介</a></li>
+          <li><a href="profile.html">代表メッセージ全文</a></li>
+          <li><a href="columns.html">コラム一覧</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>COMPANY</h4>
+        <dl class="foot-info">
+          <dt>商号</dt><dd>SASAERU合同会社</dd>
+          <dt>代表</dt><dd>佐藤 健（薬剤師）</dd>
+          <dt>所在地</dt><dd>〒000-0000<br>東京都○○区○○ 0-0-0</dd>
+          <dt>設立</dt><dd>20XX年</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 SASAERU合同会社 — All rights reserved.</span>
+      <div class="links">
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">特定商取引法に基づく表記</a>
+        <a href="#">サイトマップ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="tweaks-mount"></div>
+
+<!-- ============= JS ============= -->
+<script>
+  // === Scroll fade-in ===
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // === FAQ accordion ===
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+
+  // === Form validation ===
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let ok = true;
+      form.querySelectorAll('[data-required]').forEach(field => {
+        const row = field.closest('.form-row') || field.closest('.form-consent');
+        let valid = field.type === 'checkbox' ? field.checked : !!field.value.trim();
+        if (valid && field.dataset.email) {
+          valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+        }
+        if (row && row.classList.contains('form-row')) {
+          row.classList.toggle('invalid', !valid);
+        } else if (field.type === 'checkbox') {
+          document.getElementById('consentErr').style.display = valid ? 'none' : 'block';
+        }
+        if (!valid) ok = false;
+      });
+      if (ok) {
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        })
+        .then(() => {
+          form.style.display = 'none';
+          success.classList.add('show');
+          success.scrollIntoView({behavior: 'smooth', block: 'center'});
+        })
+        .catch(() => {
+          alert('送信中にエラーが発生しました。お手数ですが、直接メールにてご連絡ください。');
+        });
+      }
+    });
+    form.querySelectorAll('input, textarea, select').forEach(field => {
+      field.addEventListener('input', () => {
+        const row = field.closest('.form-row');
+        if (row) row.classList.remove('invalid');
+        if (field.type === 'checkbox') document.getElementById('consentErr').style.display = 'none';
+      });
+    });
+  }
+</script>
+
+<!-- ============= Tweaks ============= -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel">
+
+// tweaks-panel.jsx
+// Reusable Tweaks shell + form-control helpers.
+//
+// Owns the host protocol (listens for __activate_edit_mode / __deactivate_edit_mode,
+// posts __edit_mode_available / __edit_mode_set_keys / __edit_mode_dismissed) so
+// individual prototypes don't re-roll it. Ships a consistent set of controls so you
+// don't hand-draw <input type="range">, segmented radios, steppers, etc.
+//
+// Usage (in an HTML file that loads React + Babel):
+//
+//   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+//     "primaryColor": "#D97757",
+//     "palette": ["#D97757", "#29261b", "#f6f4ef"],
+//     "fontSize": 16,
+//     "density": "regular",
+//     "dark": false
+//   }/*EDITMODE-END*/;
+//
+//   function App() {
+//     const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+//     return (
+//       <div style={{ fontSize: t.fontSize, color: t.primaryColor }}>
+//         Hello
+//         <TweaksPanel>
+//           <TweakSection label="Typography" />
+//           <TweakSlider label="Font size" value={t.fontSize} min={10} max={32} unit="px"
+//                        onChange={(v) => setTweak('fontSize', v)} />
+//           <TweakRadio  label="Density" value={t.density}
+//                        options={['compact', 'regular', 'comfy']}
+//                        onChange={(v) => setTweak('density', v)} />
+//           <TweakSection label="Theme" />
+//           <TweakColor  label="Primary" value={t.primaryColor}
+//                        options={['#D97757', '#2A6FDB', '#1F8A5B', '#7A5AE0']}
+//                        onChange={(v) => setTweak('primaryColor', v)} />
+//           <TweakColor  label="Palette" value={t.palette}
+//                        options={[['#D97757', '#29261b', '#f6f4ef'],
+//                                  ['#475569', '#0f172a', '#f1f5f9']]}
+//                        onChange={(v) => setTweak('palette', v)} />
+//           <TweakToggle label="Dark mode" value={t.dark}
+//                        onChange={(v) => setTweak('dark', v)} />
+//         </TweaksPanel>
+//       </div>
+//     );
+//   }
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
+const __TWEAKS_STYLE = `
+  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
+    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
+    transform:scale(var(--dc-inv-zoom,1));transform-origin:bottom right;
+    background:rgba(250,249,247,.78);color:#29261b;
+    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
+    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 8px 10px 14px;cursor:move;user-select:none}
+  .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
+  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
+    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+  .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
+  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
+    overflow-y:auto;overflow-x:hidden;min-height:0;
+    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+  .twk-body::-webkit-scrollbar{width:8px}
+  .twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}
+  .twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;
+    border:2px solid transparent;background-clip:content-box}
+  .twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);
+    border:2px solid transparent;background-clip:content-box}
+  .twk-row{display:flex;flex-direction:column;gap:5px}
+  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;
+    color:rgba(41,38,27,.72)}
+  .twk-lbl>span:first-child{font-weight:500}
+  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+
+  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(41,38,27,.45);padding:10px 0 0}
+  .twk-sect:first-child{padding-top:0}
+
+  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
+    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
+  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
+  select.twk-field{padding-right:22px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 8px center}
+
+  .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;
+    border-radius:999px;background:rgba(0,0,0,.12);outline:none}
+  .twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+    width:14px;height:14px;border-radius:50%;background:#fff;
+    border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+  .twk-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
+    background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+
+  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
+    background:rgba(0,0,0,.06);user-select:none}
+  .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
+    background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);
+    transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
+  .twk-seg.dragging .twk-seg-thumb{transition:none}
+  .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
+    background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
+    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;
+    overflow-wrap:anywhere}
+
+  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
+    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
+  .twk-toggle[data-on="1"]{background:#34c759}
+  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
+
+  .twk-num{display:flex;align-items:center;height:26px;padding:0 0 0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6)}
+  .twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;
+    user-select:none;padding-right:8px}
+  .twk-num input{flex:1;min-width:0;height:100%;border:0;background:transparent;
+    font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:0 8px 0 0;
+    outline:none;color:inherit;-moz-appearance:textfield}
+  .twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{
+    -webkit-appearance:none;margin:0}
+  .twk-num-unit{padding-right:8px;color:rgba(41,38,27,.45)}
+
+  .twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;
+    background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}
+  .twk-btn:hover{background:rgba(0,0,0,.88)}
+  .twk-btn.secondary{background:rgba(0,0,0,.06);color:inherit}
+  .twk-btn.secondary:hover{background:rgba(0,0,0,.1)}
+
+  .twk-swatch{appearance:none;-webkit-appearance:none;width:56px;height:22px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:6px;padding:0;cursor:default;
+    background:transparent;flex-shrink:0}
+  .twk-swatch::-webkit-color-swatch-wrapper{padding:0}
+  .twk-swatch::-webkit-color-swatch{border:0;border-radius:5.5px}
+  .twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
+
+  .twk-chips{display:flex;gap:6px}
+  .twk-chip{position:relative;appearance:none;flex:1;min-width:0;height:46px;
+    padding:0;border:0;border-radius:6px;overflow:hidden;cursor:default;
+    box-shadow:0 0 0 .5px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);
+    transition:transform .12s cubic-bezier(.3,.7,.4,1),box-shadow .12s}
+  .twk-chip:hover{transform:translateY(-1px);
+    box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.12)}
+  .twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),
+    0 2px 6px rgba(0,0,0,.15)}
+  .twk-chip>span{position:absolute;top:0;bottom:0;right:0;width:34%;
+    display:flex;flex-direction:column;box-shadow:-1px 0 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i{flex:1;box-shadow:0 -1px 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i:first-child{box-shadow:none}
+  .twk-chip svg{position:absolute;top:6px;left:6px;width:13px;height:13px;
+    filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
+`;
+
+// ── useTweaks ───────────────────────────────────────────────────────────────
+function useTweaks(defaults) {
+  const [values, setValues] = React.useState(defaults);
+  const setTweak = React.useCallback((keyOrEdits, val) => {
+    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
+      ? keyOrEdits : { [keyOrEdits]: val };
+    setValues((prev) => ({ ...prev, ...edits }));
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
+    window.dispatchEvent(new CustomEvent('tweakchange', { detail: edits }));
+  }, []);
+  return [values, setTweak];
+}
+
+// ── TweaksPanel ─────────────────────────────────────────────────────────────
+function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
+  const [open, setOpen] = React.useState(false);
+  const dragRef = React.useRef(null);
+  const hasDeckStage = React.useMemo(
+    () => typeof document !== 'undefined' && !!document.querySelector('deck-stage'),
+    [],
+  );
+  const [railEnabled, setRailEnabled] = React.useState(
+    () => hasDeckStage && !!document.querySelector('deck-stage')?._railEnabled,
+  );
+  React.useEffect(() => {
+    if (!hasDeckStage || railEnabled) return undefined;
+    const onMsg = (e) => {
+      if (e.data && e.data.type === '__omelette_rail_enabled') setRailEnabled(true);
+    };
+    window.addEventListener('message', onMsg);
+    return () => window.removeEventListener('message', onMsg);
+  }, [hasDeckStage, railEnabled]);
+  const [railVisible, setRailVisible] = React.useState(() => {
+    try { return localStorage.getItem('deck-stage.railVisible') !== '0'; } catch (e) { return true; }
+  });
+  const toggleRail = (on) => {
+    setRailVisible(on);
+    window.postMessage({ type: '__deck_rail_visible', on }, '*');
+  };
+  const offsetRef = React.useRef({ x: 16, y: 16 });
+  const PAD = 16;
+
+  const clampToViewport = React.useCallback(() => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const w = panel.offsetWidth, h = panel.offsetHeight;
+    const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
+    const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
+    offsetRef.current = {
+      x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)),
+      y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)),
+    };
+    panel.style.right = offsetRef.current.x + 'px';
+    panel.style.bottom = offsetRef.current.y + 'px';
+  }, []);
+
+  React.useEffect(() => {
+    if (!open) return;
+    clampToViewport();
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', clampToViewport);
+      return () => window.removeEventListener('resize', clampToViewport);
+    }
+    const ro = new ResizeObserver(clampToViewport);
+    ro.observe(document.documentElement);
+    return () => ro.disconnect();
+  }, [open, clampToViewport]);
+
+  React.useEffect(() => {
+    const onMsg = (e) => {
+      const t = e?.data?.type;
+      if (t === '__activate_edit_mode') setOpen(true);
+      else if (t === '__deactivate_edit_mode') setOpen(false);
+    };
+    window.addEventListener('message', onMsg);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+
+  const dismiss = () => {
+    setOpen(false);
+    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+  };
+
+  const onDragStart = (e) => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    const sx = e.clientX, sy = e.clientY;
+    const startRight = window.innerWidth - r.right;
+    const startBottom = window.innerHeight - r.bottom;
+    const move = (ev) => {
+      offsetRef.current = {
+        x: startRight - (ev.clientX - sx),
+        y: startBottom - (ev.clientY - sy),
+      };
+      clampToViewport();
+    };
+    const up = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+  };
+
+  if (!open) return null;
+  return (
+    <>
+      <style>{__TWEAKS_STYLE}</style>
+      <div ref={dragRef} className="twk-panel" data-noncommentable=""
+           style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
+        <div className="twk-hd" onMouseDown={onDragStart}>
+          <b>{title}</b>
+          <button className="twk-x" aria-label="Close tweaks"
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onClick={dismiss}>✕</button>
+        </div>
+        <div className="twk-body">
+          {children}
+          {hasDeckStage && railEnabled && !noDeckControls && (
+            <TweakSection label="Deck">
+              <TweakToggle label="Thumbnail rail" value={railVisible} onChange={toggleRail} />
+            </TweakSection>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ── Layout helpers ──────────────────────────────────────────────────────────
+
+function TweakSection({ label, children }) {
+  return (
+    <>
+      <div className="twk-sect">{label}</div>
+      {children}
+    </>
+  );
+}
+
+function TweakRow({ label, value, children, inline = false }) {
+  return (
+    <div className={inline ? 'twk-row twk-row-h' : 'twk-row'}>
+      <div className="twk-lbl">
+        <span>{label}</span>
+        {value != null && <span className="twk-val">{value}</span>}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+// ── Controls ────────────────────────────────────────────────────────────────
+
+function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
+  return (
+    <TweakRow label={label} value={`${value}${unit}`}>
+      <input type="range" className="twk-slider" min={min} max={max} step={step}
+             value={value} onChange={(e) => onChange(Number(e.target.value))} />
+    </TweakRow>
+  );
+}
+
+function TweakToggle({ label, value, onChange }) {
+  return (
+    <div className="twk-row twk-row-h">
+      <div className="twk-lbl"><span>{label}</span></div>
+      <button type="button" className="twk-toggle" data-on={value ? '1' : '0'}
+              role="switch" aria-checked={!!value}
+              onClick={() => onChange(!value)}><i /></button>
+    </div>
+  );
+}
+
+function TweakRadio({ label, value, options, onChange }) {
+  const trackRef = React.useRef(null);
+  const [dragging, setDragging] = React.useState(false);
+  const valueRef = React.useRef(value);
+  valueRef.current = value;
+
+  const labelLen = (o) => String(typeof o === 'object' ? o.label : o).length;
+  const maxLen = options.reduce((m, o) => Math.max(m, labelLen(o)), 0);
+  const fitsAsSegments = maxLen <= ({ 2: 16, 3: 10 }[options.length] ?? 0);
+  if (!fitsAsSegments) {
+    const resolve = (s) => {
+      const m = options.find((o) => String(typeof o === 'object' ? o.value : o) === s);
+      return m === undefined ? s : typeof m === 'object' ? m.value : m;
+    };
+    return <TweakSelect label={label} value={value} options={options}
+                        onChange={(s) => onChange(resolve(s))} />;
+  }
+  const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
+  const idx = Math.max(0, opts.findIndex((o) => o.value === value));
+  const n = opts.length;
+
+  const segAt = (clientX) => {
+    const r = trackRef.current.getBoundingClientRect();
+    const inner = r.width - 4;
+    const i = Math.floor(((clientX - r.left - 2) / inner) * n);
+    return opts[Math.max(0, Math.min(n - 1, i))].value;
+  };
+
+  const onPointerDown = (e) => {
+    setDragging(true);
+    const v0 = segAt(e.clientX);
+    if (v0 !== valueRef.current) onChange(v0);
+    const move = (ev) => {
+      if (!trackRef.current) return;
+      const v = segAt(ev.clientX);
+      if (v !== valueRef.current) onChange(v);
+    };
+    const up = () => {
+      setDragging(false);
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+
+  return (
+    <TweakRow label={label}>
+      <div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown}
+           className={dragging ? 'twk-seg dragging' : 'twk-seg'}>
+        <div className="twk-seg-thumb"
+             style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
+                      width: `calc((100% - 4px) / ${n})` }} />
+        {opts.map((o) => (
+          <button key={o.value} type="button" role="radio" aria-checked={o.value === value}>
+            {o.label}
+          </button>
+        ))}
+      </div>
+    </TweakRow>
+  );
+}
+
+function TweakSelect({ label, value, options, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>
+        {options.map((o) => {
+          const v = typeof o === 'object' ? o.value : o;
+          const l = typeof o === 'object' ? o.label : o;
+          return <option key={v} value={v}>{l}</option>;
+        })}
+      </select>
+    </TweakRow>
+  );
+}
+
+function TweakText({ label, value, placeholder, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <input className="twk-field" type="text" value={value} placeholder={placeholder}
+             onChange={(e) => onChange(e.target.value)} />
+    </TweakRow>
+  );
+}
+
+function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) {
+  const clamp = (n) => {
+    if (min != null && n < min) return min;
+    if (max != null && n > max) return max;
+    return n;
+  };
+  const startRef = React.useRef({ x: 0, val: 0 });
+  const onScrubStart = (e) => {
+    e.preventDefault();
+    startRef.current = { x: e.clientX, val: value };
+    const decimals = (String(step).split('.')[1] || '').length;
+    const move = (ev) => {
+      const dx = ev.clientX - startRef.current.x;
+      const raw = startRef.current.val + dx * step;
+      const snapped = Math.round(raw / step) * step;
+      onChange(clamp(Number(snapped.toFixed(decimals))));
+    };
+    const up = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+  return (
+    <div className="twk-num">
+      <span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span>
+      <input type="number" value={value} min={min} max={max} step={step}
+             onChange={(e) => onChange(clamp(Number(e.target.value)))} />
+      {unit && <span className="twk-num-unit">{unit}</span>}
+    </div>
+  );
+}
+
+function __twkIsLight(hex) {
+  const h = String(hex).replace('#', '');
+  const x = h.length === 3 ? h.replace(/./g, (c) => c + c) : h.padEnd(6, '0');
+  const n = parseInt(x.slice(0, 6), 16);
+  if (Number.isNaN(n)) return true;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return r * 299 + g * 587 + b * 114 > 148000;
+}
+
+const __TwkCheck = ({ light }) => (
+  <svg viewBox="0 0 14 14" aria-hidden="true">
+    <path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2"
+          strokeLinecap="round" strokeLinejoin="round"
+          stroke={light ? 'rgba(0,0,0,.78)' : '#fff'} />
+  </svg>
+);
+
+function TweakColor({ label, value, options, onChange }) {
+  if (!options || !options.length) {
+    return (
+      <div className="twk-row twk-row-h">
+        <div className="twk-lbl"><span>{label}</span></div>
+        <input type="color" className="twk-swatch" value={value}
+               onChange={(e) => onChange(e.target.value)} />
+      </div>
+    );
+  }
+  const key = (o) => String(JSON.stringify(o)).toLowerCase();
+  const cur = key(value);
+  return (
+    <TweakRow label={label}>
+      <div className="twk-chips" role="radiogroup">
+        {options.map((o, i) => {
+          const colors = Array.isArray(o) ? o : [o];
+          const [hero, ...rest] = colors;
+          const sup = rest.slice(0, 4);
+          const on = key(o) === cur;
+          return (
+            <button key={i} type="button" className="twk-chip" role="radio"
+                    aria-checked={on} data-on={on ? '1' : '0'}
+                    aria-label={colors.join(', ')} title={colors.join(' · ')}
+                    style={{ background: hero }}
+                    onClick={() => onChange(o)}>
+              {sup.length > 0 && (
+                <span>
+                  {sup.map((c, j) => <i key={j} style={{ background: c }} />)}
+                </span>
+              )}
+              {on && <__TwkCheck light={__twkIsLight(hero)} />}
+            </button>
+          );
+        })}
+      </div>
+    </TweakRow>
+  );
+}
+
+function TweakButton({ label, onClick, secondary = false }) {
+  return (
+    <button type="button" className={secondary ? 'twk-btn secondary' : 'twk-btn'}
+            onClick={onClick}>{label}</button>
+  );
+}
+
+Object.assign(window, {
+  useTweaks, TweaksPanel, TweakSection, TweakRow,
+  TweakSlider, TweakToggle, TweakRadio, TweakSelect,
+  TweakText, TweakNumber, TweakColor, TweakButton,
+});
+</script>
+<script type="text/babel">
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "variation": "classic",
+    "accent": "#a8854a"
+  }/*EDITMODE-END*/;
+
+  function TweaksRoot() {
+    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+    const [panelOpen, setPanelOpen] = React.useState(false);
+
+    React.useEffect(() => {
+      document.body.classList.remove('theme-classic', 'theme-wa');
+      document.body.classList.add(t.variation === 'wa' ? 'theme-wa' : 'theme-classic');
+    }, [t.variation]);
+
+    React.useEffect(() => {
+      document.documentElement.style.setProperty('--accent', t.accent);
+    }, [t.accent]);
+
+    React.useEffect(() => {
+      const onMsg = (e) => {
+        if (e?.data?.type === '__edit_mode_dismissed') setPanelOpen(false);
+      };
+      window.addEventListener('message', onMsg);
+      return () => window.removeEventListener('message', onMsg);
+    }, []);
+
+    const openPanel = () => {
+      setPanelOpen(true);
+      window.postMessage({ type: '__activate_edit_mode' }, '*');
+    };
+
+    return (
+      <>
+        {!panelOpen && (
+          <button
+            onClick={openPanel}
+            style={{
+              position: 'fixed', bottom: 16, right: 16, zIndex: 2147483645,
+              background: 'rgba(13,29,58,0.88)', color: '#f1ead8',
+              border: 'none', borderRadius: 8, padding: '8px 14px',
+              fontSize: 12, fontWeight: 600, letterSpacing: '0.05em',
+              cursor: 'pointer', backdropFilter: 'blur(8px)',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.25)',
+            }}
+          >
+            ⚙ Tweaks
+          </button>
+        )}
+        <TweaksPanel title="Tweaks">
+          <TweakSection label="Design Variation">
+            <TweakRadio
+              value={t.variation}
+              onChange={(v) => setTweak('variation', v)}
+              options={[
+                { value: 'classic', label: '堅実' },
+                { value: 'wa', label: '和モダン' },
+              ]}
+            />
+          </TweakSection>
+          <TweakSection label="Accent Color">
+            <TweakColor
+              value={t.accent}
+              onChange={(v) => setTweak('accent', v)}
+              options={['#a8854a', '#8a3a3a', '#1f5a4a', '#1f3a5f']}
+            />
+          </TweakSection>
+        </TweaksPanel>
+      </>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('tweaks-mount')).render(<TweaksRoot />);
+</script>
+
+</body>
+</html>
