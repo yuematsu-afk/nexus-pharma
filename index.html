@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>薬局M&Aサービス｜SASAERU合同会社</title>
+<title>薬局M&Aサービス｜NexusM&A.Pharma（SASAERU合同会社）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -360,6 +360,14 @@
   .profile-bio { font-size: 14.5px; line-height: 2.1; color: rgba(241, 234, 216, 0.82); margin-bottom: 36px; }
   .profile-career { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
   @media (max-width: 700px) { .profile-career { grid-template-columns: 1fr; } }
+
+  /* Simplified career/qualifications */
+  .profile-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding-top: 32px; border-top: 1px solid rgba(241, 234, 216, 0.18); }
+  @media (max-width: 700px) { .profile-meta { grid-template-columns: 1fr; gap: 28px; } }
+  .pmeta-label { font-family: var(--mono); font-size: 11px; color: var(--accent-2); letter-spacing: 0.18em; margin-bottom: 16px; }
+  .pmeta-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .pmeta-list li { font-size: 14px; color: rgba(241, 234, 216, 0.88); line-height: 1.65; padding-left: 18px; position: relative; }
+  .pmeta-list li::before { content: ""; position: absolute; left: 0; top: 11px; width: 8px; height: 1px; background: var(--accent-2); }
   .profile-career dt {
     font-family: var(--mono); font-size: 11px; color: var(--accent-2);
     letter-spacing: 0.1em; padding-top: 16px; padding-bottom: 4px;
@@ -744,8 +752,8 @@
 <header class="site-head">
   <div class="wrap">
     <a href="#top" class="brand">
-      <span class="brand-mark">SASAERU<span class="pharm">.pharma</span></span>
-      <span class="brand-sub">薬局M&A・事業承継</span>
+      <span class="brand-mark">NexusM&A<span class="pharm">.Pharma</span></span>
+      <span class="brand-sub">薬局M&A・事業承継 ／ SASAERU合同会社</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -809,8 +817,8 @@
         <div class="lbl">着手金・中間金</div>
       </div>
       <div class="hero-stat">
-        <div class="num">100<small>%</small></div>
-        <div class="lbl">秘密厳守・管理薬剤師経験者対応</div>
+        <div class="num" style="font-size: 22px; letter-spacing: 0.02em;">中小M&A<br>ガイドライン</div>
+        <div class="lbl">遵守</div>
       </div>
     </div>
   </div>
@@ -880,7 +888,7 @@
       <div class="opt-card featured">
         <span class="opt-tag">OPTION C — RECOMMENDED</span>
         <h3>第三者承継（M&A）</h3>
-        <p>適切な譲受先へ事業を託す選択。雇用も患者様との関係も維持しながら、オーナーは適正な対価を得て次のステージへ。SASAERUが最も実績を積んできた領域です。</p>
+        <p>適切な譲受先へ事業を託す選択。雇用も患者様との関係も維持しながら、オーナーは適正な対価を得て次のステージへ。NexusM&A.Pharmaが最も実績を積んできた領域です。</p>
         <ul>
           <li>雇用・店舗・関係性をそのまま承継</li>
           <li>適正な企業価値で譲渡</li>
@@ -919,7 +927,7 @@
   <div class="wrap">
     <div class="sec-head fade-up">
       <div class="sec-label">03 — Why us</div>
-      <h2 class="sec-title">SASAERUが選ばれる、<br>3つの理由。</h2>
+      <h2 class="sec-title">NexusM&A.Pharmaが選ばれる、<br>3つの理由。</h2>
       <p class="sec-lead">薬局M&Aアドバイザーは数あれど、現場を歩いた薬剤師がアドバイザーを務める会社は、決して多くはありません。</p>
     </div>
 
@@ -928,13 +936,13 @@
         <div class="num">01</div>
         <div>
           <h3>薬剤師として<br>「現場の言葉」が通じます。</h3>
-          <p>代表・佐藤健は薬剤師。大手ドラッグストアから調剤薬局へ転職し、管理薬剤師として現場を回した経験があります。レセプト、在庫、処方元との関係、患者様対応——M&Aの説明書ではなく、先生方が日々向き合う現実の言葉でお話しできることが、私たちの最大の強みです。</p>
+          <p>代表・植松勇樹は薬剤師。大手ドラッグストアから調剤薬局へ転職し、管理薬剤師として現場を回した経験があります。レセプト、在庫、処方元との関係、患者様対応——M&Aの説明書ではなく、先生方が日々向き合う現実の言葉でお話しできることが、私たちの最大の強みです。</p>
         </div>
         <div class="strength-meta">
           <b>BACKGROUND</b>
           薬剤師資格<br>
-          管理薬剤師経験 8年<br>
-          調剤・OTC両領域の実務経験
+          調剤・OTC両領域の実務経験<br>
+          在宅対応の現場経験
         </div>
       </div>
       <div class="strength-row fade-up">
@@ -984,13 +992,13 @@
         </div>
         <div class="ph-tag" style="text-align: right;">
           PORTRAIT<br>
-          SATO TAKERU
+          UEMATSU YUKI
         </div>
       </div>
 
       <div class="fade-up">
-        <div class="profile-name latin">— Takeru Sato</div>
-        <h3 class="profile-jp">佐藤 健</h3>
+        <div class="profile-name latin">— Yuki Uematsu</div>
+        <h3 class="profile-jp">植松 勇樹</h3>
         <div class="profile-role">SASAERU合同会社 代表 ／ 薬剤師 ／ M&Aアドバイザー</div>
 
         <div class="profile-quote">
@@ -1000,23 +1008,28 @@
         </div>
 
         <p class="profile-bio">
-          大学卒業後、大手ドラッグストアにて新規出店・管理薬剤師業務に従事。その後、街の調剤薬局に転職し、地域医療の最前線で管理薬剤師として現場を回しました。「薬剤師の経営は、薬剤師にしかわからない悩みがある」——その実感が、現在のM&Aアドバイザー業の原点です。中小企業から上場企業まで、規模を問わない薬局M&Aの実務に10年以上携わり、SASAERU合同会社を設立しました。
+          薬剤師として、大手ドラッグストアで管理薬剤師を経験。その後、街の調剤薬局に転職し、在宅対応を含む地域医療の最前線で実務を重ねました。「薬剤師の経営は、薬剤師にしかわからない悩みがある」——その実感が、現在のM&Aアドバイザー業の原点です。中小企業から上場企業まで、規模を問わない薬局M&Aの実務に10年以上携わり、SASAERU合同会社を設立しました。
         </p>
 
-        <dl class="profile-career">
-          <dt>2010</dt>
-          <dd>薬学部卒業／薬剤師免許取得</dd>
-          <dt>2010 — 2014</dt>
-          <dd>大手ドラッグストア勤務（新規出店・管理薬剤師）</dd>
-          <dt>2014 — 2018</dt>
-          <dd>調剤薬局 管理薬剤師（地域医療・在宅対応）</dd>
-          <dt>2015 —</dt>
-          <dd>薬局M&A業務に従事（中小〜上場企業）</dd>
-          <dt>RESOURCES</dt>
-          <dd>薬剤師／M&Aシニアエキスパート（一般社団認定）／日本薬剤師会会員</dd>
-          <dt>NETWORK</dt>
-          <dd>主要調剤チェーン／ドラッグストア／地域中堅薬局</dd>
-        </dl>
+        <div class="profile-meta">
+          <div class="pmeta-block">
+            <div class="pmeta-label">CAREER</div>
+            <ul class="pmeta-list">
+              <li>薬剤師免許取得</li>
+              <li>大手ドラッグストア勤務（管理薬剤師経験）</li>
+              <li>調剤薬局（在宅対応）</li>
+              <li>薬局M&A業務に従事（中小〜上場企業）</li>
+            </ul>
+          </div>
+          <div class="pmeta-block">
+            <div class="pmeta-label">QUALIFICATIONS</div>
+            <ul class="pmeta-list">
+              <li>薬剤師</li>
+              <li>事業承継M&Aエキスパート</li>
+              <li>証券外務員一種</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1131,7 +1144,7 @@
     <div class="sec-head fade-up">
       <div class="sec-label">06 — Fee structure</div>
       <h2 class="sec-title">完全成功報酬制。<br>譲渡が成立するまで、費用は一切いただきません。</h2>
-      <p class="sec-lead">「相談しただけで費用が発生するのでは」というご不安を取り除くため、SASAERUは着手金・中間金を完全に無料化しました。安心してご検討の机に着いてください。</p>
+      <p class="sec-lead">「相談しただけで費用が発生するのでは」というご不安を取り除くため、NexusM&A.Pharmaは着手金・中間金を完全に無料化しました。安心してご検討の机に着いてください。</p>
     </div>
 
     <div class="pricing-banner fade-up">
@@ -1150,12 +1163,12 @@
       </div>
       <div class="price-row">
         <div class="pname">着手金</div>
-        <div class="pdesc">業務委託契約締結時に通常発生する費用。SASAERUでは無料化しています。</div>
+        <div class="pdesc">業務委託契約締結時に通常発生する費用。NexusM&A.Pharmaでは無料化しています。</div>
         <div class="pval zero">¥0</div>
       </div>
       <div class="price-row">
         <div class="pname">中間金</div>
-        <div class="pdesc">基本合意時に発生することが多い費用。SASAERUは成約まで一切請求しません。</div>
+        <div class="pdesc">基本合意時に発生することが多い費用。NexusM&A.Pharmaは成約まで一切請求しません。</div>
         <div class="pval zero">¥0</div>
       </div>
       <div class="price-row">
@@ -1164,9 +1177,9 @@
         <div class="pval zero">¥0</div>
       </div>
       <div class="price-row">
-        <div class="pname">成功報酬</div>
-        <div class="pdesc">譲渡完了時のみ、譲渡対価に応じたレーマン方式にて算出します。詳細は個別にご説明。</div>
-        <div class="pval">譲渡対価<small>連動</small></div>
+        <div class="pname">成功報酬<br><small style="font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: 0.1em; font-weight: 400;">レーマン方式</small></div>
+        <div class="pdesc">譲渡完了時のみ発生。譲渡対価に応じた段階料率にて算出します。<br><span style="display:block; margin-top: 8px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); line-height: 1.95;">1億円以下の部分：800万円<br>1億円超〜6億円以下：5%<br>6億円超〜10億円以下：4%<br>10億円超〜50億円以下：3%<br>50億円超〜100億円以下：2%<br>100億円超：1%</span></div>
+        <div class="pval">¥800<small>万〜（最低手数料）</small></div>
       </div>
     </div>
   </div>
@@ -1267,7 +1280,7 @@
           <span class="toggle"></span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          一般的には「営業権（年間利益×倍率）＋純資産」という枠組みで算出されます。倍率は立地・処方元構成・人員体制で大きく変動します。SASAERUでは複数候補との比較で、相場の上限に近い水準を引き出すことを目指します。
+          一般的には「営業権（年間利益×倍率）＋純資産」という枠組みで算出されます。倍率は立地・処方元構成・人員体制で大きく変動します。NexusM&A.Pharmaでは複数候補との比較で、相場の上限に近い水準を引き出すことを目指します。
         </div></div>
       </div>
 
@@ -1356,7 +1369,7 @@
     <div class="sec-head fade-up">
       <div class="sec-label">10 — Contact</div>
       <h2 class="sec-title">まずは、無料相談から。</h2>
-      <p class="sec-lead">代表・佐藤健が直接お話を伺います。決断前のご相談、情報収集だけのお問い合わせも歓迎いたします。</p>
+      <p class="sec-lead">代表・植松勇樹が直接お話を伺います。決断前のご相談、情報収集だけのお問い合わせも歓迎いたします。</p>
     </div>
 
     <div class="contact-grid">
@@ -1366,7 +1379,7 @@
         <ul class="contact-points">
           <li>初回相談・資料作成すべて無料</li>
           <li>秘密厳守（NDA前のご相談も可）</li>
-          <li>代表（薬剤師・佐藤健）が直接対応</li>
+          <li>代表（薬剤師・植松勇樹）が直接対応</li>
           <li>オンライン／全国出張対応</li>
           <li>強引な営業・契約勧誘は一切いたしません</li>
         </ul>
@@ -1383,7 +1396,7 @@
         <div class="form-row split">
           <div>
             <label>お名前 <span class="req">必須</span></label>
-            <input type="text" name="name" placeholder="例）佐藤 健" data-required>
+            <input type="text" name="name" placeholder="例）山田 太郎" data-required>
             <div class="err">お名前をご記入ください</div>
           </div>
           <div>
@@ -1393,17 +1406,10 @@
           </div>
         </div>
 
-        <div class="form-row split">
-          <div>
-            <label>メールアドレス <span class="req">必須</span></label>
-            <input type="email" name="email" placeholder="example@email.com" data-required data-email>
-            <div class="err">正しいメールアドレスをご記入ください</div>
-          </div>
-          <div>
-            <label>お電話番号 <span class="opt">任意</span></label>
-            <input type="tel" name="tel" placeholder="03-0000-0000">
-            <div class="err"></div>
-          </div>
+        <div class="form-row">
+          <label>メールアドレス <span class="req">必須</span></label>
+          <input type="email" name="email" placeholder="example@email.com" data-required data-email>
+          <div class="err">正しいメールアドレスをご記入ください</div>
         </div>
 
         <div class="form-row">
@@ -1440,7 +1446,7 @@
       <div class="form-success" id="formSuccess">
         <div class="latin">— Thank you for reaching out</div>
         <h3>お問い合わせを受け付けました。</h3>
-        <p>確認のメールを自動送信しております。<br>2営業日以内に、代表・佐藤より直接ご連絡いたします。</p>
+        <p>確認のメールを自動送信しております。<br>2営業日以内に、代表・植松より直接ご連絡いたします。</p>
       </div>
     </div>
   </div>
@@ -1451,7 +1457,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="brand-mark">SASAERU<span class="pharm">.pharma</span></div>
+        <div class="brand-mark">NexusM&A<span class="pharm">.Pharma</span></div>
         <p>薬局オーナー様の「次の一歩」に寄り添う、薬剤師×M&AアドバイザーのSASAERU合同会社が運営する、薬局M&A・事業承継の専門サービスです。</p>
       </div>
       <div class="foot-col">
@@ -1477,9 +1483,10 @@
         <h4>COMPANY</h4>
         <dl class="foot-info">
           <dt>商号</dt><dd>SASAERU合同会社</dd>
-          <dt>代表</dt><dd>佐藤 健（薬剤師）</dd>
-          <dt>所在地</dt><dd>〒000-0000<br>東京都○○区○○ 0-0-0</dd>
-          <dt>設立</dt><dd>20XX年</dd>
+          <dt>代表</dt><dd>植松 勇樹（薬剤師）</dd>
+          <dt>所在地</dt><dd>〒607-8255<br>京都府京都市山科区<br>小野御所ノ内町5-1-202</dd>
+          <dt>設立</dt><dd>2020年</dd>
+          <dt>サービス</dt><dd>NexusM&A.Pharma</dd>
         </dl>
       </div>
     </div>
@@ -1581,276 +1588,41 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script type="text/babel">
 const __TWEAKS_STYLE = `
-  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
-    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
-    transform:scale(var(--dc-inv-zoom,1));transform-origin:bottom right;
-    background:rgba(250,249,247,.78);color:#29261b;
-    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
-    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
-    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
-    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
-  .twk-hd{display:flex;align-items:center;justify-content:space-between;
-    padding:10px 8px 10px 14px;cursor:move;user-select:none}
+  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;max-height:calc(100vh - 32px);display:flex;flex-direction:column;transform:scale(var(--dc-inv-zoom,1));transform-origin:bottom right;background:rgba(250,249,247,.78);color:#29261b;-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border:.5px solid rgba(255,255,255,.6);border-radius:14px;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;padding:10px 8px 10px 14px;cursor:move;user-select:none}
   .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
-  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
-    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
   .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
-  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
-    overflow-y:auto;overflow-x:hidden;min-height:0;
-    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
-  .twk-body::-webkit-scrollbar{width:8px}
-  .twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}
-  .twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;
-    border:2px solid transparent;background-clip:content-box}
-  .twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);
-    border:2px solid transparent;background-clip:content-box}
-  .twk-row{display:flex;flex-direction:column;gap:5px}
-  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
-  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;
-    color:rgba(41,38,27,.72)}
-  .twk-lbl>span:first-child{font-weight:500}
-  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
-  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-    color:rgba(41,38,27,.45);padding:10px 0 0}
-  .twk-sect:first-child{padding-top:0}
-  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
-    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
-    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
-  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
-  select.twk-field{padding-right:22px;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
-    background-repeat:no-repeat;background-position:right 8px center}
-  .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;
-    border-radius:999px;background:rgba(0,0,0,.12);outline:none}
-  .twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
-    width:14px;height:14px;border-radius:50%;background:#fff;
-    border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
-  .twk-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
-    background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
-  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
-    background:rgba(0,0,0,.06);user-select:none}
-  .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
-    background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);
-    transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
-  .twk-seg.dragging .twk-seg-thumb{transition:none}
-  .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
-    background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
-    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;overflow-wrap:anywhere}
-  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
-    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
-  .twk-toggle[data-on="1"]{background:#34c759}
-  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
-    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
-  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
-  .twk-num{display:flex;align-items:center;height:26px;padding:0 0 0 8px;
-    border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6)}
-  .twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;user-select:none;padding-right:8px}
-  .twk-num input{flex:1;min-width:0;height:100%;border:0;background:transparent;
-    font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:0 8px 0 0;
-    outline:none;color:inherit;-moz-appearance:textfield}
-  .twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-  .twk-num-unit{padding-right:8px;color:rgba(41,38,27,.45)}
-  .twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;
-    background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}
-  .twk-btn:hover{background:rgba(0,0,0,.88)}
-  .twk-btn.secondary{background:rgba(0,0,0,.06);color:inherit}
-  .twk-btn.secondary:hover{background:rgba(0,0,0,.1)}
-  .twk-swatch{appearance:none;-webkit-appearance:none;width:56px;height:22px;
-    border:.5px solid rgba(0,0,0,.1);border-radius:6px;padding:0;cursor:default;
-    background:transparent;flex-shrink:0}
-  .twk-swatch::-webkit-color-swatch-wrapper{padding:0}
-  .twk-swatch::-webkit-color-swatch{border:0;border-radius:5.5px}
-  .twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
-  .twk-chips{display:flex;gap:6px}
-  .twk-chip{position:relative;appearance:none;flex:1;min-width:0;height:46px;
-    padding:0;border:0;border-radius:6px;overflow:hidden;cursor:default;
-    box-shadow:0 0 0 .5px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);
-    transition:transform .12s cubic-bezier(.3,.7,.4,1),box-shadow .12s}
-  .twk-chip:hover{transform:translateY(-1px);box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.12)}
-  .twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),0 2px 6px rgba(0,0,0,.15)}
-  .twk-chip>span{position:absolute;top:0;bottom:0;right:0;width:34%;
-    display:flex;flex-direction:column;box-shadow:-1px 0 0 rgba(0,0,0,.1)}
-  .twk-chip>span>i{flex:1;box-shadow:0 -1px 0 rgba(0,0,0,.1)}
-  .twk-chip>span>i:first-child{box-shadow:none}
-  .twk-chip svg{position:absolute;top:6px;left:6px;width:13px;height:13px;
-    filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
+  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;overflow-x:hidden;min-height:0;scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+  .twk-body::-webkit-scrollbar{width:8px}.twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}.twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;border:2px solid transparent;background-clip:content-box}.twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);border:2px solid transparent;background-clip:content-box}
+  .twk-row{display:flex;flex-direction:column;gap:5px}.twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;color:rgba(41,38,27,.72)}.twk-lbl>span:first-child{font-weight:500}.twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(41,38,27,.45);padding:10px 0 0}.twk-sect:first-child{padding-top:0}
+  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}.twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
+  select.twk-field{padding-right:22px;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");background-repeat:no-repeat;background-position:right 8px center}
+  .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;border-radius:999px;background:rgba(0,0,0,.12);outline:none}.twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}.twk-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;background:rgba(0,0,0,.06);user-select:none}.twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}.twk-seg.dragging .twk-seg-thumb{transition:none}.twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;overflow-wrap:anywhere}
+  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}.twk-toggle[data-on="1"]{background:#34c759}.twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}.twk-toggle[data-on="1"] i{transform:translateX(14px)}
+  .twk-num{display:flex;align-items:center;height:26px;padding:0 0 0 8px;border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6)}.twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;user-select:none;padding-right:8px}.twk-num input{flex:1;min-width:0;height:100%;border:0;background:transparent;font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:0 8px 0 0;outline:none;color:inherit;-moz-appearance:textfield}.twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.twk-num-unit{padding-right:8px;color:rgba(41,38,27,.45)}
+  .twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}.twk-btn:hover{background:rgba(0,0,0,.88)}.twk-btn.secondary{background:rgba(0,0,0,.06);color:inherit}.twk-btn.secondary:hover{background:rgba(0,0,0,.1)}
+  .twk-swatch{appearance:none;-webkit-appearance:none;width:56px;height:22px;border:.5px solid rgba(0,0,0,.1);border-radius:6px;padding:0;cursor:default;background:transparent;flex-shrink:0}.twk-swatch::-webkit-color-swatch-wrapper{padding:0}.twk-swatch::-webkit-color-swatch{border:0;border-radius:5.5px}.twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
+  .twk-chips{display:flex;gap:6px}.twk-chip{position:relative;appearance:none;flex:1;min-width:0;height:46px;padding:0;border:0;border-radius:6px;overflow:hidden;cursor:default;box-shadow:0 0 0 .5px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);transition:transform .12s cubic-bezier(.3,.7,.4,1),box-shadow .12s}.twk-chip:hover{transform:translateY(-1px);box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.12)}.twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),0 2px 6px rgba(0,0,0,.15)}.twk-chip>span{position:absolute;top:0;bottom:0;right:0;width:34%;display:flex;flex-direction:column;box-shadow:-1px 0 0 rgba(0,0,0,.1)}.twk-chip>span>i{flex:1;box-shadow:0 -1px 0 rgba(0,0,0,.1)}.twk-chip>span>i:first-child{box-shadow:none}.twk-chip svg{position:absolute;top:6px;left:6px;width:13px;height:13px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
 `;
-function useTweaks(defaults) {
-  const [values, setValues] = React.useState(defaults);
-  const setTweak = React.useCallback((keyOrEdits, val) => {
-    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null ? keyOrEdits : { [keyOrEdits]: val };
-    setValues((prev) => ({ ...prev, ...edits }));
-    window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
-    window.dispatchEvent(new CustomEvent('tweakchange', { detail: edits }));
-  }, []);
-  return [values, setTweak];
-}
-function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
-  const [open, setOpen] = React.useState(false);
-  const dragRef = React.useRef(null);
-  const hasDeckStage = React.useMemo(() => typeof document !== 'undefined' && !!document.querySelector('deck-stage'), []);
-  const [railEnabled, setRailEnabled] = React.useState(() => hasDeckStage && !!document.querySelector('deck-stage')?._railEnabled);
-  React.useEffect(() => {
-    if (!hasDeckStage || railEnabled) return undefined;
-    const onMsg = (e) => { if (e.data && e.data.type === '__omelette_rail_enabled') setRailEnabled(true); };
-    window.addEventListener('message', onMsg);
-    return () => window.removeEventListener('message', onMsg);
-  }, [hasDeckStage, railEnabled]);
-  const [railVisible, setRailVisible] = React.useState(() => { try { return localStorage.getItem('deck-stage.railVisible') !== '0'; } catch (e) { return true; } });
-  const toggleRail = (on) => { setRailVisible(on); window.postMessage({ type: '__deck_rail_visible', on }, '*'); };
-  const offsetRef = React.useRef({ x: 16, y: 16 });
-  const PAD = 16;
-  const clampToViewport = React.useCallback(() => {
-    const panel = dragRef.current;
-    if (!panel) return;
-    const w = panel.offsetWidth, h = panel.offsetHeight;
-    const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
-    const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
-    offsetRef.current = { x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)), y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)) };
-    panel.style.right = offsetRef.current.x + 'px';
-    panel.style.bottom = offsetRef.current.y + 'px';
-  }, []);
-  React.useEffect(() => {
-    if (!open) return;
-    clampToViewport();
-    if (typeof ResizeObserver === 'undefined') { window.addEventListener('resize', clampToViewport); return () => window.removeEventListener('resize', clampToViewport); }
-    const ro = new ResizeObserver(clampToViewport);
-    ro.observe(document.documentElement);
-    return () => ro.disconnect();
-  }, [open, clampToViewport]);
-  React.useEffect(() => {
-    const onMsg = (e) => { const t = e?.data?.type; if (t === '__activate_edit_mode') setOpen(true); else if (t === '__deactivate_edit_mode') setOpen(false); };
-    window.addEventListener('message', onMsg);
-    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
-    return () => window.removeEventListener('message', onMsg);
-  }, []);
-  const dismiss = () => { setOpen(false); window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); };
-  const onDragStart = (e) => {
-    const panel = dragRef.current;
-    if (!panel) return;
-    const r = panel.getBoundingClientRect();
-    const sx = e.clientX, sy = e.clientY;
-    const startRight = window.innerWidth - r.right;
-    const startBottom = window.innerHeight - r.bottom;
-    const move = (ev) => { offsetRef.current = { x: startRight - (ev.clientX - sx), y: startBottom - (ev.clientY - sy) }; clampToViewport(); };
-    const up = () => { window.removeEventListener('mousemove', move); window.removeEventListener('mouseup', up); };
-    window.addEventListener('mousemove', move);
-    window.addEventListener('mouseup', up);
-  };
-  if (!open) return null;
-  return (
-    <>
-      <style>{__TWEAKS_STYLE}</style>
-      <div ref={dragRef} className="twk-panel" data-noncommentable="" style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
-        <div className="twk-hd" onMouseDown={onDragStart}>
-          <b>{title}</b>
-          <button className="twk-x" aria-label="Close tweaks" onMouseDown={(e) => e.stopPropagation()} onClick={dismiss}>✕</button>
-        </div>
-        <div className="twk-body">
-          {children}
-          {hasDeckStage && railEnabled && !noDeckControls && (<TweakSection label="Deck"><TweakToggle label="Thumbnail rail" value={railVisible} onChange={toggleRail} /></TweakSection>)}
-        </div>
-      </div>
-    </>
-  );
-}
-function TweakSection({ label, children }) { return (<><div className="twk-sect">{label}</div>{children}</>); }
-function TweakRow({ label, value, children, inline = false }) {
-  return (<div className={inline ? 'twk-row twk-row-h' : 'twk-row'}><div className="twk-lbl"><span>{label}</span>{value != null && <span className="twk-val">{value}</span>}</div>{children}</div>);
-}
-function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
-  return (<TweakRow label={label} value={`${value}${unit}`}><input type="range" className="twk-slider" min={min} max={max} step={step} value={value} onChange={(e) => onChange(Number(e.target.value))} /></TweakRow>);
-}
-function TweakToggle({ label, value, onChange }) {
-  return (<div className="twk-row twk-row-h"><div className="twk-lbl"><span>{label}</span></div><button type="button" className="twk-toggle" data-on={value ? '1' : '0'} role="switch" aria-checked={!!value} onClick={() => onChange(!value)}><i /></button></div>);
-}
-function TweakRadio({ label, value, options, onChange }) {
-  const trackRef = React.useRef(null);
-  const [dragging, setDragging] = React.useState(false);
-  const valueRef = React.useRef(value);
-  valueRef.current = value;
-  const labelLen = (o) => String(typeof o === 'object' ? o.label : o).length;
-  const maxLen = options.reduce((m, o) => Math.max(m, labelLen(o)), 0);
-  const fitsAsSegments = maxLen <= ({ 2: 16, 3: 10 }[options.length] ?? 0);
-  if (!fitsAsSegments) {
-    const resolve = (s) => { const m = options.find((o) => String(typeof o === 'object' ? o.value : o) === s); return m === undefined ? s : typeof m === 'object' ? m.value : m; };
-    return <TweakSelect label={label} value={value} options={options} onChange={(s) => onChange(resolve(s))} />;
-  }
-  const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
-  const idx = Math.max(0, opts.findIndex((o) => o.value === value));
-  const n = opts.length;
-  const segAt = (clientX) => { const r = trackRef.current.getBoundingClientRect(); const inner = r.width - 4; const i = Math.floor(((clientX - r.left - 2) / inner) * n); return opts[Math.max(0, Math.min(n - 1, i))].value; };
-  const onPointerDown = (e) => {
-    setDragging(true);
-    const v0 = segAt(e.clientX);
-    if (v0 !== valueRef.current) onChange(v0);
-    const move = (ev) => { if (!trackRef.current) return; const v = segAt(ev.clientX); if (v !== valueRef.current) onChange(v); };
-    const up = () => { setDragging(false); window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
-    window.addEventListener('pointermove', move);
-    window.addEventListener('pointerup', up);
-  };
-  return (
-    <TweakRow label={label}>
-      <div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown} className={dragging ? 'twk-seg dragging' : 'twk-seg'}>
-        <div className="twk-seg-thumb" style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`, width: `calc((100% - 4px) / ${n})` }} />
-        {opts.map((o) => (<button key={o.value} type="button" role="radio" aria-checked={o.value === value}>{o.label}</button>))}
-      </div>
-    </TweakRow>
-  );
-}
-function TweakSelect({ label, value, options, onChange }) {
-  return (<TweakRow label={label}><select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>{options.map((o) => { const v = typeof o === 'object' ? o.value : o; const l = typeof o === 'object' ? o.label : o; return <option key={v} value={v}>{l}</option>; })}</select></TweakRow>);
-}
-function TweakText({ label, value, placeholder, onChange }) {
-  return (<TweakRow label={label}><input className="twk-field" type="text" value={value} placeholder={placeholder} onChange={(e) => onChange(e.target.value)} /></TweakRow>);
-}
-function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) {
-  const clamp = (n) => { if (min != null && n < min) return min; if (max != null && n > max) return max; return n; };
-  const startRef = React.useRef({ x: 0, val: 0 });
-  const onScrubStart = (e) => {
-    e.preventDefault();
-    startRef.current = { x: e.clientX, val: value };
-    const decimals = (String(step).split('.')[1] || '').length;
-    const move = (ev) => { const dx = ev.clientX - startRef.current.x; const raw = startRef.current.val + dx * step; const snapped = Math.round(raw / step) * step; onChange(clamp(Number(snapped.toFixed(decimals)))); };
-    const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
-    window.addEventListener('pointermove', move);
-    window.addEventListener('pointerup', up);
-  };
-  return (<div className="twk-num"><span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span><input type="number" value={value} min={min} max={max} step={step} onChange={(e) => onChange(clamp(Number(e.target.value)))} />{unit && <span className="twk-num-unit">{unit}</span>}</div>);
-}
-function __twkIsLight(hex) {
-  const h = String(hex).replace('#', '');
-  const x = h.length === 3 ? h.replace(/./g, (c) => c + c) : h.padEnd(6, '0');
-  const n = parseInt(x.slice(0, 6), 16);
-  if (Number.isNaN(n)) return true;
-  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
-  return r * 299 + g * 587 + b * 114 > 148000;
-}
-const __TwkCheck = ({ light }) => (<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" stroke={light ? 'rgba(0,0,0,.78)' : '#fff'} /></svg>);
-function TweakColor({ label, value, options, onChange }) {
-  if (!options || !options.length) {
-    return (<div className="twk-row twk-row-h"><div className="twk-lbl"><span>{label}</span></div><input type="color" className="twk-swatch" value={value} onChange={(e) => onChange(e.target.value)} /></div>);
-  }
-  const key = (o) => String(JSON.stringify(o)).toLowerCase();
-  const cur = key(value);
-  return (
-    <TweakRow label={label}>
-      <div className="twk-chips" role="radiogroup">
-        {options.map((o, i) => {
-          const colors = Array.isArray(o) ? o : [o];
-          const [hero, ...rest] = colors;
-          const sup = rest.slice(0, 4);
-          const on = key(o) === cur;
-          return (<button key={i} type="button" className="twk-chip" role="radio" aria-checked={on} data-on={on ? '1' : '0'} aria-label={colors.join(', ')} title={colors.join(' · ')} style={{ background: hero }} onClick={() => onChange(o)}>{sup.length > 0 && (<span>{sup.map((c, j) => <i key={j} style={{ background: c }} />)}</span>)}{on && <__TwkCheck light={__twkIsLight(hero)} />}</button>);
-        })}
-      </div>
-    </TweakRow>
-  );
-}
-function TweakButton({ label, onClick, secondary = false }) {
-  return (<button type="button" className={secondary ? 'twk-btn secondary' : 'twk-btn'} onClick={onClick}>{label}</button>);
-}
-Object.assign(window, { useTweaks, TweaksPanel, TweakSection, TweakRow, TweakSlider, TweakToggle, TweakRadio, TweakSelect, TweakText, TweakNumber, TweakColor, TweakButton });
+function useTweaks(defaults){const[values,setValues]=React.useState(defaults);const setTweak=React.useCallback((keyOrEdits,val)=>{const edits=typeof keyOrEdits==='object'&&keyOrEdits!==null?keyOrEdits:{[keyOrEdits]:val};setValues((prev)=>({...prev,...edits}));window.parent.postMessage({type:'__edit_mode_set_keys',edits},'*');window.dispatchEvent(new CustomEvent('tweakchange',{detail:edits}));},[]);return[values,setTweak];}
+function TweaksPanel({title='Tweaks',noDeckControls=false,children}){const[open,setOpen]=React.useState(false);const dragRef=React.useRef(null);const hasDeckStage=React.useMemo(()=>typeof document!=='undefined'&&!!document.querySelector('deck-stage'),[]);const[railEnabled,setRailEnabled]=React.useState(()=>hasDeckStage&&!!document.querySelector('deck-stage')?._railEnabled);React.useEffect(()=>{if(!hasDeckStage||railEnabled)return undefined;const onMsg=(e)=>{if(e.data&&e.data.type==='__omelette_rail_enabled')setRailEnabled(true);};window.addEventListener('message',onMsg);return()=>window.removeEventListener('message',onMsg);},[hasDeckStage,railEnabled]);const[railVisible,setRailVisible]=React.useState(()=>{try{return localStorage.getItem('deck-stage.railVisible')!=='0';}catch(e){return true;}});const toggleRail=(on)=>{setRailVisible(on);window.postMessage({type:'__deck_rail_visible',on},'*');};const offsetRef=React.useRef({x:16,y:16});const PAD=16;const clampToViewport=React.useCallback(()=>{const panel=dragRef.current;if(!panel)return;const w=panel.offsetWidth,h=panel.offsetHeight;const maxRight=Math.max(PAD,window.innerWidth-w-PAD);const maxBottom=Math.max(PAD,window.innerHeight-h-PAD);offsetRef.current={x:Math.min(maxRight,Math.max(PAD,offsetRef.current.x)),y:Math.min(maxBottom,Math.max(PAD,offsetRef.current.y))};panel.style.right=offsetRef.current.x+'px';panel.style.bottom=offsetRef.current.y+'px';},[]);React.useEffect(()=>{if(!open)return;clampToViewport();if(typeof ResizeObserver==='undefined'){window.addEventListener('resize',clampToViewport);return()=>window.removeEventListener('resize',clampToViewport);}const ro=new ResizeObserver(clampToViewport);ro.observe(document.documentElement);return()=>ro.disconnect();},[open,clampToViewport]);React.useEffect(()=>{const onMsg=(e)=>{const t=e?.data?.type;if(t==='__activate_edit_mode')setOpen(true);else if(t==='__deactivate_edit_mode')setOpen(false);};window.addEventListener('message',onMsg);window.parent.postMessage({type:'__edit_mode_available'},'*');return()=>window.removeEventListener('message',onMsg);},[]);const dismiss=()=>{setOpen(false);window.parent.postMessage({type:'__edit_mode_dismissed'},'*');};const onDragStart=(e)=>{const panel=dragRef.current;if(!panel)return;const r=panel.getBoundingClientRect();const sx=e.clientX,sy=e.clientY;const startRight=window.innerWidth-r.right;const startBottom=window.innerHeight-r.bottom;const move=(ev)=>{offsetRef.current={x:startRight-(ev.clientX-sx),y:startBottom-(ev.clientY-sy)};clampToViewport();};const up=()=>{window.removeEventListener('mousemove',move);window.removeEventListener('mouseup',up);};window.addEventListener('mousemove',move);window.addEventListener('mouseup',up);};if(!open)return null;return(<><style>{__TWEAKS_STYLE}</style><div ref={dragRef} className="twk-panel" data-noncommentable="" style={{right:offsetRef.current.x,bottom:offsetRef.current.y}}><div className="twk-hd" onMouseDown={onDragStart}><b>{title}</b><button className="twk-x" aria-label="Close tweaks" onMouseDown={(e)=>e.stopPropagation()} onClick={dismiss}>✕</button></div><div className="twk-body">{children}{hasDeckStage&&railEnabled&&!noDeckControls&&(<TweakSection label="Deck"><TweakToggle label="Thumbnail rail" value={railVisible} onChange={toggleRail}/></TweakSection>)}</div></div></>);}
+function TweakSection({label,children}){return(<><div className="twk-sect">{label}</div>{children}</>);}
+function TweakRow({label,value,children,inline=false}){return(<div className={inline?'twk-row twk-row-h':'twk-row'}><div className="twk-lbl"><span>{label}</span>{value!=null&&<span className="twk-val">{value}</span>}</div>{children}</div>);}
+function TweakSlider({label,value,min=0,max=100,step=1,unit='',onChange}){return(<TweakRow label={label} value={`${value}${unit}`}><input type="range" className="twk-slider" min={min} max={max} step={step} value={value} onChange={(e)=>onChange(Number(e.target.value))}/></TweakRow>);}
+function TweakToggle({label,value,onChange}){return(<div className="twk-row twk-row-h"><div className="twk-lbl"><span>{label}</span></div><button type="button" className="twk-toggle" data-on={value?'1':'0'} role="switch" aria-checked={!!value} onClick={()=>onChange(!value)}><i/></button></div>);}
+function TweakRadio({label,value,options,onChange}){const trackRef=React.useRef(null);const[dragging,setDragging]=React.useState(false);const valueRef=React.useRef(value);valueRef.current=value;const labelLen=(o)=>String(typeof o==='object'?o.label:o).length;const maxLen=options.reduce((m,o)=>Math.max(m,labelLen(o)),0);const fitsAsSegments=maxLen<=({2:16,3:10}[options.length]??0);if(!fitsAsSegments){const resolve=(s)=>{const m=options.find((o)=>String(typeof o==='object'?o.value:o)===s);return m===undefined?s:typeof m==='object'?m.value:m;};return<TweakSelect label={label} value={value} options={options} onChange={(s)=>onChange(resolve(s))}/>;}const opts=options.map((o)=>(typeof o==='object'?o:{value:o,label:o}));const idx=Math.max(0,opts.findIndex((o)=>o.value===value));const n=opts.length;const segAt=(clientX)=>{const r=trackRef.current.getBoundingClientRect();const inner=r.width-4;const i=Math.floor(((clientX-r.left-2)/inner)*n);return opts[Math.max(0,Math.min(n-1,i))].value;};const onPointerDown=(e)=>{setDragging(true);const v0=segAt(e.clientX);if(v0!==valueRef.current)onChange(v0);const move=(ev)=>{if(!trackRef.current)return;const v=segAt(ev.clientX);if(v!==valueRef.current)onChange(v);};const up=()=>{setDragging(false);window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',up);};window.addEventListener('pointermove',move);window.addEventListener('pointerup',up);};return(<TweakRow label={label}><div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown} className={dragging?'twk-seg dragging':'twk-seg'}><div className="twk-seg-thumb" style={{left:`calc(2px + ${idx} * (100% - 4px) / ${n})`,width:`calc((100% - 4px) / ${n})`}}/>{opts.map((o)=>(<button key={o.value} type="button" role="radio" aria-checked={o.value===value}>{o.label}</button>))}</div></TweakRow>);}
+function TweakSelect({label,value,options,onChange}){return(<TweakRow label={label}><select className="twk-field" value={value} onChange={(e)=>onChange(e.target.value)}>{options.map((o)=>{const v=typeof o==='object'?o.value:o;const l=typeof o==='object'?o.label:o;return<option key={v} value={v}>{l}</option>;})}</select></TweakRow>);}
+function TweakText({label,value,placeholder,onChange}){return(<TweakRow label={label}><input className="twk-field" type="text" value={value} placeholder={placeholder} onChange={(e)=>onChange(e.target.value)}/></TweakRow>);}
+function TweakNumber({label,value,min,max,step=1,unit='',onChange}){const clamp=(n)=>{if(min!=null&&n<min)return min;if(max!=null&&n>max)return max;return n;};const startRef=React.useRef({x:0,val:0});const onScrubStart=(e)=>{e.preventDefault();startRef.current={x:e.clientX,val:value};const decimals=(String(step).split('.')[1]||'').length;const move=(ev)=>{const dx=ev.clientX-startRef.current.x;const raw=startRef.current.val+dx*step;const snapped=Math.round(raw/step)*step;onChange(clamp(Number(snapped.toFixed(decimals))));};const up=()=>{window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',up);};window.addEventListener('pointermove',move);window.addEventListener('pointerup',up);};return(<div className="twk-num"><span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span><input type="number" value={value} min={min} max={max} step={step} onChange={(e)=>onChange(clamp(Number(e.target.value)))}/>{unit&&<span className="twk-num-unit">{unit}</span>}</div>);}
+function __twkIsLight(hex){const h=String(hex).replace('#','');const x=h.length===3?h.replace(/./g,(c)=>c+c):h.padEnd(6,'0');const n=parseInt(x.slice(0,6),16);if(Number.isNaN(n))return true;const r=(n>>16)&255,g=(n>>8)&255,b=n&255;return r*299+g*587+b*114>148000;}
+const __TwkCheck=({light})=>(<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" stroke={light?'rgba(0,0,0,.78)':'#fff'}/></svg>);
+function TweakColor({label,value,options,onChange}){if(!options||!options.length){return(<div className="twk-row twk-row-h"><div className="twk-lbl"><span>{label}</span></div><input type="color" className="twk-swatch" value={value} onChange={(e)=>onChange(e.target.value)}/></div>);}const key=(o)=>String(JSON.stringify(o)).toLowerCase();const cur=key(value);return(<TweakRow label={label}><div className="twk-chips" role="radiogroup">{options.map((o,i)=>{const colors=Array.isArray(o)?o:[o];const[hero,...rest]=colors;const sup=rest.slice(0,4);const on=key(o)===cur;return(<button key={i} type="button" className="twk-chip" role="radio" aria-checked={on} data-on={on?'1':'0'} aria-label={colors.join(', ')} title={colors.join(' · ')} style={{background:hero}} onClick={()=>onChange(o)}>{sup.length>0&&(<span>{sup.map((c,j)=><i key={j} style={{background:c}}/>)}</span>)}{on&&<__TwkCheck light={__twkIsLight(hero)}/>}</button>);})}</div></TweakRow>);}
+function TweakButton({label,onClick,secondary=false}){return(<button type="button" className={secondary?'twk-btn secondary':'twk-btn'} onClick={onClick}>{label}</button>);}
+Object.assign(window,{useTweaks,TweaksPanel,TweakSection,TweakRow,TweakSlider,TweakToggle,TweakRadio,TweakSelect,TweakText,TweakNumber,TweakColor,TweakButton});
 </script>
 <script type="text/babel">
   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
