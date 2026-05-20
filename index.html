@@ -1437,8 +1437,10 @@
         </dl>
       </aside>
 
-      <form class="form-card fade-up" id="contactForm" name="contact" data-netlify="true" novalidate>
-        <input type="hidden" name="form-name" value="contact">
+      <form class="form-card fade-up" id="contactForm" novalidate>
+        <input type="hidden" name="access_key" value="1f72d159-2aa7-4eda-8925-864f3656e2e3">
+        <input type="hidden" name="subject" value="【NexusM&A.Pharma】無料相談のお申し込み">
+        <input type="hidden" name="from_name" value="NexusM&A.Pharma">
         <div class="form-row split">
           <div>
             <label>お名前 <span class="req">必須</span></label>
@@ -1736,15 +1738,20 @@
         if (!valid) ok = false;
       });
       if (ok) {
-        fetch('/', {
+        fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString()
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form)))
         })
-        .then(() => {
-          form.style.display = 'none';
-          success.classList.add('show');
-          success.scrollIntoView({behavior: 'smooth', block: 'center'});
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            form.style.display = 'none';
+            success.classList.add('show');
+            success.scrollIntoView({behavior: 'smooth', block: 'center'});
+          } else {
+            alert('送信中にエラーが発生しました。お手数ですが、直接メールにてご連絡ください。');
+          }
         })
         .catch(() => {
           alert('送信中にエラーが発生しました。お手数ですが、直接メールにてご連絡ください。');
