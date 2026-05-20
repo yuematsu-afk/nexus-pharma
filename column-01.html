@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>調剤報酬改定2026、地方薬局オーナーが今考えるべき3つのこと｜NexusM&A.Pharma</title>
+<meta name="description" content="2026年の調剤報酬改定は、地方薬局の経営前提を揺るがす転換点です。立地依存の収益モデル、後発品対応、対人業務——3つの視点で経営者が今取るべき行動を解説します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f1ead8;
+    --bg-alt: #ffffff;
+    --bg-deep: #0d1d3a;
+    --ink: #14171d;
+    --ink-2: #5a5e68;
+    --ink-3: #8a8e98;
+    --primary: #0d1d3a;
+    --accent: #a8854a;
+    --line: #d4c9ad;
+    --line-soft: #e5dcc4;
+    --serif: "Shippori Mincho B1", "Noto Serif JP", "Yu Mincho", serif;
+    --sans: "Noto Sans JP", -apple-system, sans-serif;
+    --mono: "JetBrains Mono", monospace;
+    --latin: "Cormorant Garamond", serif;
+    --radius: 2px;
+    --maxw: 740px;
+    --gutter: clamp(20px, 5vw, 48px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.85;
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* Header */
+  .site-head {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(241, 234, 216, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .site-head .inner {
+    max-width: 1100px; margin: 0 auto;
+    padding: 0 var(--gutter);
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .brand-mark {
+    font-family: var(--serif); font-size: 18px; font-weight: 600;
+    letter-spacing: 0.06em; color: var(--primary);
+  }
+  .brand-mark .pharm { color: var(--accent); }
+  .back-link {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.12em; color: var(--ink-3);
+    display: flex; align-items: center; gap: 6px;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* Article hero */
+  .article-hero {
+    padding: 64px 0 0;
+    background: var(--bg);
+  }
+  .article-hero .inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter);
+  }
+  .article-eyebrow {
+    display: flex; align-items: center; gap: 16px;
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: 0.15em; color: var(--ink-3);
+    margin-bottom: 24px;
+  }
+  .article-eyebrow .cat {
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 3px 10px;
+  }
+  .article-hero h1 {
+    font-family: var(--serif); font-size: clamp(24px, 4vw, 36px);
+    font-weight: 500; color: var(--primary);
+    line-height: 1.5; letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+  .article-lead {
+    font-size: 15px; color: var(--ink-2);
+    line-height: 2; margin-bottom: 40px;
+    padding-left: 18px;
+    border-left: 2px solid var(--accent);
+  }
+  .article-cover {
+    width: 100%; aspect-ratio: 16/9;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    position: relative; overflow: hidden;
+    margin-top: 0;
+  }
+  .article-cover img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .article-cover .placeholder {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 11px;
+    color: var(--ink-3); letter-spacing: 0.15em;
+    background: repeating-linear-gradient(135deg, transparent 0 14px, rgba(13,29,58,0.04) 14px 15px);
+  }
+
+  /* Article body */
+  .article-wrap {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 56px var(--gutter) 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif); font-size: clamp(20px, 3vw, 26px);
+    font-weight: 500; color: var(--primary);
+    line-height: 1.5; margin: 56px 0 20px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--line);
+  }
+  .article-body h2:first-child { margin-top: 0; }
+  .article-body h3 {
+    font-family: var(--serif); font-size: 19px;
+    font-weight: 500; color: var(--primary);
+    line-height: 1.55; margin: 36px 0 14px;
+  }
+  .article-body p {
+    font-size: 15px; color: var(--ink);
+    line-height: 2.05; margin-bottom: 20px;
+  }
+  .article-body p:last-child { margin-bottom: 0; }
+
+  .summary-box {
+    background: var(--bg-alt); border: 1px solid var(--line);
+    padding: 28px 32px; margin: 40px 0;
+  }
+  .summary-box .summary-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; color: var(--accent);
+    text-transform: uppercase; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .summary-box .summary-label::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
+  .summary-box ol {
+    padding-left: 20px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .summary-box ol li {
+    font-size: 14.5px; color: var(--ink); line-height: 1.8;
+  }
+
+  /* Author */
+  .article-author {
+    margin-top: 64px; padding-top: 32px;
+    border-top: 1px solid var(--line-soft);
+    display: flex; align-items: flex-start; gap: 24px;
+  }
+  .author-avatar {
+    width: 64px; height: 64px; flex-shrink: 0;
+    border: 1px solid var(--line); overflow: hidden;
+    background: var(--bg-alt);
+  }
+  .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .author-info {}
+  .author-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.15em; color: var(--ink-3); margin-bottom: 6px;
+  }
+  .author-name {
+    font-family: var(--serif); font-size: 18px;
+    color: var(--primary); margin-bottom: 8px;
+  }
+  .author-bio { font-size: 13px; color: var(--ink-2); line-height: 1.85; }
+
+  /* CTA */
+  .article-cta {
+    margin: 64px 0 0;
+    background: var(--primary);
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .article-cta .cta-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; color: rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif); font-size: clamp(20px, 3vw, 26px);
+    color: #fff; font-weight: 500; line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .article-cta p {
+    font-size: 13.5px; color: rgba(255,255,255,0.6);
+    line-height: 1.9; margin-bottom: 28px;
+  }
+  .btn-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--accent); color: #fff;
+    padding: 16px 36px; font-size: 13.5px; letter-spacing: 0.08em;
+    border-radius: var(--radius); transition: all .25s;
+  }
+  .btn-cta:hover { background: #c8a872; }
+
+  /* Back nav */
+  .article-nav {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 40px var(--gutter) 80px;
+    display: flex; gap: 32px; flex-wrap: wrap;
+  }
+  .nav-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; letter-spacing: 0.04em; color: var(--ink-2);
+    border-bottom: 1px solid var(--line); padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+  }
+  .nav-back:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Footer */
+  footer.site-foot {
+    background: var(--bg-deep); color: rgba(255,255,255,0.45);
+    text-align: center; padding: 32px var(--gutter);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .article-hero { padding-top: 40px; }
+    .article-body h2 { margin-top: 44px; }
+    .article-cta { padding: 36px 24px; }
+    .summary-box { padding: 22px 20px; }
+    .article-author { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="inner">
+    <a href="index.html" class="brand-mark">NexusM&A<span class="pharm">.Pharma</span></a>
+    <a href="index.html#columns" class="back-link">← コラム一覧</a>
+  </div>
+</header>
+
+<article>
+
+  <div class="article-hero">
+    <div class="inner">
+      <div class="article-eyebrow">
+        <span class="cat">M&A基礎</span>
+        <span>2026.04.18</span>
+      </div>
+      <h1>調剤報酬改定2026、地方薬局オーナーが今考えるべき3つのこと</h1>
+      <p class="article-lead">対物業務の点数引き下げ、敷地内薬局・門前薬局への厳格化、後発品調剤体制の再整理が同時に進む2026年改定。経営の前提が揺らぐ今、地方薬局オーナーが取るべき3つの行動を解説します。</p>
+    </div>
+    <div class="article-cover">
+      <!-- 画像ファイル（assets/column-01.jpg）を追加したら下の行のコメントを外してください -->
+      <!-- <img src="assets/column-01.jpg" alt="調剤報酬改定2026と地方薬局経営"> -->
+      <div class="placeholder">[ COLUMN IMAGE — 画像準備中 ]</div>
+    </div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-body">
+
+      <p>2026年の調剤報酬改定は、地方の薬局経営にとって単なる点数改定ではありません。これまでの「門前で待てば患者が来る」「後発品をしっかり扱えば評価される」といった発想だけでは、収益を維持しにくい構造へと変わりつつあります。対物業務の点数引き下げ、敷地内薬局や門前薬局への厳格化、後発品調剤体制の再整理が同時に進むことで、経営の前提そのものが揺らいでいるからです。</p>
+      <p>こうした環境下で、地方薬局のオーナーが今から考えるべきことは大きく3つあります。第一に、基本料をどう守るか。第二に、医薬品供給機能をどう経営価値に変えるか。第三に、対人業務でどう収益を作るかです。</p>
+
+      <div class="summary-box">
+        <div class="summary-label">この記事のポイント</div>
+        <ol>
+          <li>「立地依存」の収益モデルを見直す</li>
+          <li>後発品対応を「評価項目」ではなく「供給力」に変える</li>
+          <li>対物から対人へ、本当に時間を振り向ける</li>
+        </ol>
+      </div>
+
+      <h2>1. 「立地依存」の収益モデルを見直す</h2>
+      <p>2026年改定では、処方箋の集中率が高い薬局や、立地に依存した薬局への評価が厳しく見直されています。特に都市部の門前薬局や医療モール内薬局は、見かけ上は複数の医療機関があるように見えても、実際には集中率が高いと判断されやすく、減算や評価引き下げの影響を受けやすくなっています。</p>
+      <p>これは地方薬局にとっても他人事ではありません。地方では、病院門前や診療所の隣接地に出店しているケースが少なくありませんが、その立地優位性に収益を依存していると、今後の制度変更に弱い経営になります。重要なのは、「この場所だから取れている利益」が、制度が変わっても維持できるのかを冷静に見直すことです。</p>
+      <p>経営者としてはまず、自局の集中率、立地特性、グループ内の店舗配置を棚卸しする必要があります。特定の医療機関への依存度が高いなら、紹介元の分散、在宅の強化、地域連携の深耕などで収益源を複線化しておくべきです。</p>
+
+      <h2>2. 後発品対応を「評価項目」ではなく「供給力」に変える</h2>
+      <p>今回の改定で大きいのは、後発医薬品調剤体制加算が廃止され、後発品対応が別の評価体系に組み替えられる点です。つまり、単に後発品の使用割合を上げるだけでは評価されにくくなり、安定供給や地域支援を含めた総合的な体制が求められます。</p>
+      <p>これは、地方薬局にとってはむしろチャンスでもあります。なぜなら、都市部よりも地域内の医薬品供給を担う役割が見えやすく、欠品時の対応や卸との調整、近隣薬局との融通などが経営価値に直結しやすいからです。</p>
+      <p>これからの薬局は、「薬を渡す場所」ではなく、「薬を安定して届け続けるインフラ」でなければなりません。在庫の持ち方、欠品時の代替提案、調剤過誤を防ぐオペレーション、地域の医療機関との情報共有まで含めて、供給体制を経営の中核に置く必要があります。後発品対応を単なるコンプライアンスの延長と考えるのではなく、地域から選ばれる理由に変えられるかどうかが勝負です。</p>
+
+      <h2>3. 対物から対人へ、本当に時間を振り向ける</h2>
+      <p>改定全体の方向性は明確です。調剤そのもの、つまり「対物業務」から、服薬支援やフォローアップ、在宅、残薬調整などの「対人業務」へ重心を移すことです。調剤基本料や調剤管理料の見直しに加え、かかりつけ薬剤師や在宅医療、医師との連携に関する評価が強化されていく流れは、もはや一時的なものではありません。</p>
+      <p>ただし、ここで注意したいのは、「対人業務をやっているつもり」では評価がつかないことです。電話フォロー、服薬状況の確認、医師へのフィードバック、訪問実績など、記録と成果が伴わなければ、実際の収益にはつながりません。経営者は、薬剤師の業務時間のうち、どれだけが調剤処理に費やされ、どれだけが患者対応や連携業務に使われているのかを可視化する必要があります。</p>
+      <p>地方薬局では、少人数運営で日々の処方対応に追われがちです。しかし、だからこそ役割分担を明確にし、調剤工程の効率化を進めることで、薬剤師が本来担うべき対人業務の時間を確保しなければなりません。ここを先送りすると、制度対応が後手に回るだけでなく、人件費だけが重くのしかかる経営になります。</p>
+
+      <h2>経営者が今やるべきこと</h2>
+      <p>地方薬局オーナーが今すぐ着手すべきことは、次の3点に集約されます。</p>
+      <p><strong>第一に、自局の収益構造を点検すること。</strong>処方箋集中率、立地依存度、後発品比率、在宅件数、かかりつけ機能の実績を数字で把握し、どこに脆弱性があるかを見極める必要があります。</p>
+      <p><strong>第二に、供給体制の再設計。</strong>後発品の安定供給、欠品時の対応、在庫管理、地域内連携を見直し、単なる調剤機能ではなく供給拠点としての価値を高めるべきです。</p>
+      <p><strong>第三に、対人業務の再定義。</strong>患者対応、服薬支援、在宅、医師連携を個人の努力に任せず、店舗運営として再設計することが求められます。人手不足を前提にするならなおさら、業務の標準化と役割分担が重要になります。</p>
+
+      <h2>逆風の中で問われるもの</h2>
+      <p>2026年改定は、地方薬局にとって厳しい改定です。ですが、見方を変えれば、経営の本質を問い直す機会でもあります。立地に頼るのか、供給力で選ばれるのか、対人業務で付加価値を出すのか。今後は、この3つの軸を持てる薬局だけが地域に残っていくでしょう。</p>
+      <p>制度改定は毎回、目の前の点数を追う議論に終始しがちです。しかし、経営者に必要なのは、点数の増減ではなく、5年後にどんな薬局が地域で必要とされるかを見据えることです。2026年改定は、その転換点になる可能性があります。</p>
+    </div>
+
+    <div class="article-author">
+      <div class="author-avatar">
+        <img src="assets/portrait-uematsu.jpg" alt="植松勇樹" onerror="this.style.display='none'">
+      </div>
+      <div class="author-info">
+        <div class="author-label">AUTHOR</div>
+        <div class="author-name">植松 勇樹</div>
+        <p class="author-bio">SASAERU合同会社 代表。薬剤師。薬局M&A・事業承継の専門アドバイザーとして、地方薬局オーナーの経営課題に向き合う。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <div class="cta-label">Free Consultation</div>
+    <h3>自局の経営に置き換えて<br>考えてみませんか。</h3>
+    <p>相談は無料です。代表・植松が直接お話を伺います。</p>
+    <a href="index.html#contact" class="btn-cta">無料相談を申し込む →</a>
+  </div>
+
+  <div class="article-nav">
+    <a href="index.html#columns" class="nav-back">← コラム一覧へ</a>
+    <a href="index.html" class="nav-back">← トップページへ</a>
+  </div>
+
+</article>
+
+<footer class="site-foot">
+  <p>&copy; 2026 SASAERU合同会社 / NexusM&amp;A.Pharma</p>
+</footer>
+
+</body>
+</html>
