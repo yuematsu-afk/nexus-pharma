@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>あなたの薬局の「適正価額」を知るための4つの指標｜NexusM&A.Pharma</title>
+<meta name="description" content="薬局の譲渡額は決算書だけで決まりません。立地、処方元、人員、在庫——4つの指標でオーナー自身が適正価額を把握する方法を解説します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f1ead8;
+    --bg-alt: #ffffff;
+    --bg-deep: #0d1d3a;
+    --ink: #14171d;
+    --ink-2: #5a5e68;
+    --ink-3: #8a8e98;
+    --primary: #0d1d3a;
+    --accent: #a8854a;
+    --line: #d4c9ad;
+    --line-soft: #e5dcc4;
+    --serif: "Shippori Mincho B1", "Noto Serif JP", "Yu Mincho", serif;
+    --sans: "Noto Sans JP", -apple-system, sans-serif;
+    --mono: "JetBrains Mono", monospace;
+    --latin: "Cormorant Garamond", serif;
+    --radius: 2px;
+    --maxw: 740px;
+    --gutter: clamp(20px, 5vw, 48px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.85;
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .site-head {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(241, 234, 216, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .site-head .inner {
+    max-width: 1100px; margin: 0 auto;
+    padding: 0 var(--gutter);
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .brand-mark {
+    font-family: var(--serif); font-size: 18px; font-weight: 600;
+    letter-spacing: 0.06em; color: var(--primary);
+  }
+  .brand-mark .pharm { color: var(--accent); }
+  .back-link {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.12em; color: var(--ink-3);
+    display: flex; align-items: center; gap: 6px;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .article-hero {
+    padding: 64px 0 0;
+    background: var(--bg);
+  }
+  .article-hero .inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter);
+  }
+  .article-eyebrow {
+    display: flex; align-items: center; gap: 16px;
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: 0.15em; color: var(--ink-3);
+    margin-bottom: 24px;
+  }
+  .article-eyebrow .cat {
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 3px 10px;
+  }
+  .article-hero h1 {
+    font-family: var(--serif); font-size: clamp(24px, 4vw, 36px);
+    font-weight: 500; color: var(--primary);
+    line-height: 1.5; letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+  .article-lead {
+    font-size: 15px; color: var(--ink-2);
+    line-height: 2; margin-bottom: 40px;
+    padding-left: 18px;
+    border-left: 2px solid var(--accent);
+  }
+  .article-cover {
+    width: 100%;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    margin-top: 0;
+  }
+  @media (min-width: 769px) {
+    .article-cover {
+      max-width: var(--maxw);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .article-cover img {
+    width: 100%; height: auto; display: block;
+  }
+  .article-cover .placeholder {
+    aspect-ratio: 16/9;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 11px;
+    color: var(--ink-3); letter-spacing: 0.15em;
+    background: repeating-linear-gradient(135deg, transparent 0 14px, rgba(13,29,58,0.04) 14px 15px);
+  }
+
+  .article-wrap {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 56px var(--gutter) 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif); font-size: clamp(20px, 3vw, 26px);
+    font-weight: 500; color: var(--primary);
+    line-height: 1.5; margin: 56px 0 20px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--line);
+  }
+  .article-body p {
+    font-size: 15px; color: var(--ink);
+    line-height: 2.05; margin-bottom: 20px;
+  }
+  .article-body p:last-child { margin-bottom: 0; }
+
+  .article-author {
+    margin-top: 64px; padding-top: 32px;
+    border-top: 1px solid var(--line-soft);
+    display: flex; align-items: flex-start; gap: 24px;
+  }
+  .author-avatar {
+    width: 64px; height: 64px; flex-shrink: 0;
+    border: 1px solid var(--line); overflow: hidden;
+    background: var(--bg-alt);
+  }
+  .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .author-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.15em; color: var(--ink-3); margin-bottom: 6px;
+  }
+  .author-name {
+    font-family: var(--serif); font-size: 18px;
+    color: var(--primary); margin-bottom: 8px;
+  }
+  .author-bio { font-size: 13px; color: var(--ink-2); line-height: 1.85; }
+
+  .article-cta {
+    margin: 64px 0 0;
+    background: var(--primary);
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .article-cta .cta-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; color: rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif); font-size: clamp(20px, 3vw, 26px);
+    color: #fff; font-weight: 500; line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .article-cta p {
+    font-size: 13.5px; color: rgba(255,255,255,0.6);
+    line-height: 1.9; margin-bottom: 28px;
+  }
+  .btn-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--accent); color: #fff;
+    padding: 16px 36px; font-size: 13.5px; letter-spacing: 0.08em;
+    border-radius: var(--radius); transition: all .25s;
+  }
+  .btn-cta:hover { background: #c8a872; }
+
+  .article-nav {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 40px var(--gutter) 80px;
+    display: flex; gap: 32px; flex-wrap: wrap;
+  }
+  .nav-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; letter-spacing: 0.04em; color: var(--ink-2);
+    border-bottom: 1px solid var(--line); padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+  }
+  .nav-back:hover { color: var(--accent); border-color: var(--accent); }
+
+  footer.site-foot {
+    background: var(--bg-deep); color: rgba(255,255,255,0.45);
+    text-align: center; padding: 32px var(--gutter);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 600px) {
+    .article-hero { padding-top: 40px; }
+    .article-body h2 { margin-top: 44px; }
+    .article-cta { padding: 36px 24px; }
+    .article-author { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="inner">
+    <a href="index.html" class="brand-mark">NexusM&A<span class="pharm">.Pharma</span></a>
+    <a href="index.html#columns" class="back-link">← コラム一覧</a>
+  </div>
+</header>
+
+<article>
+
+  <div class="article-hero">
+    <div class="inner">
+      <div class="article-eyebrow">
+        <span class="cat">価値評価</span>
+        <span>2026.02.10</span>
+      </div>
+      <h1>あなたの薬局の「適正価額」を知るための4つの指標</h1>
+      <p class="article-lead">薬局の譲渡額は、決算書の数字だけで決まりません。立地、処方元、人員、在庫——4つの観点で、ご自身でも適正価額の感覚を持つことができます。</p>
+    </div>
+    <div class="article-cover">
+      <!-- 画像ファイル（assets/column-03.png）を追加したら下の行のコメントを外してください -->
+      <!-- <img src="assets/column-03.png" alt="薬局の適正価額を知るための4つの指標"> -->
+      <div class="placeholder">[ COLUMN IMAGE — 画像準備中 ]</div>
+    </div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-body">
+
+      <p>薬局の譲渡額は、決算書の数字だけで決まるものではありません。実際の評価では、利益の水準に加えて、立地、処方元との関係、人員体制、在庫の状態といった"現場の強さ"が大きく影響します。つまり、同じ売上・同じ利益であっても、条件次第で価額は大きく変わります。</p>
+      <p>だからこそ、オーナー自身が大まかな適正価額の感覚を持っておくことが重要です。第三者承継を考えるにしても、複数店舗の整理を進めるにしても、まずは自分の薬局がどの程度の評価を受けそうかを把握していなければ、交渉の土台が作れません。</p>
+      <p>ここでは、薬局の価額を考えるうえで押さえておきたい4つの指標を整理します。</p>
+
+      <h2>1. 立地：その場所に価値があるか</h2>
+      <p>薬局の価額を左右する最初の要素は立地です。同じ売上規模でも、駅前・病院門前・住宅地・地方郊外では、将来の安定性や成長余地が異なります。</p>
+      <p>特に重要なのは、「今の売上が立地のおかげなのか、それとも運営力のおかげなのか」です。病院門前で安定して処方箋が入っている薬局は一見強く見えますが、処方元の移転や診療科の変化によって一気に条件が変わることがあります。逆に、住宅地の薬局でも、地域に根ざした在宅対応やかかりつけ機能があれば、安定した評価を受けやすくなります。</p>
+      <p>自分で概算する際は、まず「患者が自然に集まる場所か」「将来も処方が続きそうか」「競合の出店余地があるか」を確認するとよいでしょう。立地は、単なる住所ではなく、将来の収益の再現性を測る指標です。</p>
+
+      <h2>2. 処方元：売上の集中度が高すぎないか</h2>
+      <p>次に見るべきは処方元です。薬局の売上が特定の医療機関にどれだけ依存しているかは、価額を大きく左右します。</p>
+      <p>たとえば、売上の大半が1つのクリニックに偏っている場合、その医療機関の院長交代、閉院、診療方針の変更がそのまま薬局のリスクになります。一方で、複数の処方元からバランスよく処方を受けている薬局は、外部環境の変化に強く、買い手にとっても安心材料になります。</p>
+      <p>オーナー自身で確認するには、上位3つの処方元が全体売上の何割を占めるかを見れば十分です。1つの処方元への依存が極端に高ければ、価額は下がりやすくなります。逆に、処方元が分散していれば、安定性が評価されやすくなります。</p>
+
+      <h2>3. 人員：人が残る薬局かどうか</h2>
+      <p>薬局の価額は、建物や処方箋枚数だけでは決まりません。その薬局を実際に支えている薬剤師、事務、在宅対応の体制がどうなっているかが、買い手の判断に大きく影響します。</p>
+      <p>重要なのは、オーナーが抜けても回るかどうかです。もし経営者や一部のベテラン社員がいなければ店舗が回らないなら、その薬局は個人依存が強く、価額は下がりやすくなります。逆に、業務が標準化され、スタッフの定着率が高く、引継ぎしやすい状態であれば、買い手は安心して評価できます。</p>
+      <p>自分で見るなら、まず「採用しやすいか」「離職が多くないか」「薬剤師業務が属人化していないか」を確認してください。人員体制は、単なるコストではなく、引継ぎ可能性そのものです。</p>
+
+      <h2>4. 在庫：無駄な在庫を抱えていないか</h2>
+      <p>最後に見落とされやすいのが在庫です。薬局の在庫は、運転資金であると同時に、管理の質を示す指標でもあります。</p>
+      <p>在庫が過剰で、期限切れや返品が多い薬局は、資金効率が悪く、買い手から見ても評価しにくくなります。一方で、適正在庫を保ち、欠品を抑えながら無駄の少ない運営ができている薬局は、利益の質が高いと判断されやすいです。</p>
+      <p>概算の際には、在庫金額が月商に対してどの程度あるか、期限切れや滞留品がどれだけあるかを確認するとよいでしょう。在庫は単なる棚の中身ではなく、経営管理の精度を映す鏡です。</p>
+
+      <h2>自分で見積もるときの考え方</h2>
+      <p>薬局の価額を大づかみに考えるなら、まずは営業利益を基準にしつつ、そこに4つの補正をかけるイメージで捉えるとわかりやすいです。立地が強ければ上乗せ、処方元依存が高ければ減額、人員の定着が良ければ上乗せ、在庫管理が悪ければ減額、という考え方です。</p>
+      <p>もちろん、実際の譲渡額は、法的条件、契約関係、地域性、後継候補の有無などでも変わります。ただ、オーナー自身がこの4つを見ておくだけでも、「思ったより高く売れそうか」「改善してから出したほうがよいか」の判断がしやすくなります。</p>
+
+      <h2>譲渡前に整えるべきこと</h2>
+      <p>適正価額を知る目的は、金額を当てることではありません。大切なのは、どこを改善すれば価額が上がるかを見つけることです。</p>
+      <p>立地は変えられなくても、処方元の分散、人員の定着、在庫の最適化は改善できます。つまり、薬局の価額は「今の評価」であると同時に、「これからの整え方」で変えられるということです。</p>
+      <p>譲渡を考え始めた段階で、この4つを一度棚卸ししておくと、交渉の精度が上がります。決算書だけでは見えない価値を、自分自身で先に把握しておくことが、納得感のある承継につながります。</p>
+
+    </div>
+
+    <div class="article-author">
+      <div class="author-avatar">
+        <img src="assets/portrait.png" alt="植松勇樹" onerror="this.style.display='none'">
+      </div>
+      <div class="author-info">
+        <div class="author-label">AUTHOR</div>
+        <div class="author-name">植松 勇樹</div>
+        <p class="author-bio">SASAERU合同会社 代表。薬剤師。薬局M&A・事業承継の専門アドバイザーとして、地方薬局オーナーの経営課題に向き合う。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <div class="cta-label">Free Consultation</div>
+    <h3>自局の価額、一度整理して<br>みませんか。</h3>
+    <p>相談は無料です。代表・植松が直接お話を伺います。</p>
+    <a href="index.html#contact" class="btn-cta">無料相談を申し込む →</a>
+  </div>
+
+  <div class="article-nav">
+    <a href="index.html#columns" class="nav-back">← コラム一覧へ</a>
+    <a href="index.html" class="nav-back">← トップページへ</a>
+  </div>
+
+</article>
+
+<footer class="site-foot">
+  <p>&copy; 2026 SASAERU合同会社 / NexusM&amp;A.Pharma</p>
+</footer>
+
+</body>
+</html>
