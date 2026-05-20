@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「子に継がせない」を選んだオーナーへ。家族と話す前に整理したい論点｜NexusM&A.Pharma</title>
+<meta name="description" content="親族承継を選ばないことは逃げではありません。家族会議の前に経営者が整理すべき論点——守るべきもの、経営の現実、第三者承継の考え方を解説します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f1ead8;
+    --bg-alt: #ffffff;
+    --bg-deep: #0d1d3a;
+    --ink: #14171d;
+    --ink-2: #5a5e68;
+    --ink-3: #8a8e98;
+    --primary: #0d1d3a;
+    --accent: #a8854a;
+    --line: #d4c9ad;
+    --line-soft: #e5dcc4;
+    --serif: "Shippori Mincho B1", "Noto Serif JP", "Yu Mincho", serif;
+    --sans: "Noto Sans JP", -apple-system, sans-serif;
+    --mono: "JetBrains Mono", monospace;
+    --latin: "Cormorant Garamond", serif;
+    --radius: 2px;
+    --maxw: 740px;
+    --gutter: clamp(20px, 5vw, 48px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.85;
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .site-head {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(241, 234, 216, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .site-head .inner {
+    max-width: 1100px; margin: 0 auto;
+    padding: 0 var(--gutter);
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .brand-mark {
+    font-family: var(--serif); font-size: 18px; font-weight: 600;
+    letter-spacing: 0.06em; color: var(--primary);
+  }
+  .brand-mark .pharm { color: var(--accent); }
+  .back-link {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.12em; color: var(--ink-3);
+    display: flex; align-items: center; gap: 6px;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .article-hero {
+    padding: 64px 0 0;
+    background: var(--bg);
+  }
+  .article-hero .inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter);
+  }
+  .article-eyebrow {
+    display: flex; align-items: center; gap: 16px;
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: 0.15em; color: var(--ink-3);
+    margin-bottom: 24px;
+  }
+  .article-eyebrow .cat {
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 3px 10px;
+  }
+  .article-hero h1 {
+    font-family: var(--serif); font-size: clamp(24px, 4vw, 36px);
+    font-weight: 500; color: var(--primary);
+    line-height: 1.5; letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+  .article-lead {
+    font-size: 15px; color: var(--ink-2);
+    line-height: 2; margin-bottom: 40px;
+    padding-left: 18px;
+    border-left: 2px solid var(--accent);
+  }
+  .article-cover {
+    width: 100%;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    margin-top: 0;
+  }
+  @media (min-width: 769px) {
+    .article-cover {
+      max-width: var(--maxw);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .article-cover img {
+    width: 100%; height: auto; display: block;
+  }
+  .article-cover .placeholder {
+    aspect-ratio: 16/9;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 11px;
+    color: var(--ink-3); letter-spacing: 0.15em;
+    background: repeating-linear-gradient(135deg, transparent 0 14px, rgba(13,29,58,0.04) 14px 15px);
+  }
+
+  .article-wrap {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 56px var(--gutter) 0;
+  }
+  .article-body h2 {
+    font-family: var(--serif); font-size: clamp(20px, 3vw, 26px);
+    font-weight: 500; color: var(--primary);
+    line-height: 1.5; margin: 56px 0 20px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--line);
+  }
+  .article-body p {
+    font-size: 15px; color: var(--ink);
+    line-height: 2.05; margin-bottom: 20px;
+  }
+  .article-body p:last-child { margin-bottom: 0; }
+  .article-body ul, .article-body ol {
+    padding-left: 0; list-style: none;
+    margin: 0 0 20px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .article-body ul li, .article-body ol li {
+    font-size: 14.5px; color: var(--ink-2);
+    line-height: 1.9; padding-left: 18px; position: relative;
+  }
+  .article-body ul li::before {
+    content: "–"; position: absolute; left: 0; color: var(--accent);
+  }
+  .article-body ol { counter-reset: ol-counter; }
+  .article-body ol li { counter-increment: ol-counter; }
+  .article-body ol li::before {
+    content: counter(ol-counter) ".";
+    position: absolute; left: 0;
+    font-family: var(--mono); font-size: 12px; color: var(--accent);
+  }
+
+  .article-author {
+    margin-top: 64px; padding-top: 32px;
+    border-top: 1px solid var(--line-soft);
+    display: flex; align-items: flex-start; gap: 24px;
+  }
+  .author-avatar {
+    width: 64px; height: 64px; flex-shrink: 0;
+    border: 1px solid var(--line); overflow: hidden;
+    background: var(--bg-alt);
+  }
+  .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .author-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.15em; color: var(--ink-3); margin-bottom: 6px;
+  }
+  .author-name {
+    font-family: var(--serif); font-size: 18px;
+    color: var(--primary); margin-bottom: 8px;
+  }
+  .author-bio { font-size: 13px; color: var(--ink-2); line-height: 1.85; }
+
+  .article-cta {
+    margin: 64px 0 0;
+    background: var(--primary);
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .article-cta .cta-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; color: rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+  }
+  .article-cta h3 {
+    font-family: var(--serif); font-size: clamp(20px, 3vw, 26px);
+    color: #fff; font-weight: 500; line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .article-cta p {
+    font-size: 13.5px; color: rgba(255,255,255,0.6);
+    line-height: 1.9; margin-bottom: 28px;
+  }
+  .btn-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--accent); color: #fff;
+    padding: 16px 36px; font-size: 13.5px; letter-spacing: 0.08em;
+    border-radius: var(--radius); transition: all .25s;
+  }
+  .btn-cta:hover { background: #c8a872; }
+
+  .article-nav {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 40px var(--gutter) 80px;
+    display: flex; gap: 32px; flex-wrap: wrap;
+  }
+  .nav-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; letter-spacing: 0.04em; color: var(--ink-2);
+    border-bottom: 1px solid var(--line); padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+  }
+  .nav-back:hover { color: var(--accent); border-color: var(--accent); }
+
+  footer.site-foot {
+    background: var(--bg-deep); color: rgba(255,255,255,0.45);
+    text-align: center; padding: 32px var(--gutter);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 600px) {
+    .article-hero { padding-top: 40px; }
+    .article-body h2 { margin-top: 44px; }
+    .article-cta { padding: 36px 24px; }
+    .article-author { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="inner">
+    <a href="index.html" class="brand-mark">NexusM&A<span class="pharm">.Pharma</span></a>
+    <a href="index.html#columns" class="back-link">← コラム一覧</a>
+  </div>
+</header>
+
+<article>
+
+  <div class="article-hero">
+    <div class="inner">
+      <div class="article-eyebrow">
+        <span class="cat">事業承継</span>
+        <span>2026.03.22</span>
+      </div>
+      <h1>「子に継がせない」を選んだオーナーへ。家族と話す前に整理したい論点</h1>
+      <p class="article-lead">親族承継を選ばないことは、決して逃げではありません。家族会議の前に、経営者自身が整理しておくべき論点を順を追って解説します。</p>
+    </div>
+    <div class="article-cover">
+      <!-- 画像ファイル（assets/column-02.png）を追加したら下の行のコメントを外してください -->
+      <!-- <img src="assets/column-02.png" alt="事業承継と家族会議"> -->
+      <div class="placeholder">[ COLUMN IMAGE — 画像準備中 ]</div>
+    </div>
+  </div>
+
+  <div class="article-wrap">
+    <div class="article-body">
+
+      <p>薬局経営者のなかには、「子どもに継がせるべきか」で長く悩んできた方が少なくありません。しかし、結論から言えば、親族承継を選ばないことは決して逃げではありません。むしろ、事業・家族・従業員・地域の将来を冷静に見たうえで、第三者承継という現実的な選択肢を取ることは、経営者として十分に責任ある判断です。</p>
+      <p>大切なのは、「継がせるか、やめるか」を感情論で決めることではなく、家族と話し合う前に、論点を整理しておくことです。感情が先に立つと、承継の話は"親の都合"や"子の期待"のぶつかり合いになり、肝心の事業の未来が見えなくなります。だからこそ、家族会議の前に、経営者自身が考えるべき順序があります。</p>
+
+      <h2>まず整理すべきは「誰に継がせるか」ではなく「何を守るか」</h2>
+      <p>承継の議論で最初に確認すべきなのは、後継者の有無ではありません。まずは、自分が薬局を通じて何を守ってきたのかを明確にすることです。</p>
+      <p>たとえば、地域の患者との信頼関係、長年勤めてくれたスタッフの雇用、近隣医療機関との連携、処方元との関係、あるいは家族の生活基盤など、守るべきものは一つではありません。これを言語化しておくと、承継先を選ぶ基準もぶれにくくなります。</p>
+      <p>「子に継がせるかどうか」の議論は、実はこの"守りたいもの"を次に引き継げるかどうかの議論です。親族承継にこだわらないのであれば、なおさら「何を残したいのか」を先に決めておく必要があります。</p>
+
+      <h2>家族に伝える前に、経営の現実を見える化する</h2>
+      <p>第三者承継を考えるうえで、家族に話す前に整理しておきたいのが、薬局の経営状態です。承継の可否は、気持ちだけでは決まりません。事業価値、収益性、地域性、将来の規制対応力など、客観的な要素が大きく関わります。</p>
+      <p>少なくとも、次の点は把握しておきたいところです。</p>
+      <ul>
+        <li>直近数年の売上と利益の推移</li>
+        <li>処方元の偏りと集中リスク</li>
+        <li>在宅やかかりつけ機能の実績</li>
+        <li>スタッフの年齢構成と定着状況</li>
+        <li>設備投資の必要性と資金負担</li>
+        <li>近い将来の改定や制度変更への耐性</li>
+      </ul>
+      <p>これらを整理せずに家族へ相談すると、話題が「なぜ子どもに継がせないのか」という感情論に寄りやすくなります。一方で、現実を見える化しておけば、「この事業をどう次につなぐか」という建設的な会話に変えやすくなります。</p>
+
+      <h2>子どもに継がせない理由は、正直でよい</h2>
+      <p>親族承継を選ばない理由は、立派である必要はありません。「本人に薬局経営の意思がない」「別の仕事を選んでいる」「地元に戻る予定がない」「事業規模や将来性を考えると負担が大きい」など、理由はむしろ率直なほうが伝わります。</p>
+      <p>無理に"会社のため""地域のため"という美しい言葉だけで包むと、かえって家族には本音が伝わりません。大切なのは、子どもを責めないことです。承継は義務ではなく、適性と意思が必要な経営判断です。</p>
+      <p>親としては、「継がないと言われること」そのものが寂しく感じられるかもしれません。ですが、子どもにとっても、望まない承継を引き受けることは大きな重荷になります。双方にとって無理のない選択肢を作ることが、結果として良い家族関係を守ることにつながります。</p>
+
+      <h2>第三者承継は「売却」ではなく「引継ぎ」の発想で考える</h2>
+      <p>第三者承継というと、どうしても「売る」「手放す」という印象を持たれがちです。しかし、薬局の承継は、単なる売買ではありません。地域の患者、スタッフ、取引先、処方元との関係を次の経営者につなぐ"引継ぎ"です。</p>
+      <p>そのため、譲渡先を考えるときには、価格だけで決めるべきではありません。スタッフの雇用を守れるか、地域医療との関係を壊さないか、現場を理解した運営ができるか、といった観点が重要です。</p>
+      <p>とくに調剤薬局では、経営者が変わることで、現場の空気や連携体制が大きく変わることがあります。だからこそ、金額だけでなく、「この薬局を誰に任せれば、今の価値を損なわずに済むか」という視点が欠かせません。</p>
+
+      <h2>家族会議は「決定の場」ではなく「共有の場」にする</h2>
+      <p>承継の話し合いを家族会議で行う際、最初から結論を迫る必要はありません。むしろ、最初の会議は"決める場"ではなく、"認識をそろえる場"にしたほうがうまくいきます。</p>
+      <p>会議では、次の順番で話すと整理しやすくなります。</p>
+      <ol>
+        <li>薬局を続けてきた理由を共有する</li>
+        <li>現在の経営環境を事実ベースで伝える</li>
+        <li>子どもに継がせるかどうかの前に、選択肢を並べる</li>
+        <li>親族承継、第三者承継、店舗の整理などの可能性を比較する</li>
+        <li>誰に何を求めるかを一度持ち帰って考える</li>
+      </ol>
+      <p>この流れにすると、家族の誰かが感情的に反対しても、議論が脱線しにくくなります。また、いきなり承継の最終判断を求めないことで、相手も受け止めやすくなります。</p>
+
+      <h2>「後継者不在」ではなく「承継設計不足」と考える</h2>
+      <p>薬局業界では、後継者不在が大きな課題として語られます。しかし、実務の現場では、後継者が本当にいないというより、「承継の設計ができていない」ケースも少なくありません。</p>
+      <p>いつ、誰に、何を、どの順序で引き継ぐのか。店舗ごとに何を残し、何を変えるのか。スタッフへの説明はいつ行うのか。個人保証や資産の整理はどう進めるのか。</p>
+      <p>こうした論点を先に整理しておけば、親族承継を選ばない場合でも、家族・社員・関係先への影響を最小限に抑えられます。承継とは、誰か一人に"引き継ぐ"ことではなく、事業の形を崩さず次の段階へ移すことです。</p>
+
+      <h2>経営者として残すべきものを決める</h2>
+      <p>「子に継がせない」と決めることは、事業を諦めることではありません。むしろ、薬局をここまで育ててきた経営者だからこそ、誰に何を残すべきかを見極める必要があります。</p>
+      <p>第三者承継は、家族の誰かに無理をさせず、従業員の雇用と地域の医療機能を守るための有力な選択肢です。そのためには、家族に話す前に、経営の現実と自分の意思を整理しておくことが欠かせません。</p>
+      <p>承継の成否を分けるのは、最後に誰へ渡したかではなく、渡す前にどれだけ準備できたかです。家族会議は、その準備を共有するための場として使うべきです。</p>
+
+    </div>
+
+    <div class="article-author">
+      <div class="author-avatar">
+        <img src="assets/portrait.png" alt="植松勇樹" onerror="this.style.display='none'">
+      </div>
+      <div class="author-info">
+        <div class="author-label">AUTHOR</div>
+        <div class="author-name">植松 勇樹</div>
+        <p class="author-bio">SASAERU合同会社 代表。薬剤師。薬局M&A・事業承継の専門アドバイザーとして、地方薬局オーナーの経営課題に向き合う。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <div class="cta-label">Free Consultation</div>
+    <h3>承継の論点整理から、<br>一緒に始めませんか。</h3>
+    <p>相談は無料です。代表・植松が直接お話を伺います。</p>
+    <a href="index.html#contact" class="btn-cta">無料相談を申し込む →</a>
+  </div>
+
+  <div class="article-nav">
+    <a href="index.html#columns" class="nav-back">← コラム一覧へ</a>
+    <a href="index.html" class="nav-back">← トップページへ</a>
+  </div>
+
+</article>
+
+<footer class="site-foot">
+  <p>&copy; 2026 SASAERU合同会社 / NexusM&amp;A.Pharma</p>
+</footer>
+
+</body>
+</html>
