@@ -369,6 +369,61 @@
   @media (max-width: 800px) { .strength-meta { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-soft); padding-top: 16px; } }
   .strength-meta b { color: var(--ink-2); display: block; margin-bottom: 4px; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; }
 
+  /* === 薬剤師代表の専門性 === */
+  .expertise { background: var(--bg-alt); }
+  body.theme-wa .expertise { background: var(--bg); }
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+    align-items: start;
+    margin-top: 52px;
+  }
+  .expertise-lead {
+    border-left: 2px solid var(--accent);
+    padding-left: 24px;
+  }
+  .expertise-lead h3 {
+    font-size: clamp(24px, 3vw, 34px);
+    margin-bottom: 18px;
+  }
+  .expertise-lead p {
+    color: var(--ink-2);
+    font-size: 14.5px;
+    line-height: 2;
+  }
+  .expertise-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .expertise-point {
+    border: 1px solid var(--line);
+    background: var(--bg);
+    padding: 22px 22px;
+  }
+  body.theme-wa .expertise-point { background: var(--bg-alt); }
+  .expertise-point .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .expertise-point h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .expertise-point p {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.9;
+  }
+  @media (max-width: 900px) {
+    .expertise-grid { grid-template-columns: 1fr; gap: 32px; }
+    .expertise-points { grid-template-columns: 1fr; }
+  }
+
   /* === 代表プロフィール === */
   .profile { background: var(--bg-deep); color: #f1ead8; }
   .profile h2, .profile .sec-title { color: #f1ead8; }
@@ -447,6 +502,94 @@
   .flow-meta dt { color: var(--ink-3); font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; padding-top: 3px; }
   .flow-meta dd { color: var(--ink-2); }
 
+  /* === 買い手ネットワーク === */
+  .network { background: var(--bg-alt); }
+  body.theme-wa .network { background: var(--bg); }
+  .network-proof {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .network-proof-item {
+    padding: 24px 22px;
+    border-right: 1px solid var(--line-soft);
+  }
+  .network-proof-item:last-child { border-right: 0; }
+  .network-proof-item b {
+    display: block;
+    font-family: var(--latin);
+    font-size: 34px;
+    line-height: 1;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .network-proof-item span {
+    display: block;
+    font-size: 12.5px;
+    color: var(--ink-2);
+    line-height: 1.75;
+  }
+  .network-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 42px;
+  }
+  .network-card {
+    border: 1px solid var(--line);
+    background: var(--bg);
+    padding: 26px 24px;
+    min-height: 230px;
+  }
+  body.theme-wa .network-card { background: var(--bg-alt); }
+  .network-card .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.14em;
+    margin-bottom: 18px;
+  }
+  .network-card h3 {
+    font-size: 18px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .network-card p {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.9;
+  }
+  .network-note {
+    margin-top: 34px;
+    padding: 24px 28px;
+    border-left: 2px solid var(--accent);
+    background: rgba(168, 133, 74, 0.07);
+    font-size: 13.5px;
+    color: var(--ink-2);
+    line-height: 1.95;
+  }
+  @media (max-width: 980px) {
+    .network-proof { grid-template-columns: repeat(2, 1fr); }
+    .network-proof-item:nth-child(2) { border-right: 0; }
+    .network-proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line-soft); }
+    .network-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .network-proof { grid-template-columns: 1fr; }
+    .network-proof-item,
+    .network-proof-item:nth-child(2) {
+      border-right: 0;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .network-proof-item:last-child { border-bottom: 0; }
+    .network-grid { grid-template-columns: 1fr; }
+    .network-card { min-height: auto; }
+  }
+
   /* === 料金 === */
   .pricing { background: var(--bg-alt); }
   body.theme-wa .pricing { background: var(--bg); }
@@ -486,12 +629,10 @@
   .case-img {
     aspect-ratio: 16/9; border: 1px solid var(--line-soft);
     overflow: hidden; position: relative;
-  }
-  .case-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     background:
       repeating-linear-gradient(135deg, transparent 0 12px, rgba(13,29,58,0.05) 12px 13px);
-    display: flex; align-items: flex-end; padding: 12px;
   }
+  .case-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .case-img span { font-family: var(--mono); font-size: 9px; color: var(--ink-3); letter-spacing: 0.1em; }
   .case-tag { display: flex; gap: 6px; flex-wrap: wrap; }
   .case-tag span {
@@ -947,6 +1088,7 @@
       <a href="#strengths">選ばれる理由</a>
       <a href="#profile">代表紹介</a>
       <a href="#flow">流れ</a>
+      <a href="#network">買い手</a>
       <a href="#price">料金</a>
       <a href="#cases">事例</a>
       <a href="#faq">FAQ</a>
@@ -1179,11 +1321,51 @@
   </div>
 </section>
 
+<!-- ============= 薬剤師代表の専門性 ============= -->
+<section class="expertise" id="pharmacist-expertise">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">04 — Pharmacist lens</div>
+      <h2 class="sec-title">薬剤師だから、<br>薬局M&Aで見るべき論点が違います。</h2>
+      <p class="sec-lead">調剤薬局の譲渡は、決算書と店舗数だけでは判断できません。保険薬局指定、管理薬剤師、処方元、在宅対応、人員体制まで見て初めて、守るべき価値と譲渡後のリスクが見えてきます。</p>
+    </div>
+
+    <div class="expertise-grid fade-up">
+      <div class="expertise-lead">
+        <h3>「売れるか」だけでなく、<br>譲渡後も薬局として続くか。</h3>
+        <p>代表・植松は薬剤師として薬局現場を経験しています。M&Aの条件交渉だけでなく、薬局が地域医療の受け皿として機能し続けるか、従業員・患者様・処方元との関係をどう引き継ぐかまで、現場の言葉で整理します。</p>
+      </div>
+      <div class="expertise-points">
+        <div class="expertise-point">
+          <div class="label">POINT 01</div>
+          <h4>保険薬局指定・許認可</h4>
+          <p>薬局開設許可や保険薬局指定の扱い、譲渡スキームごとの確認事項を初期段階から整理します。</p>
+        </div>
+        <div class="expertise-point">
+          <div class="label">POINT 02</div>
+          <h4>管理薬剤師・人員体制</h4>
+          <p>管理薬剤師の継続可否、薬剤師採用難、シフト負担は買い手評価にも直結します。</p>
+        </div>
+        <div class="expertise-point">
+          <div class="label">POINT 03</div>
+          <h4>処方元・患者様との関係</h4>
+          <p>門前薬局、面対応、在宅対応では、処方元や患者様への引き継ぎ方が譲渡後の安定性を左右します。</p>
+        </div>
+        <div class="expertise-point">
+          <div class="label">POINT 04</div>
+          <h4>在庫・薬歴・現場オペレーション</h4>
+          <p>在庫水準、薬歴運用、レセプト、在宅対応の実態まで、薬局特有の確認事項を見落としません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============= 代表プロフィール ============= -->
 <section class="profile" id="profile">
   <div class="wrap">
     <div class="sec-head fade-up">
-      <div class="sec-label">04 — Founder</div>
+      <div class="sec-label">05 — Founder</div>
       <h2 class="sec-title">「経営にお疲れの先生方の、<br>最後の対話の相手でありたい。」</h2>
     </div>
 
@@ -1200,7 +1382,7 @@
         </div>
 
         <p class="profile-bio">
-          薬剤師として、大手ドラッグストアで管理薬剤師を経験。その後、街の調剤薬局に転職し、在宅対応を含む地域医療の最前線で実務を重ねました。「薬剤師の経営は、薬剤師にしかわからない悩みがある」——その実感が、現在のM&Aアドバイザー業の原点です。中小企業から上場企業まで、規模を問わない薬局M&Aの実務に10年以上携わり、SASAERU合同会社を設立しました。
+          薬剤師として、大手ドラッグストアで管理薬剤師を経験。その後、街の調剤薬局に転職し、在宅対応を含む地域医療の最前線で実務を重ねました。保険薬局指定、管理薬剤師、人員体制、処方元との関係、在庫や薬歴の運用——薬局M&Aでは、決算書だけでは見えない現場論点が価値とリスクを左右します。「薬剤師の経営は、薬剤師にしかわからない悩みがある」——その実感が、現在のM&Aアドバイザー業の原点です。中小企業から上場企業まで、規模を問わない薬局M&Aの実務に10年以上携わり、SASAERU合同会社を設立しました。
         </p>
 
         <div class="profile-meta">
@@ -1231,7 +1413,7 @@
 <section id="flow">
   <div class="wrap">
     <div class="sec-head fade-up">
-      <div class="sec-label">05 — Service flow</div>
+      <div class="sec-label">06 — Service flow</div>
       <h2 class="sec-title">ご相談から譲渡完了まで、<br>6つのステップ。</h2>
       <p class="sec-lead">秘密厳守は当然のこと、すべてのプロセスにおいて代表自身が直接担当します。譲渡完了後のアフターフォローも責任を持って対応いたします。</p>
     </div>
@@ -1320,7 +1502,7 @@
         <div class="flow-meta">
           <dl>
             <dt>引継期間</dt><dd>3〜12ヶ月</dd>
-<dt>担当</dt><dd>代表が直接対応</dd>
+            <dt>担当</dt><dd>代表が直接対応</dd>
           </dl>
         </div>
       </div>
@@ -1328,11 +1510,68 @@
   </div>
 </section>
 
+<!-- ============= 買い手ネットワーク ============= -->
+<section class="network" id="network">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">07 — Matching policy</div>
+      <h2 class="sec-title">薬局を託す相手は、<br>価格だけで選びません。</h2>
+      <p class="sec-lead">譲渡後も患者様、従業員、処方元との関係が続くこと。NexusM&A.Pharmaは、代表自身が薬剤師として現場を理解しているからこそ、数字だけでなく「誰に引き継ぐべきか」まで一緒に整理します。</p>
+    </div>
+
+    <div class="network-proof fade-up">
+      <div class="network-proof-item">
+        <b>10年+</b>
+        <span>薬局M&A・事業承継に関する実務経験</span>
+      </div>
+      <div class="network-proof-item">
+        <b>120件</b>
+        <span>累計相談実績（参考値）</span>
+      </div>
+      <div class="network-proof-item">
+        <b>全国</b>
+        <span>都市部・地方、1店舗から複数店舗まで相談対応</span>
+      </div>
+      <div class="network-proof-item">
+        <b>匿名</b>
+        <span>薬局名を伏せた初期打診・買い手探索に対応</span>
+      </div>
+    </div>
+
+    <div class="network-grid fade-up">
+      <article class="network-card">
+        <span class="tag">LOCAL PHARMACY</span>
+        <h3>地域密着型の薬局法人</h3>
+        <p>処方元や患者様との関係を丁寧に引き継ぎたい案件で候補に入ります。従業員の雇用継続や地域医療の維持を重視する場合に相性があります。</p>
+      </article>
+      <article class="network-card">
+        <span class="tag">MID-SIZE CHAIN</span>
+        <h3>中堅調剤チェーン</h3>
+        <p>複数店舗、管理体制、在宅対応、採用力の補完が必要な案件で検討します。譲渡後の運営安定性と条件面のバランスを見ます。</p>
+      </article>
+      <article class="network-card">
+        <span class="tag">WIDE AREA BUYER</span>
+        <h3>広域チェーン・ドラッグストア</h3>
+        <p>立地、処方箋枚数、近隣店舗との連携余地がある場合に候補となります。価格だけでなく、患者様・スタッフへの影響も確認します。</p>
+      </article>
+      <article class="network-card">
+        <span class="tag">HOME CARE FOCUS</span>
+        <h3>在宅・施設対応に強い譲受先</h3>
+        <p>在宅件数や施設対応の引き継ぎが重要な薬局では、薬剤師体制、訪問導線、薬歴運用まで見て、継続可能な相手を探します。</p>
+      </article>
+    </div>
+
+    <p class="network-note fade-up">
+      買い手候補の選定では、譲渡価格、雇用維持、管理薬剤師の継続可否、保険薬局指定・許認可、処方元への説明、在庫・薬歴・レセコン移行まで確認します。紹介会社・顧問税理士・金融機関経由のご相談も、秘密保持を前提に代表が直接対応します。
+    </p>
+  </div>
+</section>
+
 <!-- ============= 料金 ============= -->
 <section class="pricing" id="price">
   <div class="wrap">
     <div class="sec-head fade-up">
-      <div class="sec-label">06 — Fee structure</div>
+      <div class="sec-label">08 — Fee structure</div>
       <h2 class="sec-title">完全成功報酬制。<br>譲渡が成立するまで、費用は一切いただきません。</h2>
       <p class="sec-lead">「相談しただけで費用が発生するのでは」というご不安を取り除くため、NexusM&A.Pharmaは着手金・中間金を完全に無料化しました。安心してご検討の机に着いてください。</p>
     </div>
@@ -1372,6 +1611,9 @@
         <div class="pval">¥800<small>万〜（最低手数料）</small></div>
       </div>
     </div>
+    <p class="sec-lead fade-up" style="margin-top: 28px; font-size: 13px; max-width: 760px;">
+      ※手数料の算定基準、最低手数料、支払時期、業務範囲、相手方からの手数料の有無、秘密保持、専任条項・テール条項等は、契約締結前に書面で明確に説明します。比較検討やセカンドオピニオンのみのご相談も歓迎します。
+    </p>
   </div>
 </section>
 
@@ -1379,7 +1621,7 @@
 <section id="cases">
   <div class="wrap">
     <div class="sec-head fade-up">
-      <div class="sec-label">07 — Case studies</div>
+      <div class="sec-label">09 — Case studies</div>
       <h2 class="sec-title">成約事例（一部抜粋）</h2>
       <p class="sec-lead">守秘義務の範囲内で、これまでお手伝いした事例をご紹介します。条件・地域・規模はダミーデータです。実例詳細は個別にご説明可能です。</p>
     </div>
@@ -1425,7 +1667,7 @@
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="sec-head fade-up">
-      <div class="sec-label">08 — FAQ</div>
+      <div class="sec-label">10 — FAQ</div>
       <h2 class="sec-title">よくあるご質問</h2>
     </div>
 
@@ -1517,6 +1759,50 @@
           むしろ複数社のご意見を伺うことを推奨します。私たちは「薬剤師である代表が直接担当する」という独自性で評価いただいています。比較検討のうえでお選びいただければ幸いです。セカンドオピニオンのみのご相談も歓迎します。
         </div></div>
       </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.09</span>
+          <span>税理士や金融機関からの紹介でも相談できますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          可能です。顧問税理士、社労士、金融機関、医薬品卸、医療関係者の方からのご紹介にも対応しています。紹介者さまの同席・非同席は、オーナー様のご希望に合わせて調整します。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.10</span>
+          <span>薬局名を出さずに匿名で相談できますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          初期段階では匿名・概要ベースでのご相談も可能です。地域、店舗数、処方箋枚数、相談背景など、差し支えない範囲からお聞かせください。個別情報を外部へ出す際は、必ず事前に確認します。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.11</span>
+          <span>廃業とM&Aのどちらがよいか比較できますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          比較できます。廃業時の原状回復費、在庫処分、従業員対応、患者様への影響と、第三者承継で残せる雇用・店舗・譲渡対価を並べて整理します。売却を前提にせず、判断材料を作るところから支援します。
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span class="qmark latin">Q.12</span>
+          <span>家族や顧問先の先生と一緒に相談できますか？</span>
+          <span class="toggle"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          もちろん可能です。ご家族、顧問税理士、社労士、金融機関担当者など、意思決定に関わる方との同席相談にも対応します。関係者ごとに知っておくべき論点を整理し、無理のない進め方をご提案します。
+        </div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1525,7 +1811,7 @@
 <section id="columns">
   <div class="wrap">
     <div class="sec-head fade-up">
-      <div class="sec-label">09 — Insights</div>
+      <div class="sec-label">11 — Insights</div>
       <h2 class="sec-title">薬局経営者のための、コラム。</h2>
       <p class="sec-lead">M&Aや事業承継に関する基礎知識から、調剤報酬改定の経営インパクトまで。代表が現場感覚で執筆しています。</p>
     </div>
@@ -1557,7 +1843,7 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="sec-head fade-up">
-      <div class="sec-label">10 — Contact</div>
+      <div class="sec-label">12 — Contact</div>
       <h2 class="sec-title">まずは、無料相談から。</h2>
       <p class="sec-lead">代表・植松勇樹が直接お話を伺います。決断前のご相談、情報収集だけのお問い合わせも歓迎いたします。</p>
     </div>
@@ -1638,6 +1924,7 @@
             <option>1〜3年後の事業承継に備えたい</option>
             <option>廃業とM&Aの違いを知りたい</option>
             <option>セカンドオピニオン</option>
+            <option>紹介・提携について相談したい</option>
             <option>その他</option>
           </select>
         </div>
@@ -1818,6 +2105,9 @@
           <li><a href="#strengths">選ばれる理由</a></li>
           <li><a href="#flow">サービスの流れ</a></li>
           <li><a href="#price">料金体系</a></li>
+          <li><a href="fee.html">手数料ガイド</a></li>
+          <li><a href="valuation.html">売却相場ガイド</a></li>
+          <li><a href="readiness-check.html">相談前チェックリスト</a></li>
           <li><a href="#cases">成約事例</a></li>
           <li><a href="#faq">よくある質問</a></li>
         </ul>
@@ -1827,6 +2117,7 @@
         <ul>
           <li><a href="#profile">代表紹介</a></li>
           <li><a href="#profile">代表メッセージ</a></li>
+          <li><a href="partners.html">紹介パートナー</a></li>
           <li><a href="columns.html">コラム一覧</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>

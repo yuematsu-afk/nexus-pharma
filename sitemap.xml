@@ -13,6 +13,42 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nexus-pharma.sasa-eru.com/partners.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nexus-pharma.sasa-eru.com/referral-sheet.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nexus-pharma.sasa-eru.com/fee.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nexus-pharma.sasa-eru.com/valuation.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nexus-pharma.sasa-eru.com/closure-vs-ma.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nexus-pharma.sasa-eru.com/readiness-check.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nexus-pharma.sasa-eru.com/column-01.html</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
