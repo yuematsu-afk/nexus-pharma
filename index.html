@@ -4,9 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>薬局M&Aサービス｜NexusM&A.Pharma（SASAERU合同会社）</title>
+<meta name="description" content="薬局M&A・事業承継に特化した仲介サービス。薬剤師である代表が、後継者不在、調剤報酬改定、採用難に悩む薬局オーナーの無料相談から譲渡完了まで直接支援します。">
+<link rel="canonical" href="https://nexus-pharma.sasa-eru.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NexusM&A.Pharma">
+<meta property="og:title" content="薬局M&Aサービス｜NexusM&A.Pharma">
+<meta property="og:description" content="後継者不在・収益悪化・採用難に悩む薬局オーナーへ。薬剤師であるM&Aアドバイザーが、無料相談から譲渡完了まで直接支援します。">
+<meta property="og:url" content="https://nexus-pharma.sasa-eru.com/">
+<meta property="og:image" content="https://nexus-pharma.sasa-eru.com/assets/hero-portrait.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="薬局M&Aサービス｜NexusM&A.Pharma">
+<meta name="twitter:description" content="薬局M&A・事業承継に特化。無料相談から譲渡完了まで代表が直接支援します。">
+<meta name="twitter:image" content="https://nexus-pharma.sasa-eru.com/assets/hero-portrait.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "NexusM&A.Pharma",
+  "url": "https://nexus-pharma.sasa-eru.com/",
+  "image": "https://nexus-pharma.sasa-eru.com/assets/hero-portrait.png",
+  "description": "薬局M&A・事業承継に特化したM&A仲介サービス。薬剤師である代表が無料相談から譲渡完了まで支援します。",
+  "areaServed": "JP",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "SASAERU合同会社",
+    "url": "https://sasa-eru.com/"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "植松勇樹"
+  },
+  "serviceType": [
+    "薬局M&A仲介",
+    "薬局事業承継支援",
+    "薬局譲渡相談"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "y.uematsu@sasa-eru.com",
+    "contactType": "customer support",
+    "availableLanguage": "Japanese"
+  }
+}
+</script>
 <style>
   :root {
     /* === 堅実 (default) === */
@@ -512,6 +555,64 @@
   .col-card:hover h3 { color: var(--accent); }
   .col-card p { font-size: 13px; color: var(--ink-2); line-height: 1.85; }
 
+  /* === Conversion strip === */
+  .consult-strip {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .consult-strip .wrap {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr auto;
+    gap: 36px;
+    align-items: center;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .consult-kicker {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+  }
+  .consult-strip h2 {
+    font-size: clamp(23px, 2.5vw, 34px);
+    line-height: 1.45;
+    margin-top: 10px;
+  }
+  .consult-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-left: 1px solid var(--line-soft);
+  }
+  .consult-option {
+    padding: 6px 22px;
+    border-right: 1px solid var(--line-soft);
+  }
+  .consult-option b {
+    display: block;
+    font-family: var(--serif);
+    color: var(--primary);
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  .consult-option span {
+    display: block;
+    font-size: 12.5px;
+    color: var(--ink-2);
+    line-height: 1.8;
+  }
+  .consult-strip .btn-primary {
+    white-space: nowrap;
+    padding: 18px 28px;
+  }
+  @media (max-width: 980px) {
+    .consult-strip .wrap { grid-template-columns: 1fr; gap: 26px; }
+    .consult-options { grid-template-columns: 1fr; border-left: 0; border-top: 1px solid var(--line-soft); }
+    .consult-option { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line-soft); }
+    .consult-strip .btn-primary { justify-content: center; }
+  }
+
   /* === Contact === */
   .contact { background: var(--bg-alt); }
   body.theme-wa .contact { background: var(--bg); }
@@ -674,6 +775,23 @@
   .foot-bottom .links { display: flex; gap: 24px; }
   .foot-bottom a:hover { color: var(--accent-2); }
 
+  .mobile-sticky-cta {
+    display: none;
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 60;
+    background: var(--primary);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.24);
+    box-shadow: 0 16px 34px rgba(13,29,58,0.28);
+    padding: 14px 18px;
+    text-align: center;
+    font-size: 13.5px;
+    letter-spacing: 0.08em;
+  }
+
   /* === Scroll fade === */
   .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
   .fade-up.in { opacity: 1; transform: translateY(0); }
@@ -703,7 +821,7 @@
 
   /* ============= MOBILE REFINEMENTS ============= */
   @media (max-width: 768px) {
-    body { font-size: 14.5px; line-height: 1.85; }
+    body { font-size: 14.5px; line-height: 1.85; padding-bottom: 76px; }
     .sec-title { font-size: clamp(24px, 6.5vw, 32px); line-height: 1.5; }
     .sec-lead { font-size: 14.5px; line-height: 1.95; }
     .sec-head { margin-bottom: 40px; }
@@ -795,6 +913,7 @@
     .foot-bottom { flex-direction: column; align-items: flex-start; }
     .foot-bottom .links { flex-wrap: wrap; gap: 16px; }
     .foot-brand .brand-mark { font-size: 22px; }
+    .mobile-sticky-cta { display: block; }
 
   }
 
@@ -853,7 +972,7 @@
           廃業ではなく、事業を、雇用を、患者様との関係を、次の世代へ託すために。
         </p>
         <div class="hero-cta fade-up">
-          <a href="#contact" class="btn-primary">
+          <a href="#contact" class="btn-primary" data-event="cta_click" data-cta="hero_free_consult">
             無料相談を予約する <span class="arrow">→</span>
           </a>
           <a href="#strengths" class="btn-ghost">私たちが選ばれる理由</a>
@@ -913,6 +1032,30 @@
       ひとつでも当てはまるなら——<b>「廃業」ではなく「事業承継」という選択肢</b>を、<br>
       知っておくだけでも、これからの経営判断は変わります。
     </div>
+  </div>
+</section>
+
+<section class="consult-strip" aria-labelledby="consult-strip-title">
+  <div class="wrap">
+    <div>
+      <div class="consult-kicker">FREE CONSULTATION</div>
+      <h2 id="consult-strip-title">売る前提でなくても、<br>相談できます。</h2>
+    </div>
+    <div class="consult-options">
+      <div class="consult-option">
+        <b>今すぐ譲渡したい</b>
+        <span>候補先探索、価格目線、譲渡スケジュールを整理します。</span>
+      </div>
+      <div class="consult-option">
+        <b>1〜3年後に備えたい</b>
+        <span>承継時期、税務・家族会議、店舗価値の磨き方を確認します。</span>
+      </div>
+      <div class="consult-option">
+        <b>相場だけ知りたい</b>
+        <span>決算書を出す前の段階でも、概算の考え方から説明します。</span>
+      </div>
+    </div>
+    <a href="#contact" class="btn-primary" data-event="cta_click" data-cta="stage_consult_strip">無料で選択肢を整理する <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -1442,6 +1585,13 @@
         <input type="hidden" name="access_key" value="1f72d159-2aa7-4eda-8925-864f3656e2e3">
         <input type="hidden" name="subject" value="【NexusM&A.Pharma】無料相談のお申し込み">
         <input type="hidden" name="from_name" value="NexusM&A.Pharma">
+        <input type="hidden" name="page_url" id="pageUrl">
+        <input type="hidden" name="referrer" id="referrer">
+        <input type="hidden" name="utm_source" id="utmSource">
+        <input type="hidden" name="utm_medium" id="utmMedium">
+        <input type="hidden" name="utm_campaign" id="utmCampaign">
+        <input type="hidden" name="utm_term" id="utmTerm">
+        <input type="hidden" name="utm_content" id="utmContent">
         <div class="form-row split">
           <div>
             <label>お名前 <span class="req">必須</span></label>
@@ -1461,6 +1611,23 @@
           <div class="err">正しいメールアドレスをご記入ください</div>
         </div>
 
+        <div class="form-row split">
+          <div>
+            <label>電話番号 <span class="opt">任意</span></label>
+            <input type="tel" name="phone" placeholder="例）090-0000-0000">
+          </div>
+          <div>
+            <label>検討時期 <span class="opt">任意</span></label>
+            <select name="timing">
+              <option value="">選択してください</option>
+              <option>できるだけ早く譲渡を検討したい</option>
+              <option>半年〜1年以内に方向性を決めたい</option>
+              <option>1〜3年後に備えて情報収集したい</option>
+              <option>まだ時期は未定だが相場を知りたい</option>
+            </select>
+          </div>
+        </div>
+
         <div class="form-row">
           <label>ご相談内容（カテゴリ） <span class="opt">任意</span></label>
           <select name="category">
@@ -1468,6 +1635,8 @@
             <option>後継者不在についての相談</option>
             <option>譲渡相場・企業価値の概算を知りたい</option>
             <option>具体的に譲渡を検討している</option>
+            <option>1〜3年後の事業承継に備えたい</option>
+            <option>廃業とM&Aの違いを知りたい</option>
             <option>セカンドオピニオン</option>
             <option>その他</option>
           </select>
@@ -1657,7 +1826,7 @@
         <h4>ABOUT</h4>
         <ul>
           <li><a href="#profile">代表紹介</a></li>
-          <li><a href="profile.html">代表メッセージ全文</a></li>
+          <li><a href="#profile">代表メッセージ</a></li>
           <li><a href="columns.html">コラム一覧</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>
@@ -1677,13 +1846,15 @@
       <span>© 2026 SASAERU合同会社 — All rights reserved.</span>
       <div class="links">
         <a href="#compliance">中小M&amp;Aガイドライン遵守宣言</a>
-        <a href="#">プライバシーポリシー</a>
-        <a href="#">特定商取引法に基づく表記</a>
-        <a href="#">サイトマップ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      <a href="https://sasa-eru.com/" target="_blank" rel="noopener">運営会社</a>
+        <a href="sitemap.xml">サイトマップ</a>
       </div>
     </div>
   </div>
 </footer>
+
+<a href="#contact" class="mobile-sticky-cta" data-event="cta_click" data-cta="mobile_sticky">無料相談を申し込む →</a>
 
 <!-- ============= JS ============= -->
 <script>
@@ -1718,6 +1889,37 @@
     });
   });
 
+  // === Marketing attribution and event hooks ===
+  const params = new URLSearchParams(window.location.search);
+  const setValue = (id, value) => {
+    const field = document.getElementById(id);
+    if (field) field.value = value || '';
+  };
+  setValue('pageUrl', window.location.href);
+  setValue('referrer', document.referrer);
+  setValue('utmSource', params.get('utm_source'));
+  setValue('utmMedium', params.get('utm_medium'));
+  setValue('utmCampaign', params.get('utm_campaign'));
+  setValue('utmTerm', params.get('utm_term'));
+  setValue('utmContent', params.get('utm_content'));
+
+  const trackMarketingEvent = (eventName, detail = {}) => {
+    if (window.gtag) {
+      window.gtag('event', eventName, detail);
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: eventName, ...detail });
+  };
+
+  document.querySelectorAll('[data-event]').forEach(el => {
+    el.addEventListener('click', () => {
+      trackMarketingEvent(el.dataset.event, {
+        cta_id: el.dataset.cta || '',
+        link_url: el.getAttribute('href') || '',
+      });
+    });
+  });
+
   // === Form validation ===
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
@@ -1747,6 +1949,10 @@
         .then(res => res.json())
         .then(data => {
           if (data.success) {
+            trackMarketingEvent('generate_lead', {
+              lead_category: form.querySelector('[name="category"]').value || '',
+              lead_timing: form.querySelector('[name="timing"]').value || '',
+            });
             form.style.display = 'none';
             success.classList.add('show');
             success.scrollIntoView({behavior: 'smooth', block: 'center'});
