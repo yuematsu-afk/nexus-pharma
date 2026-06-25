@@ -292,6 +292,22 @@
   .hero-stat .num small { font-size: 0.45em; margin-left: 4px; color: var(--ink-2); }
   .hero-stat .lbl { font-size: 12px; color: var(--ink-2); margin-top: 8px; letter-spacing: 0.05em; }
 
+  .popular-guides { padding-top: 70px; }
+  .popular-guides .sec-head { margin-bottom: 36px; }
+  .guide-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .guide-card {
+    display: flex; flex-direction: column; min-height: 220px;
+    padding: 26px 24px; background: var(--bg-alt);
+    border: 1px solid var(--line); transition: border-color .25s, transform .25s;
+  }
+  .guide-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .guide-card .tag { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: .16em; margin-bottom: 16px; }
+  .guide-card h3 { font-size: 18px; line-height: 1.55; margin-bottom: 12px; }
+  .guide-card p { font-size: 13px; color: var(--ink-2); line-height: 1.85; flex: 1; }
+  .guide-card .read { margin-top: 18px; font-family: var(--mono); font-size: 11px; color: var(--primary); letter-spacing: .1em; }
+  @media (max-width: 980px) { .guide-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .popular-guides { padding-top: 46px; } .guide-grid { grid-template-columns: 1fr; } .guide-card { min-height: auto; } }
+
   /* Wa-modan hero accent */
   body.theme-wa .hero::before {
     content: "薬局の、もうひとつの未来";
@@ -1221,6 +1237,43 @@
   </div>
 </section>
 
+<!-- ============= よく読まれているガイド ============= -->
+<section class="popular-guides tight" aria-labelledby="popular-guides-title">
+  <div class="wrap">
+    <div class="sec-head fade-up">
+      <div class="sec-label">Popular Guides</div>
+      <h2 class="sec-title" id="popular-guides-title">よく読まれているガイド</h2>
+      <p class="sec-lead">売却を決める前に、薬局オーナーが特に不安に感じやすい論点を先に整理できます。</p>
+    </div>
+    <div class="guide-grid fade-up">
+      <a class="guide-card" href="successor-shortage-pharmacy.html">
+        <span class="tag">SUCCESSION</span>
+        <h3>後継者不在の薬局は売却できる？</h3>
+        <p>廃業と第三者承継を比べながら、相談前に整理したいことを確認できます。</p>
+        <span class="read">READ →</span>
+      </a>
+      <a class="guide-card" href="pharmacy-ma-risks.html">
+        <span class="tag">RISK CHECK</span>
+        <h3>薬局M&Aで失敗しないための注意点</h3>
+        <p>秘密保持、買い手選び、従業員説明、許認可の確認ポイントをまとめています。</p>
+        <span class="read">READ →</span>
+      </a>
+      <a class="guide-card" href="front-door-pharmacy.html">
+        <span class="tag">FRONT DOOR</span>
+        <h3>門前薬局の売却で見られる評価ポイント</h3>
+        <p>処方元との関係、集中率、医師の年齢など、門前薬局特有の評価論点を解説します。</p>
+        <span class="read">READ →</span>
+      </a>
+      <a class="guide-card" href="regional-pharmacy-sale.html">
+        <span class="tag">REGIONAL</span>
+        <h3>地方・郊外薬局の買い手探索</h3>
+        <p>薬剤師採用、地域医療、在宅対応を含めて、買い手候補の広げ方を整理します。</p>
+        <span class="read">READ →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============= 悩み共感 ============= -->
 <section class="pain" id="pain">
   <div class="wrap">
@@ -2029,6 +2082,8 @@
             <option>1〜3年後の事業承継に備えたい</option>
             <option>廃業とM&Aの違いを知りたい</option>
             <option>買い手候補がいるか確認したい</option>
+            <option>地方・郊外薬局の売却について相談したい</option>
+            <option>薬局M&Aの注意点・進め方を確認したい</option>
             <option>セカンドオピニオン</option>
             <option>紹介・提携について相談したい</option>
             <option>その他</option>
@@ -2312,6 +2367,9 @@
     anonymous: '薬局名を伏せて匿名で相談したい',
     valuation: '譲渡相場・企業価値の概算を知りたい',
     closure: '廃業とM&Aの違いを知りたい',
+    successor: '後継者不在についての相談',
+    regional: '地方・郊外薬局の売却について相談したい',
+    risks: '薬局M&Aの注意点・進め方を確認したい',
   };
   const categorySelect = document.querySelector('[name="category"]');
   const messageField = document.querySelector('[name="message"]');
