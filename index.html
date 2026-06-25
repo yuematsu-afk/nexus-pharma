@@ -209,6 +209,39 @@
   .hero h1 .small { font-size: 0.55em; display: block; color: var(--ink-2); font-weight: 400; margin-top: 18px; letter-spacing: 0.04em; }
   .hero p.lead { font-size: 16px; line-height: 2; color: var(--ink); margin-bottom: 40px; max-width: 560px; }
   .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .hero-intents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: -18px 0 34px;
+    max-width: 640px;
+  }
+  .hero-intent {
+    display: block;
+    background: rgba(255,255,255,0.42);
+    border: 1px solid var(--line);
+    padding: 16px 16px 15px;
+    transition: border-color .2s, transform .2s, background .2s;
+  }
+  .hero-intent:hover {
+    border-color: var(--accent);
+    background: rgba(255,255,255,0.72);
+    transform: translateY(-2px);
+  }
+  .hero-intent b {
+    display: block;
+    font-family: var(--serif);
+    color: var(--primary);
+    font-size: 15.5px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .hero-intent span {
+    display: block;
+    color: var(--ink-2);
+    font-size: 11.5px;
+    line-height: 1.65;
+  }
   .btn-primary {
     display: inline-flex; align-items: center; gap: 14px;
     background: var(--primary); color: #fff;
@@ -776,6 +809,32 @@
   .contact-channels dt:not(:first-child) { margin-top: 14px; }
   .contact-channels dd { font-family: var(--serif); font-size: 22px; color: var(--primary); }
   .contact-channels dd small { font-size: 11px; color: var(--ink-3); font-family: var(--mono); margin-left: 10px; letter-spacing: 0.05em; }
+  .contact-intents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 0 0 24px;
+  }
+  .contact-intent {
+    border: 1px solid var(--line);
+    background: var(--bg-alt);
+    padding: 16px 14px;
+  }
+  body.theme-wa .contact-intent { background: var(--bg); }
+  .contact-intent b {
+    display: block;
+    color: var(--primary);
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+  .contact-intent span {
+    display: block;
+    color: var(--ink-2);
+    font-size: 11.5px;
+    line-height: 1.65;
+  }
 
   .form-card { background: var(--bg); padding: 44px 44px; border: 1px solid var(--line); }
   body.theme-wa .form-card { background: var(--bg-alt); border-color: var(--line); }
@@ -977,6 +1036,7 @@
     .hero-eyebrow { margin-bottom: 22px; }
     .hero-eyebrow span { font-size: 10px; letter-spacing: 0.15em; }
     .hero-cta { gap: 12px; }
+    .hero-intents { grid-template-columns: 1fr; margin: -8px 0 26px; }
     .hero-cta .btn-primary { width: 100%; justify-content: center; padding: 18px 24px; }
     .hero-cta .btn-ghost { width: 100%; justify-content: center; }
     .hero-visual { aspect-ratio: 4/5; }
@@ -1042,6 +1102,7 @@
     /* Contact */
     .contact-grid { margin-top: 32px; }
     .contact-side h3 { font-size: 21px; }
+    .contact-intents { grid-template-columns: 1fr; }
     .form-card { padding: 28px 22px; }
     .form-row { margin-bottom: 18px; }
     .form-row input, .form-row textarea, .form-row select { padding: 13px 14px; font-size: 15px; }
@@ -1113,6 +1174,20 @@
           一人で抱え込む前に、薬局の現場を歩いてきた専門家に話してみませんか。<br>
           廃業ではなく、事業を、雇用を、患者様との関係を、次の世代へ託すために。
         </p>
+        <div class="hero-intents fade-up" aria-label="相談入口">
+          <a class="hero-intent" href="?utm_source=top&utm_medium=intent_cta&utm_campaign=anonymous_consult&consult=anonymous#contact" data-event="cta_click" data-cta="hero_anonymous">
+            <b>匿名で相談したい</b>
+            <span>薬局名を出さずに、まず状況だけ整理できます。</span>
+          </a>
+          <a class="hero-intent" href="?utm_source=top&utm_medium=intent_cta&utm_campaign=valuation_check&consult=valuation#contact" data-event="cta_click" data-cta="hero_valuation">
+            <b>概算価格を知りたい</b>
+            <span>決算書提出前でも、評価の考え方から確認できます。</span>
+          </a>
+          <a class="hero-intent" href="?utm_source=top&utm_medium=intent_cta&utm_campaign=closure_compare&consult=closure#contact" data-event="cta_click" data-cta="hero_closure">
+            <b>廃業と比較したい</b>
+            <span>閉局費用、雇用、患者様への影響を比べます。</span>
+          </a>
+        </div>
         <div class="hero-cta fade-up">
           <a href="#contact" class="btn-primary" data-event="cta_click" data-cta="hero_free_consult">
             無料相談を予約する <span class="arrow">→</span>
@@ -1868,6 +1943,20 @@
       </aside>
 
       <form class="form-card fade-up" id="contactForm" novalidate>
+        <div class="contact-intents" aria-label="よくある相談入口">
+          <div class="contact-intent">
+            <b>匿名相談</b>
+            <span>薬局名を伏せて相談可能</span>
+          </div>
+          <div class="contact-intent">
+            <b>概算価格診断</b>
+            <span>売却前提でなくてもOK</span>
+          </div>
+          <div class="contact-intent">
+            <b>廃業比較</b>
+            <span>M&Aとの違いを整理</span>
+          </div>
+        </div>
         <input type="hidden" name="access_key" value="1f72d159-2aa7-4eda-8925-864f3656e2e3">
         <input type="hidden" name="subject" value="【NexusM&A.Pharma】無料相談のお申し込み">
         <input type="hidden" name="from_name" value="NexusM&A.Pharma">
@@ -1880,14 +1969,12 @@
         <input type="hidden" name="utm_content" id="utmContent">
         <div class="form-row split">
           <div>
-            <label>お名前 <span class="req">必須</span></label>
-            <input type="text" name="name" placeholder="例）山田 太郎" data-required>
-            <div class="err">お名前をご記入ください</div>
+            <label>お名前 <span class="opt">任意</span></label>
+            <input type="text" name="name" placeholder="例）山田 太郎">
           </div>
           <div>
-            <label>薬局名 <span class="req">必須</span></label>
-            <input type="text" name="pharmacy" placeholder="例）○○調剤薬局" data-required>
-            <div class="err">薬局名をご記入ください</div>
+            <label>薬局名 <span class="opt">任意・匿名可</span></label>
+            <input type="text" name="pharmacy" placeholder="匿名相談の場合は空欄で構いません">
           </div>
         </div>
 
@@ -1914,15 +2001,34 @@
           </div>
         </div>
 
+        <div class="form-row split">
+          <div>
+            <label>都道府県 <span class="opt">任意</span></label>
+            <input type="text" name="prefecture" placeholder="例）東京都">
+          </div>
+          <div>
+            <label>店舗数 <span class="opt">任意</span></label>
+            <select name="stores">
+              <option value="">選択してください</option>
+              <option>1店舗</option>
+              <option>2〜3店舗</option>
+              <option>4〜9店舗</option>
+              <option>10店舗以上</option>
+            </select>
+          </div>
+        </div>
+
         <div class="form-row">
           <label>ご相談内容（カテゴリ） <span class="opt">任意</span></label>
           <select name="category">
             <option value="">選択してください</option>
+            <option>薬局名を伏せて匿名で相談したい</option>
             <option>後継者不在についての相談</option>
             <option>譲渡相場・企業価値の概算を知りたい</option>
             <option>具体的に譲渡を検討している</option>
             <option>1〜3年後の事業承継に備えたい</option>
             <option>廃業とM&Aの違いを知りたい</option>
+            <option>買い手候補がいるか確認したい</option>
             <option>セカンドオピニオン</option>
             <option>紹介・提携について相談したい</option>
             <option>その他</option>
@@ -1930,9 +2036,8 @@
         </div>
 
         <div class="form-row">
-          <label>ご相談内容（自由記入） <span class="req">必須</span></label>
-          <textarea name="message" placeholder="ご状況、ご希望、ご質問など、思いつくままにお書きください。後ほど代表より直接ご連絡いたします。" data-required></textarea>
-          <div class="err">ご相談内容をご記入ください</div>
+          <label>ご相談内容（自由記入） <span class="opt">任意</span></label>
+          <textarea name="message" placeholder="空欄でも送信できます。ご状況、ご希望、ご質問などがあれば、思いつくままにお書きください。"></textarea>
         </div>
 
         <label class="form-consent">
@@ -2108,6 +2213,11 @@
           <li><a href="fee.html">手数料ガイド</a></li>
           <li><a href="valuation.html">売却相場ガイド</a></li>
           <li><a href="readiness-check.html">相談前チェックリスト</a></li>
+          <li><a href="employee-transition.html">従業員対応ガイド</a></li>
+          <li><a href="clinic-patient-transition.html">処方元・患者様対応ガイド</a></li>
+          <li><a href="front-door-pharmacy.html">門前薬局売却ガイド</a></li>
+          <li><a href="managing-pharmacist.html">管理薬剤師ガイド</a></li>
+          <li><a href="home-care-pharmacy.html">在宅対応薬局ガイド</a></li>
           <li><a href="#cases">成約事例</a></li>
           <li><a href="#faq">よくある質問</a></li>
         </ul>
@@ -2145,7 +2255,7 @@
   </div>
 </footer>
 
-<a href="#contact" class="mobile-sticky-cta" data-event="cta_click" data-cta="mobile_sticky">無料相談を申し込む →</a>
+<a href="#contact" class="mobile-sticky-cta" data-event="cta_click" data-cta="mobile_sticky">匿名・無料で相談する →</a>
 
 <!-- ============= JS ============= -->
 <script>
@@ -2193,6 +2303,21 @@
   setValue('utmCampaign', params.get('utm_campaign'));
   setValue('utmTerm', params.get('utm_term'));
   setValue('utmContent', params.get('utm_content'));
+
+  const consultIntent = params.get('consult');
+  const categoryByIntent = {
+    anonymous: '薬局名を伏せて匿名で相談したい',
+    valuation: '譲渡相場・企業価値の概算を知りたい',
+    closure: '廃業とM&Aの違いを知りたい',
+  };
+  const categorySelect = document.querySelector('[name="category"]');
+  const messageField = document.querySelector('[name="message"]');
+  if (consultIntent && categoryByIntent[consultIntent] && categorySelect) {
+    categorySelect.value = categoryByIntent[consultIntent];
+  }
+  if (consultIntent === 'anonymous' && messageField && !messageField.value) {
+    messageField.placeholder = '匿名相談を希望します。薬局名は伏せたままで、まず相談したいです。';
+  }
 
   const trackMarketingEvent = (eventName, detail = {}) => {
     if (window.gtag) {
