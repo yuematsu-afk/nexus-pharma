@@ -507,6 +507,42 @@
     margin-bottom: 40px;
   }
   .profile-bio { font-size: 14.5px; line-height: 2.1; color: rgba(241, 234, 216, 0.82); margin-bottom: 36px; }
+  .profile-advisory {
+    margin: 0 0 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid rgba(241, 234, 216, 0.18);
+    border-left: 1px solid rgba(241, 234, 216, 0.18);
+  }
+  .profile-advisory-item {
+    padding: 24px 22px;
+    border-right: 1px solid rgba(241, 234, 216, 0.18);
+    border-bottom: 1px solid rgba(241, 234, 216, 0.18);
+  }
+  .profile-advisory-item b {
+    display: block;
+    font-family: var(--serif);
+    color: #f1ead8;
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .profile-advisory-item span {
+    display: block;
+    color: rgba(241, 234, 216, 0.68);
+    font-size: 12.5px;
+    line-height: 1.85;
+  }
+  .profile-note {
+    margin: -10px 0 36px;
+    padding: 20px 24px;
+    border-left: 2px solid var(--accent-2);
+    background: rgba(241, 234, 216, 0.05);
+    color: rgba(241, 234, 216, 0.82);
+    font-size: 13.5px;
+    line-height: 2;
+  }
+  @media (max-width: 800px) { .profile-advisory { grid-template-columns: 1fr; } }
   .profile-career { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
   @media (max-width: 700px) { .profile-career { grid-template-columns: 1fr; } }
 
@@ -851,6 +887,43 @@
     font-size: 11.5px;
     line-height: 1.65;
   }
+  .form-assurance {
+    margin: 0 0 24px;
+    padding: 22px 24px;
+    border: 1px solid var(--line);
+    background: var(--bg-alt);
+  }
+  body.theme-wa .form-assurance { background: var(--bg); }
+  .form-assurance h3 {
+    font-size: 18px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .form-assurance ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 18px;
+  }
+  .form-assurance li {
+    position: relative;
+    padding-left: 18px;
+    color: var(--ink-2);
+    font-size: 12.5px;
+    line-height: 1.75;
+  }
+  .form-assurance li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 8px;
+    height: 1px;
+    background: var(--accent);
+  }
+  @media (max-width: 640px) { .form-assurance ul { grid-template-columns: 1fr; } }
 
   .form-card { background: var(--bg); padding: 44px 44px; border: 1px solid var(--line); }
   body.theme-wa .form-card { background: var(--bg-alt); border-color: var(--line); }
@@ -1513,6 +1586,25 @@
           薬剤師として、大手ドラッグストアで管理薬剤師を経験。その後、街の調剤薬局に転職し、在宅対応を含む地域医療の最前線で実務を重ねました。保険薬局指定、管理薬剤師、人員体制、処方元との関係、在庫や薬歴の運用——薬局M&Aでは、決算書だけでは見えない現場論点が価値とリスクを左右します。「薬剤師の経営は、薬剤師にしかわからない悩みがある」——その実感が、現在のM&Aアドバイザー業の原点です。中小企業から上場企業まで、規模を問わない薬局M&Aの実務に10年以上携わり、SASAERU合同会社を設立しました。
         </p>
 
+        <div class="profile-advisory">
+          <div class="profile-advisory-item">
+            <b>現場の継続性を見る</b>
+            <span>管理薬剤師、在宅対応、薬歴運用、処方元との連携など、譲渡後に止められない業務を確認します。</span>
+          </div>
+          <div class="profile-advisory-item">
+            <b>患者様と従業員を守る</b>
+            <span>価格だけでなく、雇用継続、患者様への説明、地域医療への影響まで含めて買い手候補を見ます。</span>
+          </div>
+          <div class="profile-advisory-item">
+            <b>薬局名を伏せて整理する</b>
+            <span>初回相談では実名開示を急ぎません。薬局名や処方元名を伏せたまま、選択肢を確認できます。</span>
+          </div>
+        </div>
+
+        <div class="profile-note">
+          相談の場では、売却を前提に話を進めるのではなく、「廃業・親族承継・従業員承継・第三者承継」のどれが先生にとって現実的かを一緒に整理します。薬剤師として現場の不安を理解し、M&Aアドバイザーとして条件と進め方を言語化します。
+        </div>
+
         <div class="profile-meta">
           <div class="pmeta-block">
             <div class="pmeta-label">CAREER</div>
@@ -1996,6 +2088,15 @@
       </aside>
 
       <form class="form-card fade-up" id="contactForm" novalidate>
+        <div class="form-assurance" aria-label="相談前の安心材料">
+          <h3>薬局名を出さずに、まず状況だけ相談できます。</h3>
+          <ul>
+            <li>初回相談は無料、着手金・中間金も不要です</li>
+            <li>電話番号の入力は任意、メールだけで送信できます</li>
+            <li>薬局名・法人名は空欄のままで問題ありません</li>
+            <li>売却を決めていない情報収集段階でも歓迎します</li>
+          </ul>
+        </div>
         <div class="contact-intents" aria-label="よくある相談入口">
           <div class="contact-intent">
             <b>匿名相談</b>
