@@ -1264,7 +1264,7 @@
           廃業ではなく、事業を、雇用を、患者様との関係を、次の世代へ託すために。
         </p>
         <div class="hero-intents fade-up" aria-label="相談入口">
-          <a class="hero-intent" href="?utm_source=top&utm_medium=intent_cta&utm_campaign=anonymous_consult&consult=anonymous#contact" data-event="cta_click" data-cta="hero_anonymous">
+          <a class="hero-intent" href="anonymous-consult.html?utm_source=top&utm_medium=intent_cta&utm_campaign=anonymous_consult" data-event="cta_click" data-cta="hero_anonymous">
             <b>匿名で相談したい</b>
             <span>薬局名を出さずに、まず状況だけ整理できます。</span>
           </a>
@@ -1325,6 +1325,12 @@
         <p>廃業と第三者承継を比べながら、相談前に整理したいことを確認できます。</p>
         <span class="read">READ →</span>
       </a>
+      <a class="guide-card" href="anonymous-consult.html">
+        <span class="tag">ANONYMOUS</span>
+        <h3>薬局名を伏せたまま相談する方法</h3>
+        <p>薬局名、法人名、処方元名を出さずに相談できる範囲と、情報開示の順番を確認できます。</p>
+        <span class="read">READ →</span>
+      </a>
       <a class="guide-card" href="pharmacy-ma-risks.html">
         <span class="tag">RISK CHECK</span>
         <h3>薬局M&Aで失敗しないための注意点</h3>
@@ -1341,6 +1347,12 @@
         <span class="tag">DOCUMENTS</span>
         <h3>薬局M&Aで必要になる書類一覧</h3>
         <p>決算書、処方箋枚数、人員体制、賃貸借契約、許認可など、相談前に準備したい資料を整理しています。</p>
+        <span class="read">READ →</span>
+      </a>
+      <a class="guide-card" href="pharmacist-advisor.html">
+        <span class="tag">PHARMACIST</span>
+        <h3>薬剤師代表に相談できる安心感</h3>
+        <p>管理薬剤師、処方元、患者様、在宅対応など、薬局現場の論点を踏まえて相談できます。</p>
         <span class="read">READ →</span>
       </a>
       <a class="guide-card" href="front-door-pharmacy.html">
@@ -1612,6 +1624,10 @@
             <span>初回相談では実名開示を急ぎません。薬局名や処方元名を伏せたまま、選択肢を確認できます。</span>
           </div>
         </div>
+
+        <p style="margin: 0 0 24px;">
+          <a href="index.html?utm_source=profile&utm_medium=inline_cta&utm_campaign=pharmacist_consult&consult=pharmacist#contact" class="btn-primary" data-event="cta_click" data-cta="profile_pharmacist_consult">薬剤師代表に相談する <span class="arrow">→</span></a>
+        </p>
 
         <div class="profile-note">
           相談の場では、売却を前提に話を進めるのではなく、「廃業・親族承継・従業員承継・第三者承継」のどれが先生にとって現実的かを一緒に整理します。薬剤師として現場の不安を理解し、M&Aアドバイザーとして条件と進め方を言語化します。
@@ -2199,6 +2215,7 @@
             <option>薬局M&Aの注意点・進め方を確認したい</option>
             <option>薬局売却の手順を知りたい</option>
             <option>必要書類・準備資料を確認したい</option>
+            <option>薬剤師である代表に相談したい</option>
             <option>セカンドオピニオン</option>
             <option>紹介・提携について相談したい</option>
             <option>その他</option>
@@ -2384,6 +2401,8 @@
           <li><a href="valuation.html">売却相場ガイド</a></li>
           <li><a href="readiness-check.html">相談前チェックリスト</a></li>
           <li><a href="pharmacy-ma-risks.html">薬局M&A注意点ガイド</a></li>
+          <li><a href="anonymous-consult.html">匿名相談ガイド</a></li>
+          <li><a href="pharmacist-advisor.html">薬剤師代表への相談</a></li>
           <li><a href="pharmacy-sale-process.html">薬局売却手順ガイド</a></li>
           <li><a href="pharmacy-ma-documents.html">必要書類ガイド</a></li>
           <li><a href="successor-shortage-pharmacy.html">後継者不在ガイド</a></li>
@@ -2489,6 +2508,7 @@
     risks: '薬局M&Aの注意点・進め方を確認したい',
     process: '薬局売却の手順を知りたい',
     documents: '必要書類・準備資料を確認したい',
+    pharmacist: '薬剤師である代表に相談したい',
   };
   const categorySelect = document.querySelector('[name="category"]');
   const messageField = document.querySelector('[name="message"]');

@@ -49,6 +49,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nexus-pharma.sasa-eru.com/anonymous-consult.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nexus-pharma.sasa-eru.com/pharmacist-advisor.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nexus-pharma.sasa-eru.com/pharmacy-sale-process.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
