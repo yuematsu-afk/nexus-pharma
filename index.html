@@ -912,15 +912,18 @@
   .contact-channels dd small { font-size: 11px; color: var(--ink-3); font-family: var(--mono); margin-left: 10px; letter-spacing: 0.05em; }
   .contact-intents {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 12px;
     margin: 0 0 24px;
   }
   .contact-intent {
+    display: block;
     border: 1px solid var(--line);
     background: var(--bg-alt);
     padding: 16px 14px;
+    transition: border-color .2s, transform .2s, background .2s;
   }
+  .contact-intent:hover { border-color: var(--accent); background: #fffaf0; transform: translateY(-2px); }
   body.theme-wa .contact-intent { background: var(--bg); }
   .contact-intent b {
     display: block;
@@ -2211,18 +2214,26 @@
           </ul>
         </div>
         <div class="contact-intents" aria-label="よくある相談入口">
-          <div class="contact-intent">
+          <a class="contact-intent" href="index.html?utm_source=form&utm_medium=intent_card&utm_campaign=anonymous_consult&consult=anonymous#contact" data-event="cta_click" data-cta="form_intent_anonymous">
             <b>匿名相談</b>
             <span>薬局名を伏せて相談可能</span>
-          </div>
-          <div class="contact-intent">
+          </a>
+          <a class="contact-intent" href="index.html?utm_source=form&utm_medium=intent_card&utm_campaign=valuation_check&consult=valuation#contact" data-event="cta_click" data-cta="form_intent_valuation">
             <b>概算価格診断</b>
             <span>売却前提でなくてもOK</span>
-          </div>
-          <div class="contact-intent">
+          </a>
+          <a class="contact-intent" href="index.html?utm_source=form&utm_medium=intent_card&utm_campaign=debt_consult&consult=debt#contact" data-event="cta_click" data-cta="form_intent_debt">
+            <b>借入金あり</b>
+            <span>資料が揃う前でも相談可能</span>
+          </a>
+          <a class="contact-intent" href="index.html?utm_source=form&utm_medium=intent_card&utm_campaign=timing_consult&consult=timing#contact" data-event="cta_click" data-cta="form_intent_timing">
+            <b>売却時期の相談</b>
+            <span>1〜3年後の準備にも対応</span>
+          </a>
+          <a class="contact-intent" href="index.html?utm_source=form&utm_medium=intent_card&utm_campaign=closure_compare&consult=closure#contact" data-event="cta_click" data-cta="form_intent_closure">
             <b>廃業比較</b>
             <span>M&Aとの違いを整理</span>
-          </div>
+          </a>
         </div>
         <input type="hidden" name="access_key" value="1f72d159-2aa7-4eda-8925-864f3656e2e3">
         <input type="hidden" name="subject" value="【NexusM&A.Pharma】無料相談のお申し込み">
@@ -2613,13 +2624,30 @@
     timing: '売却タイミング・引退時期について相談したい',
     pharmacist: '薬剤師である代表に相談したい',
   };
+  const messagePlaceholderByIntent = {
+    anonymous: '匿名相談を希望します。薬局名は伏せたままで、まず相談したいです。',
+    valuation: '売却を決めているわけではありませんが、薬局の概算価格や評価の見方を知りたいです。',
+    closure: '廃業とM&Aを比較したいです。費用、従業員、患者様、処方元への影響を整理したいです。',
+    successor: '後継者がいないため、第三者承継や売却の可能性を相談したいです。',
+    regional: '地方・郊外薬局の売却可能性や買い手候補について相談したいです。',
+    risks: '薬局M&Aで失敗しないための注意点や進め方を確認したいです。',
+    process: '薬局売却の手順、期間、初回相談で必要な情報を確認したいです。',
+    documents: '相談前に必要な書類や、匿名のまま伏せられる情報を確認したいです。',
+    diagnosis: '売却準備診断の結果をもとに、次に何を準備すべきか相談したいです。',
+    tax: '売却後の手取りや税金、役員借入金・退職金の考え方について相談したいです。',
+    buyer: '買い手候補の選び方、譲渡先との相性、従業員や患者様への配慮について相談したいです。',
+    debt: '借入金やリースがあります。資料が揃っていない段階ですが、売却可能性と進め方を相談したいです。',
+    single: '1店舗薬局・小規模薬局の売却可能性について相談したいです。薬局名は必要になるまで伏せたいです。',
+    timing: '売却を決めてはいませんが、いつ頃から準備すべきか、今できることを相談したいです。',
+    pharmacist: '薬剤師である代表に、管理薬剤師・処方元・患者様対応を含めて相談したいです。',
+  };
   const categorySelect = document.querySelector('[name="category"]');
   const messageField = document.querySelector('[name="message"]');
   if (consultIntent && categoryByIntent[consultIntent] && categorySelect) {
     categorySelect.value = categoryByIntent[consultIntent];
   }
-  if (consultIntent === 'anonymous' && messageField && !messageField.value) {
-    messageField.placeholder = '匿名相談を希望します。薬局名は伏せたままで、まず相談したいです。';
+  if (consultIntent && messagePlaceholderByIntent[consultIntent] && messageField && !messageField.value) {
+    messageField.placeholder = messagePlaceholderByIntent[consultIntent];
   }
 
   const trackMarketingEvent = (eventName, detail = {}) => {
