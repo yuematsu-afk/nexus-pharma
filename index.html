@@ -58,11 +58,11 @@
     --bg-deep: #0d1d3a;
     --ink: #14171d;
     --ink-2: #5a5e68;
-    --ink-3: #8a8e98;
+    --ink-3: #5f6470;
     --primary: #0d1d3a;
     --primary-2: #1f3a5f;
-    --accent: #a8854a;
-    --accent-2: #c8a872;
+    --accent: #765721;
+    --accent-2: #d8ba7e;
     --line: #d4c9ad;
     --line-soft: #e5dcc4;
     --danger: #a23434;
@@ -301,7 +301,7 @@
     border: 1px solid var(--line); transition: border-color .25s, transform .25s;
   }
   .guide-card:hover { transform: translateY(-3px); border-color: var(--accent); }
-  .guide-card .tag { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: .16em; margin-bottom: 16px; }
+  .guide-card .tag { font-family: var(--mono); font-size: 10.5px; color: var(--accent); letter-spacing: .13em; margin-bottom: 16px; font-weight: 600; }
   .guide-card h3 { font-size: 18px; line-height: 1.55; margin-bottom: 12px; }
   .guide-card p { font-size: 13px; color: var(--ink-2); line-height: 1.85; flex: 1; }
   .guide-card .read { margin-top: 18px; font-family: var(--mono); font-size: 11px; color: var(--primary); letter-spacing: .1em; }
@@ -633,9 +633,10 @@
   .network-card .tag {
     display: inline-block;
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 10.5px;
     color: var(--accent);
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
+    font-weight: 600;
     margin-bottom: 18px;
   }
   .network-card h3 {
@@ -774,8 +775,8 @@
   }
   .col-img::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; background: var(--accent); width: 0; transition: width .35s; }
   .col-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-  .col-img span { position: absolute; left: 14px; bottom: 14px; font-family: var(--mono); font-size: 9px; color: var(--ink-3); letter-spacing: 0.12em; }
-  .col-meta { display: flex; gap: 16px; font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em; }
+  .col-img span { position: absolute; left: 14px; bottom: 14px; font-family: var(--mono); font-size: 9.5px; color: var(--ink-2); letter-spacing: 0.1em; font-weight: 600; }
+  .col-meta { display: flex; gap: 16px; font-family: var(--mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.08em; font-weight: 600; }
   .col-meta .cat { color: var(--accent); }
   .col-card h3 { font-size: 19px; line-height: 1.6; transition: color .2s; }
   .col-card:hover h3 { color: var(--accent); }
@@ -936,7 +937,7 @@
     letter-spacing: 0.05em; font-weight: 500;
   }
   .form-row label .req { font-family: var(--mono); font-size: 9.5px; color: var(--accent); padding: 2px 6px; border: 1px solid var(--accent); letter-spacing: 0.1em; }
-  .form-row label .opt { font-family: var(--mono); font-size: 9.5px; color: var(--ink-3); padding: 2px 6px; border: 1px solid var(--line); letter-spacing: 0.1em; }
+  .form-row label .opt { font-family: var(--mono); font-size: 10px; color: var(--ink-2); padding: 2px 6px; border: 1px solid var(--line); letter-spacing: 0.08em; background: rgba(255,255,255,0.55); }
   .form-row input, .form-row textarea, .form-row select {
     width: 100%; padding: 14px 16px;
     background: var(--bg-alt); border: 1px solid var(--line);
@@ -1043,7 +1044,7 @@
   @media (max-width: 600px) { .foot-grid { grid-template-columns: 1fr; } }
   .foot-brand .brand-mark { color: #f1ead8; font-size: 26px; }
   .foot-brand .brand-mark .pharm { color: var(--accent-2); }
-  .foot-brand p { font-size: 13px; color: rgba(241, 234, 216, 0.6); line-height: 1.95; margin-top: 18px; }
+  .foot-brand p { font-size: 13px; color: rgba(241, 234, 216, 0.76); line-height: 1.95; margin-top: 18px; }
   .foot-col h4 {
     color: var(--accent-2); font-family: var(--mono); font-size: 11px;
     letter-spacing: 0.15em; margin-bottom: 18px; font-weight: 400;
@@ -1051,14 +1052,14 @@
   .foot-col ul { list-style: none; }
   .foot-col li { padding: 6px 0; font-size: 13px; }
   .foot-col a:hover { color: var(--accent-2); }
-  .foot-info dt { font-family: var(--mono); font-size: 10px; color: rgba(241, 234, 216, 0.5); letter-spacing: 0.1em; margin-top: 12px; }
+  .foot-info dt { font-family: var(--mono); font-size: 10.5px; color: rgba(241, 234, 216, 0.72); letter-spacing: 0.08em; margin-top: 12px; }
   .foot-info dt:first-child { margin-top: 0; }
   .foot-info dd { font-size: 13px; color: rgba(241, 234, 216, 0.85); line-height: 1.6; margin-top: 2px; }
   .foot-bottom {
     margin-top: 60px; padding-top: 30px;
     border-top: 1px solid rgba(241, 234, 216, 0.15);
     display: flex; justify-content: space-between; align-items: center;
-    font-size: 11.5px; color: rgba(241, 234, 216, 0.5);
+    font-size: 11.5px; color: rgba(241, 234, 216, 0.72);
     flex-wrap: wrap; gap: 14px;
   }
   .foot-bottom .links { display: flex; gap: 24px; }
@@ -1336,6 +1337,12 @@
         <h3>薬局売却の準備状況を診断する</h3>
         <p>後継者、処方箋枚数、管理薬剤師、必要資料など、相談前に確認したい10項目をセルフチェックできます。</p>
         <span class="read">CHECK →</span>
+      </a>
+      <a class="guide-card" href="pharmacy-sale-tax.html">
+        <span class="tag">TAX</span>
+        <h3>薬局売却の税金と手取りを確認する</h3>
+        <p>譲渡対価、役員借入金、退職金、手数料など、売却価格だけでは分からない手取りの見方を整理します。</p>
+        <span class="read">READ →</span>
       </a>
       <a class="guide-card" href="pharmacy-ma-risks.html">
         <span class="tag">RISK CHECK</span>
@@ -2222,6 +2229,7 @@
             <option>薬局売却の手順を知りたい</option>
             <option>必要書類・準備資料を確認したい</option>
             <option>売却準備診断の結果について相談したい</option>
+            <option>売却後の手取り・税金について相談したい</option>
             <option>薬剤師である代表に相談したい</option>
             <option>セカンドオピニオン</option>
             <option>紹介・提携について相談したい</option>
@@ -2410,6 +2418,7 @@
           <li><a href="pharmacy-ma-risks.html">薬局M&A注意点ガイド</a></li>
           <li><a href="anonymous-consult.html">匿名相談ガイド</a></li>
           <li><a href="sale-readiness-diagnosis.html">売却準備かんたん診断</a></li>
+          <li><a href="pharmacy-sale-tax.html">税金・手取りガイド</a></li>
           <li><a href="pharmacist-advisor.html">薬剤師代表への相談</a></li>
           <li><a href="pharmacy-sale-process.html">薬局売却手順ガイド</a></li>
           <li><a href="pharmacy-ma-documents.html">必要書類ガイド</a></li>
@@ -2517,6 +2526,7 @@
     process: '薬局売却の手順を知りたい',
     documents: '必要書類・準備資料を確認したい',
     diagnosis: '売却準備診断の結果について相談したい',
+    tax: '売却後の手取り・税金について相談したい',
     pharmacist: '薬剤師である代表に相談したい',
   };
   const categorySelect = document.querySelector('[name="category"]');
