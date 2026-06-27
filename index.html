@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>薬局M&Aサービス｜NexusM&A.Pharma（SASAERU合同会社）</title>
+<title>薬局M&A・事業承継専門｜NexusM&A.Pharma</title>
 <meta name="description" content="薬局M&A・事業承継に特化した仲介サービス。薬剤師である代表が、後継者不在、調剤報酬改定、採用難に悩む薬局オーナーの無料相談から譲渡完了まで直接支援します。">
 <link rel="canonical" href="https://nexus-pharma.sasa-eru.com/">
 <meta property="og:type" content="website">
@@ -189,16 +189,16 @@
     transition: all .3s;
   }
   body.theme-wa .site-head { background: rgba(245, 239, 225, 0.9); }
-  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-  .brand { display: flex; align-items: baseline; gap: 14px; }
+  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 28px; }
+  .brand { display: flex; align-items: baseline; gap: 12px; min-width: 280px; white-space: nowrap; }
   .brand-mark {
-    font-family: var(--serif); font-size: 22px; font-weight: 600;
+    font-family: var(--serif); font-size: 21px; font-weight: 600;
     letter-spacing: 0.06em; color: var(--primary);
   }
   .brand-mark .pharm { color: var(--accent); }
-  .brand-sub { font-family: var(--mono); font-size: 10px; color: var(--ink-3); letter-spacing: 0.15em; }
-  .nav { display: flex; align-items: center; gap: 32px; }
-  .nav a { font-size: 13px; color: var(--ink); transition: color .2s; position: relative; }
+  .brand-sub { font-family: var(--sans); font-size: 11px; color: var(--ink-2); letter-spacing: 0.08em; }
+  .nav { display: flex; align-items: center; justify-content: flex-end; gap: clamp(14px, 1.9vw, 26px); flex: 1; min-width: 0; }
+  .nav a { font-size: 12.5px; color: var(--ink); transition: color .2s; position: relative; white-space: nowrap; }
   .nav a:hover { color: var(--accent); }
   .nav-cta {
     background: var(--primary); color: #fff !important;
@@ -211,6 +211,14 @@
   .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .nav-toggle.open span:nth-child(2) { opacity: 0; }
   .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  @media (max-width: 1080px) {
+    .site-head .wrap { gap: 18px; }
+    .brand { min-width: auto; }
+    .brand-sub { display: none; }
+    .nav { gap: 15px; }
+    .nav a { font-size: 12px; }
+    .nav-cta { padding: 11px 16px; }
+  }
   @media (max-width: 900px) {
     .site-head .wrap { height: 64px; }
     .brand-mark { font-size: 18px; }
@@ -342,7 +350,7 @@
 
   .popular-guides { padding-top: 70px; }
   .popular-guides .sec-head { margin-bottom: 36px; }
-  .guide-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .guide-card {
     display: flex; flex-direction: column; min-height: 220px;
     padding: 26px 24px; background: var(--bg-alt);
@@ -353,8 +361,23 @@
   .guide-card h3 { font-size: 18px; line-height: 1.55; margin-bottom: 12px; }
   .guide-card p { font-size: 13px; color: var(--ink-2); line-height: 1.85; flex: 1; }
   .guide-card .read { margin-top: 18px; font-family: var(--mono); font-size: 11px; color: var(--primary); letter-spacing: .1em; }
+  .popular-guides .guide-card:nth-child(n+7) { display: none; }
+  .guide-actions { margin-top: 28px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .guide-actions a { font-size: 13px; color: var(--primary); border-bottom: 1px solid var(--primary); padding-bottom: 4px; }
   @media (max-width: 980px) { .guide-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 640px) { .popular-guides { padding-top: 46px; } .guide-grid { grid-template-columns: 1fr; } .guide-card { min-height: auto; } }
+  @media (max-width: 640px) { .popular-guides { padding-top: 46px; } .guide-grid { grid-template-columns: 1fr; } .guide-card { min-height: auto; padding: 22px 20px; } }
+
+  .situation-entrance { padding: 78px 0; background: var(--bg-alt); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+  .situation-head { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: end; margin-bottom: 34px; }
+  .situation-head .sec-title { margin-bottom: 0; }
+  .situation-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .situation-card { min-height: 174px; padding: 24px 22px; background: var(--bg); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .2s, transform .2s; }
+  .situation-card:hover { background: #fffaf0; transform: translateY(-2px); }
+  .situation-card .tag { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: var(--accent); margin-bottom: 13px; }
+  .situation-card h3 { font-size: 18px; line-height: 1.5; margin-bottom: 9px; }
+  .situation-card p { font-size: 13px; color: var(--ink-2); line-height: 1.8; }
+  @media (max-width: 900px) { .situation-head { grid-template-columns: 1fr; gap: 14px; } .situation-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .situation-entrance { padding: 56px 0; } .situation-grid { grid-template-columns: 1fr; } .situation-card { min-height: auto; } }
 
   /* Wa-modan hero accent */
   body.theme-wa .hero::before {
@@ -375,6 +398,13 @@
   .sec-head.center { text-align: center; }
   .sec-head.center .sec-label { justify-content: center; }
   .sec-head.center .sec-lead { margin: 0 auto; }
+  .section-actions { margin-top: 34px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .section-link {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--primary); font-size: 13px; letter-spacing: .06em;
+    border-bottom: 1px solid var(--primary); padding-bottom: 5px;
+  }
+  .section-link:hover { color: var(--accent); border-color: var(--accent); }
 
   /* === 悩み共感 === */
   .pain {
@@ -614,6 +644,7 @@
 
   /* === サービスの流れ === */
   .flow-list { margin-top: 60px; counter-reset: flow; }
+  #flow .flow-row:nth-child(n+4) { display: none; }
   .flow-row {
     display: grid; grid-template-columns: 130px 1fr 1.2fr;
     gap: 50px; align-items: start;
@@ -1281,20 +1312,21 @@
   <div class="wrap">
     <a href="#top" class="brand">
       <span class="brand-mark">NexusM&A<span class="pharm">.Pharma</span></span>
-      <span class="brand-sub">薬局M&A・事業承継 ／ SASAERU合同会社</span>
+      <span class="brand-sub">薬局M&A・事業承継専門</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <nav class="nav" id="siteNav">
       <a href="#strengths">選ばれる理由</a>
-      <a href="#profile">代表紹介</a>
-      <a href="#flow">流れ</a>
-      <a href="#network">買い手</a>
-      <a href="#price">料金</a>
-      <a href="#cases">事例</a>
+      <a href="pharmacist-advisor.html">薬剤師代表</a>
+      <a href="pharmacy-sale-process.html">流れ</a>
+      <a href="fee.html">料金</a>
+      <a href="cases.html">事例</a>
+      <a href="columns.html">ガイド</a>
+      <a href="members.html">限定資料</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact" class="nav-cta">無料相談</a>
+      <a href="#contact" class="nav-cta">匿名・無料相談</a>
     </nav>
   </div>
 </header>
@@ -1362,6 +1394,51 @@
   </div>
 </section>
 
+<!-- ============= 相談タイプ別入口 ============= -->
+<section class="situation-entrance" aria-labelledby="situation-title">
+  <div class="wrap">
+    <div class="situation-head fade-up">
+      <div>
+        <div class="sec-label">Start Here</div>
+        <h2 class="sec-title" id="situation-title">いまの状況に近い入口から、必要な情報だけ確認できます。</h2>
+      </div>
+      <p class="sec-lead">トップページを読み切らなくても大丈夫です。後継者、廃業比較、人員不足、門前・地方薬局、匿名相談など、薬局オーナーが最初に迷いやすい論点へ直接進めます。</p>
+    </div>
+    <div class="situation-grid fade-up">
+      <a class="situation-card" href="successor-shortage-pharmacy.html">
+        <span class="tag">SUCCESSION</span>
+        <h3>後継者がいない</h3>
+        <p>親族承継、従業員承継、第三者承継、廃業を比較します。</p>
+      </a>
+      <a class="situation-card" href="closure-vs-ma.html">
+        <span class="tag">CLOSURE</span>
+        <h3>廃業と迷っている</h3>
+        <p>閉局費用、患者様、従業員、処方元への影響を整理します。</p>
+      </a>
+      <a class="situation-card" href="pharmacist-shortage-pharmacy-sale.html">
+        <span class="tag">STAFFING</span>
+        <h3>薬剤師が採れない</h3>
+        <p>管理薬剤師、人員不足、採用難がある薬局の承継可能性を見ます。</p>
+      </a>
+      <a class="situation-card" href="front-door-pharmacy.html">
+        <span class="tag">FRONT DOOR</span>
+        <h3>門前薬局の将来が不安</h3>
+        <p>処方元リスク、医師の高齢化、集中率、患者引継ぎを確認します。</p>
+      </a>
+      <a class="situation-card" href="regional-pharmacy-sale.html">
+        <span class="tag">REGIONAL</span>
+        <h3>地方薬局を託したい</h3>
+        <p>地域医療、人員体制、在宅対応、買い手探索範囲を整理します。</p>
+      </a>
+      <a class="situation-card" href="anonymous-consult.html">
+        <span class="tag">ANONYMOUS</span>
+        <h3>匿名で相談したい</h3>
+        <p>薬局名や処方元名を伏せたまま、売却可能性を相談できます。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============= よく読まれているガイド ============= -->
 <section class="popular-guides tight" aria-labelledby="popular-guides-title">
   <div class="wrap">
@@ -1383,29 +1460,29 @@
         <p>薬局名、法人名、処方元名を出さずに相談できる範囲と、情報開示の順番を確認できます。</p>
         <span class="read">READ →</span>
       </a>
-      <a class="guide-card" href="sale-readiness-diagnosis.html">
-        <span class="tag">DIAGNOSIS</span>
-        <h3>薬局売却の準備状況を診断する</h3>
-        <p>後継者、処方箋枚数、管理薬剤師、必要資料など、相談前に確認したい10項目をセルフチェックできます。</p>
-        <span class="read">CHECK →</span>
-      </a>
-      <a class="guide-card" href="pharmacy-sale-tax.html">
-        <span class="tag">TAX</span>
-        <h3>薬局売却の税金と手取りを確認する</h3>
-        <p>譲渡対価、役員借入金、退職金、手数料など、売却価格だけでは分からない手取りの見方を整理します。</p>
+      <a class="guide-card" href="valuation.html">
+        <span class="tag">VALUATION</span>
+        <h3>薬局売却の相場と評価方法</h3>
+        <p>利益、純資産、立地、処方元、人員体制など、決算書だけでは見えない価値を整理します。</p>
         <span class="read">READ →</span>
       </a>
-      <a class="guide-card" href="pharmacy-buyer-selection.html">
-        <span class="tag">BUYER</span>
-        <h3>薬局M&Aの買い手候補を比較する</h3>
-        <p>譲渡価格だけでなく、雇用継続、管理薬剤師、処方元、患者様への配慮まで確認します。</p>
+      <a class="guide-card" href="closure-vs-ma.html">
+        <span class="tag">CLOSURE</span>
+        <h3>薬局の廃業とM&Aを比較する</h3>
+        <p>閉局費用、雇用、患者様、処方元、地域医療への影響から第三者承継と比較します。</p>
         <span class="read">READ →</span>
       </a>
-      <a class="guide-card" href="pharmacy-debt-sale.html">
-        <span class="tag">DEBT</span>
-        <h3>借入金がある薬局売却を確認する</h3>
-        <p>金融機関借入、リース、役員借入金、手取りへの影響を整理します。</p>
+      <a class="guide-card" href="pharmacist-shortage-pharmacy-sale.html">
+        <span class="tag">STAFFING</span>
+        <h3>薬剤師採用難の薬局売却</h3>
+        <p>管理薬剤師の退職、採用難、人員体制を前提に買い手候補の見方を整理します。</p>
         <span class="read">READ →</span>
+      </a>
+      <a class="guide-card" href="members.html">
+        <span class="tag">OWNER ONLY</span>
+        <h3>薬局オーナー限定資料室</h3>
+        <p>公開ページでは書きにくい、薬剤師視点のM&A・経営レポートを承認制で案内します。</p>
+        <span class="read">APPLY →</span>
       </a>
       <a class="guide-card" href="single-store-pharmacy-sale.html">
         <span class="tag">1 STORE</span>
@@ -1479,6 +1556,10 @@
         <p>薬剤師採用、地域医療、在宅対応を含めて、買い手候補の広げ方を整理します。</p>
         <span class="read">READ →</span>
       </a>
+    </div>
+    <div class="guide-actions fade-up">
+      <a href="columns.html">すべてのガイドを見る</a>
+      <a href="sale-readiness-diagnosis.html">売却準備を10項目で診断する</a>
     </div>
   </div>
 </section>
@@ -1774,8 +1855,8 @@
   <div class="wrap">
     <div class="sec-head fade-up">
       <div class="sec-label">06 — Service flow</div>
-      <h2 class="sec-title">ご相談から譲渡完了まで、<br>6つのステップ。</h2>
-      <p class="sec-lead">秘密厳守は当然のこと、すべてのプロセスにおいて代表自身が直接担当します。譲渡完了後のアフターフォローも責任を持って対応いたします。</p>
+      <h2 class="sec-title">まず確認したい、<br>初回相談から買い手探索前までの流れ。</h2>
+      <p class="sec-lead">トップでは初期段階だけを要約します。秘密保持、価値算定、買い手探索、契約、引き継ぎまでの詳細は手順ページで確認できます。</p>
     </div>
 
     <div class="flow-list">
@@ -2020,6 +2101,10 @@
         </div>
       </article>
     </div>
+    <div class="section-actions fade-up">
+      <a class="section-link" href="cases.html">事例を詳しく見る →</a>
+      <a class="section-link" href="pharmacy-buyer-selection.html">買い手候補の選び方を見る →</a>
+    </div>
   </div>
 </section>
 
@@ -2163,6 +2248,10 @@
           もちろん可能です。ご家族、顧問税理士、社労士、金融機関担当者など、意思決定に関わる方との同席相談にも対応します。関係者ごとに知っておくべき論点を整理し、無理のない進め方をご提案します。
         </div></div>
       </div>
+    </div>
+    <div class="section-actions fade-up">
+      <a class="section-link" href="pharmacy-sale-process.html">譲渡完了までの詳しい流れを見る →</a>
+      <a class="section-link" href="pharmacy-ma-documents.html">相談前に必要な資料を見る →</a>
     </div>
   </div>
 </section>
@@ -2535,51 +2624,34 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="brand-mark">NexusM&A<span class="pharm">.Pharma</span></div>
-        <p>薬局オーナー様の「次の一歩」に寄り添う、薬剤師×M&AアドバイザーのSASAERU合同会社が運営する、薬局M&A・事業承継の専門サービスです。</p>
+        <p>薬局オーナー様の「次の一歩」に寄り添う、薬剤師が直接支援する薬局M&A・事業承継の専門サービスです。</p>
       </div>
       <div class="foot-col">
         <h4>SERVICE</h4>
         <ul>
           <li><a href="#strengths">選ばれる理由</a></li>
-          <li><a href="#flow">サービスの流れ</a></li>
-          <li><a href="#price">料金体系</a></li>
+          <li><a href="pharmacist-advisor.html">薬剤師代表への相談</a></li>
+          <li><a href="pharmacy-sale-process.html">サービスの流れ</a></li>
           <li><a href="fee.html">手数料ガイド</a></li>
           <li><a href="valuation.html">売却相場ガイド</a></li>
-          <li><a href="readiness-check.html">相談前チェックリスト</a></li>
-          <li><a href="pharmacy-ma-risks.html">薬局M&A注意点ガイド</a></li>
           <li><a href="anonymous-consult.html">匿名相談ガイド</a></li>
           <li><a href="sale-readiness-diagnosis.html">売却準備かんたん診断</a></li>
-          <li><a href="pharmacy-sale-tax.html">税金・手取りガイド</a></li>
-          <li><a href="pharmacy-buyer-selection.html">買い手候補の選び方</a></li>
-          <li><a href="pharmacy-debt-sale.html">借入金がある薬局売却</a></li>
-          <li><a href="single-store-pharmacy-sale.html">1店舗薬局売却ガイド</a></li>
-          <li><a href="pharmacy-sale-timing.html">売却タイミングガイド</a></li>
-          <li><a href="pharmacist-shortage-pharmacy-sale.html">薬剤師採用難の薬局売却</a></li>
-          <li><a href="prescription-decline-pharmacy-sale.html">処方箋・売上低下時の売却</a></li>
-          <li><a href="family-discussion-pharmacy-sale.html">家族相談前の薬局売却ガイド</a></li>
+          <li><a href="cases.html">成約事例</a></li>
           <li><a href="members.html">薬局オーナー限定資料室</a></li>
-          <li><a href="pharmacist-advisor.html">薬剤師代表への相談</a></li>
-          <li><a href="pharmacy-sale-process.html">薬局売却手順ガイド</a></li>
-          <li><a href="pharmacy-ma-documents.html">必要書類ガイド</a></li>
-          <li><a href="successor-shortage-pharmacy.html">後継者不在ガイド</a></li>
-          <li><a href="regional-pharmacy-sale.html">地方薬局売却ガイド</a></li>
-          <li><a href="employee-transition.html">従業員対応ガイド</a></li>
-          <li><a href="clinic-patient-transition.html">処方元・患者様対応ガイド</a></li>
-          <li><a href="front-door-pharmacy.html">門前薬局売却ガイド</a></li>
-          <li><a href="managing-pharmacist.html">管理薬剤師ガイド</a></li>
-          <li><a href="home-care-pharmacy.html">在宅対応薬局ガイド</a></li>
-          <li><a href="#cases">成約事例</a></li>
-          <li><a href="#faq">よくある質問</a></li>
+          <li><a href="columns.html">すべてのガイド</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>ABOUT</h4>
+        <h4>GUIDES</h4>
         <ul>
-          <li><a href="#profile">代表紹介</a></li>
-          <li><a href="#profile">代表メッセージ</a></li>
+          <li><a href="successor-shortage-pharmacy.html">後継者不在</a></li>
+          <li><a href="closure-vs-ma.html">廃業とM&A比較</a></li>
+          <li><a href="pharmacist-shortage-pharmacy-sale.html">薬剤師採用難</a></li>
+          <li><a href="front-door-pharmacy.html">門前薬局</a></li>
+          <li><a href="regional-pharmacy-sale.html">地方薬局</a></li>
+          <li><a href="pharmacy-ma-documents.html">必要書類</a></li>
+          <li><a href="pharmacy-sale-tax.html">税金・手取り</a></li>
           <li><a href="partners.html">紹介パートナー</a></li>
-          <li><a href="columns.html">コラム一覧</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </div>
       <div class="foot-col">
