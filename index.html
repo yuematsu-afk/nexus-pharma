@@ -245,38 +245,39 @@
 
   /* ============= HERO ============= */
   .hero {
-    position: relative; padding-top: 180px; padding-bottom: 120px;
+    position: relative; padding-top: 144px; padding-bottom: 82px;
     overflow: hidden;
   }
-  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: start; }
   @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } .hero { padding-top: 130px; padding-bottom: 70px; } }
+  .hero-side { display: flex; flex-direction: column; gap: 18px; padding-top: 18px; }
   .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
   .hero-eyebrow::before { content: ""; width: 48px; height: 1px; background: var(--primary); }
   .hero-eyebrow span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--primary); }
   .hero h1 {
-    font-size: clamp(34px, 4.6vw, 60px);
-    line-height: 1.4;
+    font-size: clamp(34px, 4.1vw, 50px);
+    line-height: 1.32;
     letter-spacing: 0.01em;
     font-weight: 500;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
     color: var(--primary);
   }
   .hero h1 .em { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
-  .hero h1 .small { font-size: 0.55em; display: block; color: var(--ink-2); font-weight: 400; margin-top: 18px; letter-spacing: 0.04em; }
-  .hero p.lead { font-size: 16px; line-height: 2; color: var(--ink); margin-bottom: 40px; max-width: 560px; }
+  .hero h1 .small { font-size: 0.48em; display: block; color: var(--ink-2); font-weight: 400; margin-top: 16px; line-height: 1.7; letter-spacing: 0.04em; }
+  .hero p.lead { font-size: 16px; line-height: 1.95; color: var(--ink); margin-bottom: 32px; max-width: 560px; }
   .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
   .hero-intents {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    margin: -18px 0 34px;
+    margin: -10px 0 28px;
     max-width: 640px;
   }
   .hero-intent {
     display: block;
     background: rgba(255,255,255,0.42);
     border: 1px solid var(--line);
-    padding: 16px 16px 15px;
+    padding: 14px 15px 13px;
     transition: border-color .2s, transform .2s, background .2s;
   }
   .hero-intent:hover {
@@ -298,6 +299,24 @@
     font-size: 11.5px;
     line-height: 1.65;
   }
+  .hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: -16px 0 30px;
+  }
+  .hero-trust span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.5);
+    color: var(--primary);
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: .03em;
+  }
   .btn-primary {
     display: inline-flex; align-items: center; gap: 14px;
     background: var(--primary); color: #fff;
@@ -316,7 +335,7 @@
   .btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
 
   .hero-visual {
-    position: relative; aspect-ratio: 4/5;
+    position: relative; aspect-ratio: 1/1.08;
     border: 1px solid var(--line);
     background: var(--bg-alt);
     overflow: hidden;
@@ -340,11 +359,17 @@
     border-bottom: 2px solid var(--accent); border-left: 2px solid var(--accent);
   }
   .hero-stats {
-    margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--line);
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    margin-top: 0; padding-top: 0; border-top: 0;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
   }
   @media (max-width: 700px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
-  .hero-stat .num { font-family: var(--latin); font-size: 44px; font-style: normal; color: var(--primary); line-height: 1; }
+  .hero-stat {
+    min-height: 96px;
+    padding: 16px 16px 14px;
+    background: rgba(255,255,255,0.45);
+    border: 1px solid var(--line);
+  }
+  .hero-stat .num { font-family: var(--latin); font-size: 34px; font-style: normal; color: var(--primary); line-height: 1; }
   .hero-stat .num small { font-size: 0.45em; margin-left: 4px; color: var(--ink-2); }
   .hero-stat .lbl { font-size: 12px; color: var(--ink-2); margin-top: 8px; letter-spacing: 0.05em; }
 
@@ -378,6 +403,115 @@
   .situation-card p { font-size: 13px; color: var(--ink-2); line-height: 1.8; }
   @media (max-width: 900px) { .situation-head { grid-template-columns: 1fr; gap: 14px; } .situation-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .situation-entrance { padding: 56px 0; } .situation-grid { grid-template-columns: 1fr; } .situation-card { min-height: auto; } }
+
+  .early-strategy {
+    background: var(--bg-deep);
+    color: #f1ead8;
+    padding: 72px 0;
+  }
+  .early-strategy .wrap {
+    display: grid;
+    grid-template-columns: 0.86fr 1.14fr;
+    gap: 52px;
+    align-items: start;
+  }
+  .early-strategy h2 {
+    color: #f1ead8;
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.5;
+    margin: 12px 0 18px;
+  }
+  .early-strategy p {
+    color: rgba(241, 234, 216, 0.78);
+    font-size: 14.5px;
+    line-height: 2;
+  }
+  .early-strategy .sec-label { color: var(--accent-2); margin-bottom: 0; }
+  .early-strategy .sec-label::before { background: var(--accent-2); }
+  .strategy-note {
+    margin-top: 26px;
+    padding: 22px 24px;
+    border-left: 2px solid var(--accent-2);
+    background: rgba(241, 234, 216, 0.05);
+    font-family: var(--serif);
+    color: #f1ead8;
+    font-size: 18px;
+    line-height: 1.85;
+  }
+  .strategy-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(241, 234, 216, 0.18);
+    border-left: 1px solid rgba(241, 234, 216, 0.18);
+  }
+  .strategy-card {
+    padding: 26px 24px;
+    border-right: 1px solid rgba(241, 234, 216, 0.18);
+    border-bottom: 1px solid rgba(241, 234, 216, 0.18);
+  }
+  .strategy-card strong {
+    display: block;
+    color: var(--accent-2);
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .14em;
+    margin-bottom: 12px;
+  }
+  .strategy-card h3 {
+    color: #f1ead8;
+    font-size: 21px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .strategy-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 0;
+  }
+  .strategy-card li {
+    position: relative;
+    padding-left: 18px;
+    color: rgba(241, 234, 216, 0.72);
+    font-size: 13px;
+    line-height: 1.85;
+  }
+  .strategy-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 8px;
+    height: 1px;
+    background: var(--accent-2);
+  }
+  .strategy-card.is-positive {
+    background: rgba(241, 234, 216, 0.06);
+  }
+  .strategy-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .strategy-actions .btn-ghost {
+    color: #f1ead8;
+    border-color: rgba(241, 234, 216, 0.7);
+  }
+  .strategy-actions .btn-ghost:hover {
+    color: var(--accent-2);
+    border-color: var(--accent-2);
+  }
+  @media (max-width: 900px) {
+    .early-strategy .wrap { grid-template-columns: 1fr; gap: 34px; }
+  }
+  @media (max-width: 640px) {
+    .early-strategy { padding: 62px 0; }
+    .strategy-compare { grid-template-columns: 1fr; }
+    .strategy-card { padding: 24px 20px; }
+    .strategy-note { font-size: 16px; padding: 20px; }
+  }
 
   /* Wa-modan hero accent */
   body.theme-wa .hero::before {
@@ -861,64 +995,6 @@
   .col-card:hover h3 { color: var(--accent); }
   .col-card p { font-size: 13px; color: var(--ink-2); line-height: 1.85; }
 
-  /* === Conversion strip === */
-  .consult-strip {
-    background: var(--bg-alt);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .consult-strip .wrap {
-    display: grid;
-    grid-template-columns: 0.75fr 1.25fr auto;
-    gap: 36px;
-    align-items: center;
-    padding-top: 42px;
-    padding-bottom: 42px;
-  }
-  .consult-kicker {
-    font-family: var(--mono);
-    font-size: 10.5px;
-    letter-spacing: 0.16em;
-    color: var(--accent);
-  }
-  .consult-strip h2 {
-    font-size: clamp(23px, 2.5vw, 34px);
-    line-height: 1.45;
-    margin-top: 10px;
-  }
-  .consult-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-left: 1px solid var(--line-soft);
-  }
-  .consult-option {
-    padding: 6px 22px;
-    border-right: 1px solid var(--line-soft);
-  }
-  .consult-option b {
-    display: block;
-    font-family: var(--serif);
-    color: var(--primary);
-    font-size: 17px;
-    margin-bottom: 8px;
-  }
-  .consult-option span {
-    display: block;
-    font-size: 12.5px;
-    color: var(--ink-2);
-    line-height: 1.8;
-  }
-  .consult-strip .btn-primary {
-    white-space: nowrap;
-    padding: 18px 28px;
-  }
-  @media (max-width: 980px) {
-    .consult-strip .wrap { grid-template-columns: 1fr; gap: 26px; }
-    .consult-options { grid-template-columns: 1fr; border-left: 0; border-top: 1px solid var(--line-soft); }
-    .consult-option { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line-soft); }
-    .consult-strip .btn-primary { justify-content: center; }
-  }
-
   /* === Contact === */
   .contact { background: var(--bg-alt); }
   body.theme-wa .contact { background: var(--bg); }
@@ -1179,6 +1255,7 @@
   body.theme-wa .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
   body.theme-wa .hero-visual::before, body.theme-wa .hero-visual::after { border-color: var(--accent); }
   body.theme-wa .pain { background: #1a1715; }
+  body.theme-wa .early-strategy { background: #1a1715; }
   body.theme-wa .profile { background: #1a1715; }
   body.theme-wa .faq { background: #1a1715; }
   body.theme-wa footer.site-foot { background: #1a1715; }
@@ -1200,7 +1277,7 @@
     section { padding: 64px 0; }
 
     /* Hero */
-    .hero { padding-top: 110px; padding-bottom: 56px; }
+    .hero { padding-top: 92px; padding-bottom: 42px; }
     .hero h1 { font-size: clamp(26px, 7.4vw, 36px); line-height: 1.5; margin-bottom: 24px; }
     .hero h1 .small { font-size: 0.6em; margin-top: 12px; line-height: 1.7; }
     .hero p.lead { font-size: 14.5px; line-height: 1.95; margin-bottom: 28px; }
@@ -1209,14 +1286,33 @@
     .hero-eyebrow span { font-size: 10px; letter-spacing: 0.15em; }
     .hero-cta { gap: 12px; }
     .hero-intents { grid-template-columns: 1fr; margin: -8px 0 26px; }
+    .hero-intent { padding: 13px 16px; }
+    .hero-intent b { margin-bottom: 0; font-size: 15px; }
+    .hero-intent span { display: none; }
+    .hero-trust { margin: -10px 0 24px; }
+    .hero-trust span { flex: 1 1 calc(50% - 8px); justify-content: center; text-align: center; padding: 7px 10px; }
     .hero-cta .btn-primary { width: 100%; justify-content: center; padding: 18px 24px; }
-    .hero-cta .btn-ghost { width: 100%; justify-content: center; }
-    .hero-visual { aspect-ratio: 4/5; }
+    .hero-cta .btn-ghost { display: none; }
+    .hero-side { gap: 16px; padding-top: 0; }
+    .hero-visual { aspect-ratio: 16/10; }
     .hero-visual > img { object-position: top center; }
-    .hero-stats { margin-top: 48px; padding-top: 28px; gap: 18px 16px; }
-    .hero-stat .num { font-size: 34px; }
+    .hero-stats { margin-top: 0; padding-top: 0; gap: 12px; }
+    .hero-stat { min-height: 82px; padding: 14px 12px 12px; }
+    .hero-stat .num { font-size: 30px; }
+    .hero-stat .lbl { font-size: 11px; }
 
     /* Pain */
+    .early-strategy h2 { font-size: 26px; }
+    .early-strategy h2 br { display: none; }
+    .early-strategy .wrap { gap: 24px; }
+    .early-strategy p { font-size: 13.5px; line-height: 1.85; }
+    .strategy-card ul { display: none; }
+    .strategy-card { padding: 20px 18px; }
+    .strategy-card h3 { font-size: 18px; }
+    .strategy-card p { display: none; }
+    .strategy-note { font-size: 15px; line-height: 1.8; margin-top: 20px; }
+    .strategy-actions .btn-primary,
+    .strategy-actions .btn-ghost { width: 100%; justify-content: center; }
     .pain-card { padding: 32px 24px; }
     .pain-card h3 { font-size: 19px; }
     .pain-card h3 br { display: none; }
@@ -1361,6 +1457,11 @@
             <span>閉局費用、雇用、患者様への影響を比べます。</span>
           </a>
         </div>
+        <div class="hero-trust fade-up" aria-label="相談前の安心材料">
+          <span>着手金・中間金0円</span>
+          <span>薬局名を伏せて相談OK</span>
+          <span>強引な営業はしません</span>
+        </div>
         <div class="hero-cta fade-up">
           <a href="#contact" class="btn-primary" data-event="cta_click" data-cta="hero_free_consult">
             無料相談を予約する <span class="arrow">→</span>
@@ -1368,27 +1469,71 @@
           <a href="#strengths" class="btn-ghost">私たちが選ばれる理由</a>
         </div>
       </div>
-      <div class="hero-visual fade-up">
-        <img src="assets/hero-portrait.png" alt="代表が薬局オーナーと面談している様子">
+      <div class="hero-side fade-up">
+        <div class="hero-visual">
+          <img src="assets/hero-portrait.png" alt="代表が薬局オーナーと面談している様子">
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">10<small>年+</small></div>
+            <div class="lbl">薬局M&A 専門経験</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">120<small>件</small></div>
+            <div class="lbl">累計相談実績（参考値）</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">¥0</div>
+            <div class="lbl">着手金・中間金</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num" style="font-size: 18px; letter-spacing: 0.02em;">中小M&A<br>ガイドライン</div>
+            <div class="lbl">遵守</div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="hero-stats fade-up">
-      <div class="hero-stat">
-        <div class="num">10<small>年+</small></div>
-        <div class="lbl">薬局M&A 専門経験</div>
+<!-- ============= 早期相談の気づき ============= -->
+<section class="early-strategy" aria-labelledby="early-strategy-title">
+  <div class="wrap">
+    <div class="fade-up">
+      <div class="sec-label">Before Decision</div>
+      <h2 id="early-strategy-title">「まだ売るつもりはない」<br>そんな先生にこそ、読んでほしい。</h2>
+      <p>
+        調剤報酬改定、薬剤師採用難、処方元の将来、管理薬剤師の継続。薬局の出口は、限界が来てから考えるほど選択肢が狭くなります。
+        売却を決める前の段階で、廃業・親族承継・従業員承継・第三者承継を並べておくことが、結果的に薬局と地域医療を守る準備になります。
+      </p>
+      <div class="strategy-note">相談は、売却の意思表示ではありません。薬局を続けるために、まず選択肢を増やす時間です。</div>
+    </div>
+    <div class="fade-up">
+      <div class="strategy-compare">
+        <div class="strategy-card">
+          <strong>LATE STAGE</strong>
+          <h3>追い詰められてからの承継</h3>
+          <p>人員不足や収益低下が進んだあとでは、買い手候補も条件も限られやすくなります。</p>
+          <ul>
+            <li>資料準備や従業員対応を急ぐ必要がある</li>
+            <li>廃業費用との比較が後回しになる</li>
+            <li>処方元・患者様への説明時間が短くなる</li>
+          </ul>
+        </div>
+        <div class="strategy-card is-positive">
+          <strong>STRATEGIC STAGE</strong>
+          <h3>戦略的な、事業承継</h3>
+          <p>まだ余力があるうちに準備すれば、譲渡・承継・継続経営を冷静に比較できます。</p>
+          <ul>
+            <li>薬局名を伏せて買い手候補の方向性を確認できる</li>
+            <li>価値を下げる現場リスクを先に整えられる</li>
+            <li>家族・従業員への説明準備がしやすい</li>
+          </ul>
+        </div>
       </div>
-      <div class="hero-stat">
-        <div class="num">120<small>件</small></div>
-        <div class="lbl">累計相談実績（参考値）</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num">¥0</div>
-        <div class="lbl">着手金・中間金</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num" style="font-size: 22px; letter-spacing: 0.02em;">中小M&A<br>ガイドライン</div>
-        <div class="lbl">遵守</div>
+      <div class="strategy-actions">
+        <a href="#contact" class="btn-primary" data-event="cta_click" data-cta="early_strategy_consult">売る前提なしで相談する <span class="arrow">→</span></a>
+        <a href="sale-readiness-diagnosis.html" class="btn-ghost">売却準備を10項目で診断する</a>
       </div>
     </div>
   </div>
@@ -1592,30 +1737,6 @@
       ひとつでも当てはまるなら——<b>「廃業」ではなく「事業承継」という選択肢</b>を、<br>
       知っておくだけでも、これからの経営判断は変わります。
     </div>
-  </div>
-</section>
-
-<section class="consult-strip" aria-labelledby="consult-strip-title">
-  <div class="wrap">
-    <div>
-      <div class="consult-kicker">FREE CONSULTATION</div>
-      <h2 id="consult-strip-title">売る前提でなくても、<br>相談できます。</h2>
-    </div>
-    <div class="consult-options">
-      <div class="consult-option">
-        <b>今すぐ譲渡したい</b>
-        <span>候補先探索、価格目線、譲渡スケジュールを整理します。</span>
-      </div>
-      <div class="consult-option">
-        <b>1〜3年後に備えたい</b>
-        <span>承継時期、税務・家族会議、店舗価値の磨き方を確認します。</span>
-      </div>
-      <div class="consult-option">
-        <b>相場だけ知りたい</b>
-        <span>決算書を出す前の段階でも、概算の考え方から説明します。</span>
-      </div>
-    </div>
-    <a href="#contact" class="btn-primary" data-event="cta_click" data-cta="stage_consult_strip">無料で選択肢を整理する <span class="arrow">→</span></a>
   </div>
 </section>
 
