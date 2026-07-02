@@ -134,6 +134,9 @@
     letter-spacing: .08em;
     white-space: nowrap;
   }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+  .btn-sub { background: transparent; border: 1px solid rgba(241,234,216,.48); color: #fff; }
+  .btn-sub:hover { background: rgba(255,255,255,.08); }
   footer { padding: 32px 0; color: var(--ink-3); font-size: 12px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
   @media (max-width: 900px) {
@@ -141,6 +144,7 @@
     .nav { flex-wrap: wrap; gap: 16px; }
     .article-grid { grid-template-columns: 1fr; padding-bottom: 64px; }
     .cta .wrap { grid-template-columns: 1fr; }
+    .btn-row { justify-content: stretch; }
     .btn { width: 100%; }
   }
 </style>
@@ -356,7 +360,10 @@
         <h2>記事を読んで不安が具体化したら、まずは無料相談へ。</h2>
         <p>売却を決めていない段階でも、代表が直接お話を伺い、選択肢を整理します。</p>
       </div>
-      <a class="btn" href="index.html#contact">無料相談を申し込む →</a>
+      <div class="btn-row">
+        <a class="btn" href="index.html?utm_source=columns&utm_medium=cta&utm_campaign=columns_consult#contact">無料相談を申し込む →</a>
+        <a class="btn btn-sub" href="members.html?utm_source=columns&utm_medium=cta_sub&utm_campaign=owner_insights">限定資料を申請する →</a>
+      </div>
     </div>
   </section>
 </main>

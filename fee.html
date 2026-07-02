@@ -43,6 +43,7 @@
   .cta h2 { color:#fff; margin-bottom:8px; }
   .cta p { color:rgba(255,255,255,.72); }
   .btn { display:inline-flex; background:var(--accent); color:#fff; padding:16px 24px; margin-top:16px; }
+  .cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.cta-actions .btn{margin-top:0}.btn-sub{background:transparent;border:1px solid rgba(255,255,255,.48);color:#fff}.btn-sub:hover{background:rgba(255,255,255,.08)}
   footer { padding:28px 0; color:#8a8e98; font-size:12px; }
   @media(max-width:720px){ header .wrap{height:auto;min-height:64px;align-items:flex-start;flex-direction:column;padding-top:16px;padding-bottom:16px}.row{grid-template-columns:1fr}.price{text-align:left} }
 </style>
@@ -73,7 +74,11 @@
   <section class="cta"><div class="wrap">
     <h2>費用条件だけの比較相談も可能です。</h2>
     <p>他社提案の見方、最低手数料、契約前に確認すべき論点を代表が直接説明します。</p>
-    <a class="btn" href="index.html?utm_source=fee&utm_medium=cta&utm_campaign=fee_page#contact">手数料について相談する →</a>
+    <div class="cta-actions">
+      <a class="btn" href="index.html?utm_source=fee&utm_medium=cta&utm_campaign=fee_page#contact">手数料について相談する →</a>
+      <a class="btn btn-sub" href="index.html?utm_source=fee&utm_medium=cta_sub&utm_campaign=valuation_check&consult=valuation#contact">概算価格を知る →</a>
+      <a class="btn btn-sub" href="members.html?utm_source=fee&utm_medium=cta_sub&utm_campaign=owner_insights">限定資料を申請する →</a>
+    </div>
   </div></section>
 </main>
 <footer><div class="wrap">© SASAERU LLC. NexusM&A.Pharma</div></footer>
