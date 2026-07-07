@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -1400,6 +1400,7 @@
     .ma-benefits { grid-template-columns: 1fr; }
   }
 </style>
+<script src="assets/analytics.js" defer></script>
 </head>
 <body class="theme-classic" data-screen-label="01 Top">
 
@@ -2900,7 +2901,9 @@
   }
 
   const trackMarketingEvent = (eventName, detail = {}) => {
-    if (window.gtag) {
+    if (window.nexusTrackEvent) {
+      window.nexusTrackEvent(eventName, detail);
+    } else if (window.gtag) {
       window.gtag('event', eventName, detail);
     }
     window.dataLayer = window.dataLayer || [];
@@ -2975,3 +2978,5 @@
 
 </body>
 </html>
+
+
