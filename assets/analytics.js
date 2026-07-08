@@ -1,5 +1,5 @@
 (function () {
-  var GA_MEASUREMENT_ID = '';
+  var GA_MEASUREMENT_ID = 'G-N707M7ND10';
   var PLACEHOLDER_IDS = ['G-XXXXXXXXXX', ''];
 
   window.dataLayer = window.dataLayer || [];
