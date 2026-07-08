@@ -95,6 +95,52 @@
   }
   h1 { font-size: clamp(32px, 4vw, 52px); margin-bottom: 22px; }
   .lead { color: var(--ink-2); max-width: 720px; line-height: 2; }
+  .topic-map {
+    padding: 0 0 30px;
+  }
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .topic-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 190px;
+    padding: 22px 20px;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    transition: border-color .2s, transform .2s;
+  }
+  .topic-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .topic-card span {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--accent);
+    letter-spacing: .12em;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .topic-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .topic-card p {
+    color: var(--ink-2);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+  .topic-card b {
+    margin-top: auto;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--primary);
+    letter-spacing: .08em;
+  }
   .article-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -142,6 +188,7 @@
   @media (max-width: 900px) {
     .site-head .wrap { height: auto; min-height: 64px; align-items: flex-start; flex-direction: column; padding-top: 16px; padding-bottom: 16px; }
     .nav { flex-wrap: wrap; gap: 16px; }
+    .topic-grid { grid-template-columns: 1fr; }
     .article-grid { grid-template-columns: 1fr; padding-bottom: 64px; }
     .cta .wrap { grid-template-columns: 1fr; }
     .btn-row { justify-content: stretch; }
@@ -169,6 +216,35 @@
       <div class="eyebrow">INSIGHTS FOR PHARMACY OWNERS</div>
       <h1>薬局M&A・事業承継コラム</h1>
       <p class="lead">譲渡を決める前に知っておきたい論点を、薬局の現場とM&A実務の両方から整理します。後継者不在、調剤報酬改定、採用難、価値評価に悩む薬局オーナーのための読み物です。</p>
+    </div>
+  </section>
+
+  <section class="topic-map wrap" aria-label="状況別に読む">
+    <div class="topic-grid">
+      <a class="topic-card" href="successor-shortage-pharmacy.html?utm_source=columns&utm_medium=topic_map&utm_campaign=succession">
+        <span>SUCCESSION</span>
+        <h2>後継者がいない</h2>
+        <p>親族承継、従業員承継、第三者承継、廃業を比較する前に読む入口です。</p>
+        <b>READ →</b>
+      </a>
+      <a class="topic-card" href="valuation.html?utm_source=columns&utm_medium=topic_map&utm_campaign=valuation">
+        <span>VALUATION</span>
+        <h2>薬局の価値を知りたい</h2>
+        <p>売却相場、評価方法、買い手が見る収益の質を整理します。</p>
+        <b>READ →</b>
+      </a>
+      <a class="topic-card" href="pharmacist-shortage-pharmacy-sale.html?utm_source=columns&utm_medium=topic_map&utm_campaign=staffing">
+        <span>FIELD RISK</span>
+        <h2>採用・現場に不安がある</h2>
+        <p>管理薬剤師、従業員、処方元、在宅対応など現場リスクを確認します。</p>
+        <b>READ →</b>
+      </a>
+      <a class="topic-card" href="readiness-check.html?utm_source=columns&utm_medium=topic_map&utm_campaign=readiness">
+        <span>CHECKLIST</span>
+        <h2>相談前に準備したい</h2>
+        <p>決算書、処方箋枚数、人員体制、許認可など初回相談前の整理に進めます。</p>
+        <b>READ →</b>
+      </a>
     </div>
   </section>
 
