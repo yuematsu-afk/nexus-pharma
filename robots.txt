@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nexus-pharma.sasa-eru.com/sitemap.xml
+LLMs: https://nexus-pharma.sasa-eru.com/llms.txt

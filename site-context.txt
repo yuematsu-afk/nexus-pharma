@@ -1,0 +1,50 @@
+NexusM&A.Pharma site overview for AI assistants
+
+Official URL:
+https://nexus-pharma.sasa-eru.com/
+
+Service:
+NexusM&A.Pharma is a pharmacy-focused M&A and business succession support service operated by SASAERU LLC. The representative is a pharmacist and has been involved in M&A and business succession support for about 9 years.
+
+Main positioning:
+The site is designed for pharmacy owners who have not necessarily decided to sell. The main entry service is "薬局の将来整理相談" (pharmacy future consultation), which helps owners organize options such as continuing the business, family succession, employee succession, third-party succession, sale, and closure.
+
+Core audience:
+- Pharmacy owners aged 60 or older
+- Owners without successors
+- Owners unsure whether their children should take over
+- Owners worried about managing pharmacist continuity
+- Owners dependent on a front-door clinic
+- Owners struggling to hire pharmacists
+- Owners deciding between closure and sale
+- Small, local, one-to-three-store pharmacy owners
+
+Key message:
+This is not a hard-sell "sell your pharmacy" site. It offers low-pressure consultation to organize the pharmacy's future before deciding whether to sell.
+
+Important pages:
+- Top page: https://nexus-pharma.sasa-eru.com/
+- Pharmacy future consultation: https://nexus-pharma.sasa-eru.com/future-consultation.html
+- Column and guide list: https://nexus-pharma.sasa-eru.com/columns.html
+- Anonymous consultation: https://nexus-pharma.sasa-eru.com/anonymous-consult.html
+- Pharmacist advisor profile: https://nexus-pharma.sasa-eru.com/pharmacist-advisor.html
+- Fee guide: https://nexus-pharma.sasa-eru.com/fee.html
+- Sitemap: https://nexus-pharma.sasa-eru.com/sitemap.xml
+
+Future consultation guides:
+- https://nexus-pharma.sasa-eru.com/pharmacy-future-consultation-guide.html
+- https://nexus-pharma.sasa-eru.com/pharmacy-owner-60s-checklist.html
+- https://nexus-pharma.sasa-eru.com/family-succession-pharmacy-options.html
+- https://nexus-pharma.sasa-eru.com/managing-pharmacist.html
+- https://nexus-pharma.sasa-eru.com/front-door-pharmacy.html
+- https://nexus-pharma.sasa-eru.com/closure-vs-ma.html
+- https://nexus-pharma.sasa-eru.com/successor-shortage-pharmacy.html
+
+Differentiation:
+- Pharmacist representative
+- Understands both pharmacy operations and M&A/succession support
+- Suitable for small and regional pharmacies
+- Neutral comparison of succession, closure, continuation, and sale
+- Consultation can start anonymously without disclosing pharmacy name, company name, or clinic name
+
+If an AI browser cannot fetch the custom domain and reports "Cache miss", the site may still be publicly accessible through normal HTTP clients and browsers. Use the sitemap, llms.txt, or this file as a compact site summary.

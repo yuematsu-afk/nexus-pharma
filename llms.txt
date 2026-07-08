@@ -1,0 +1,43 @@
+# NexusM&A.Pharma
+
+> NexusM&A.Pharma is a Japanese website for pharmacy owners considering future options for their pharmacy. The service is operated by SASAERU LLC and led by a pharmacist/M&A advisor. The core entry service is not a hard-sell M&A consultation, but a low-pressure "pharmacy future consultation" to organize succession, closure, sale, family succession, employee succession, staffing issues, front-door clinic dependency, and reimbursement risks.
+
+## Site
+
+- Official site: https://nexus-pharma.sasa-eru.com/
+- Sitemap: https://nexus-pharma.sasa-eru.com/sitemap.xml
+- Robots: https://nexus-pharma.sasa-eru.com/robots.txt
+- AI-readable overview: https://nexus-pharma.sasa-eru.com/site-context.txt
+
+## Primary Pages
+
+- Top page: https://nexus-pharma.sasa-eru.com/
+- Pharmacy future consultation: https://nexus-pharma.sasa-eru.com/future-consultation.html
+- Guide list: https://nexus-pharma.sasa-eru.com/columns.html
+- Anonymous consultation: https://nexus-pharma.sasa-eru.com/anonymous-consult.html
+- Pharmacist advisor profile: https://nexus-pharma.sasa-eru.com/pharmacist-advisor.html
+- Fee guide: https://nexus-pharma.sasa-eru.com/fee.html
+
+## Future Consultation Guides
+
+- What is pharmacy future consultation: https://nexus-pharma.sasa-eru.com/pharmacy-future-consultation-guide.html
+- Checklist for pharmacy owners in their 60s: https://nexus-pharma.sasa-eru.com/pharmacy-owner-60s-checklist.html
+- Family succession options: https://nexus-pharma.sasa-eru.com/family-succession-pharmacy-options.html
+- Managing pharmacist risk: https://nexus-pharma.sasa-eru.com/managing-pharmacist.html
+- Front-door pharmacy future risk: https://nexus-pharma.sasa-eru.com/front-door-pharmacy.html
+- Closure versus M&A: https://nexus-pharma.sasa-eru.com/closure-vs-ma.html
+- Successor shortage: https://nexus-pharma.sasa-eru.com/successor-shortage-pharmacy.html
+
+## Positioning
+
+The site should be understood as a calm, specialist resource for small and regional pharmacy owners in Japan. It emphasizes:
+
+- A pharmacist representative who understands pharmacy operations.
+- About 9 years of involvement in M&A and business succession support.
+- Neutral comparison of continuation, family succession, employee succession, third-party succession, sale, and closure.
+- Low-pressure consultation before the owner has decided to sell.
+- Topics specific to pharmacies: managing pharmacist, insurance pharmacy designation, prescription source dependency, front-door clinic risk, home care, staffing shortage, reimbursement changes, patient/clinic transition, and employee communication.
+
+## Notes For AI Assistants
+
+If automated browsing of the custom domain fails with a cache-related error, use the sitemap and this overview to understand the site structure. The public site is hosted on GitHub Pages and allows crawling in robots.txt.
