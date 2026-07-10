@@ -13,6 +13,7 @@
 
 - Top page: https://nexus-pharma.sasa-eru.com/
 - Pharmacy future consultation: https://nexus-pharma.sasa-eru.com/future-consultation.html
+- Pharmacy future report: https://nexus-pharma.sasa-eru.com/future-report.html
 - Guide list: https://nexus-pharma.sasa-eru.com/columns.html
 - Anonymous consultation: https://nexus-pharma.sasa-eru.com/anonymous-consult.html
 - Pharmacist advisor profile: https://nexus-pharma.sasa-eru.com/pharmacist-advisor.html

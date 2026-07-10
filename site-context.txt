@@ -25,6 +25,7 @@ This is not a hard-sell "sell your pharmacy" site. It offers low-pressure consul
 Important pages:
 - Top page: https://nexus-pharma.sasa-eru.com/
 - Pharmacy future consultation: https://nexus-pharma.sasa-eru.com/future-consultation.html
+- Pharmacy future report: https://nexus-pharma.sasa-eru.com/future-report.html
 - Column and guide list: https://nexus-pharma.sasa-eru.com/columns.html
 - Anonymous consultation: https://nexus-pharma.sasa-eru.com/anonymous-consult.html
 - Pharmacist advisor profile: https://nexus-pharma.sasa-eru.com/pharmacist-advisor.html
