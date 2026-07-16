@@ -18,8 +18,8 @@
 - Anonymous consultation: https://nexus-pharma.sasa-eru.com/anonymous-consult.html
 - Pharmacist advisor profile: https://nexus-pharma.sasa-eru.com/pharmacist-advisor.html
 - Fee guide: https://nexus-pharma.sasa-eru.com/fee.html
-- Referral partner page: https://nexus-pharma.sasa-eru.com/referral-partner.html
-- Professionals and financial institutions page: https://nexus-pharma.sasa-eru.com/professionals.html
+- Referral partner page for pharmacy support partners who need a low-pressure wall-discussion contact: https://nexus-pharma.sasa-eru.com/referral-partner.html
+- Professionals page for tax accountants, CPAs, financial planners, and financial institutions that may refer client pharmacy owners: https://nexus-pharma.sasa-eru.com/professionals.html
 
 ## Future Consultation Guides
 
