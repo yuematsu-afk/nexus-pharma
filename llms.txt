@@ -19,6 +19,7 @@
 - Pharmacist advisor profile: https://nexus-pharma.sasa-eru.com/pharmacist-advisor.html
 - Fee guide: https://nexus-pharma.sasa-eru.com/fee.html
 - Referral partner page: https://nexus-pharma.sasa-eru.com/referral-partner.html
+- Professionals and financial institutions page: https://nexus-pharma.sasa-eru.com/professionals.html
 
 ## Future Consultation Guides
 
